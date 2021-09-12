@@ -1,0 +1,27 @@
+---
+import "../style/global.css";
+
+export interface Props {
+  title: string;
+  author: string;
+  publishDate: string;
+  heroImage: string;
+}
+
+const { title, author, publishDate, heroImage, alt } = Astro.props;
+---
+
+<html lang="en">
+  <div class="w-full h-full overflow-y-scroll flex justify-center">
+    <article class="prose prose-lg">
+      <header>
+        {heroImage && <img width="720" height="420" class="hero-image" loading="lazy" src={heroImage} alt={alt} />}
+        <p class="publish-date">{publishDate}</p>
+        <h1 class="title">{title}</h1>
+      </header>
+      <main>
+        <slot />
+      </main>
+    </article>
+  </div>
+</html>
