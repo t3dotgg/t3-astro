@@ -3,7 +3,7 @@ import "../../style/global.css";
 
 import BlogPostPreview from "../../components/BlogPostPreview.astro";
 
-const siteTitle = "Theo's Blog";
+const siteTitle = "Theo&apos;s Blog";
 const description = "Thought dumps and nerdy stuff";
 
 // Data Fetching: List all Markdown posts in the repo.
@@ -17,7 +17,6 @@ const allPosts = Astro.fetchContent<{ date: string }>("./posts/*.md").sort(
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.svg" />
     <meta name="description" content={description} />
     <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
