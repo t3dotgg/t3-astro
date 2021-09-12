@@ -72,8 +72,8 @@ First, we have to modify our Vercel project settings once more to point it at a 
 Toggle "override" for "DEVELOPMENT COMMAND" and set it to `npm run {vercel-special-command-name}`.
 
 <img
-  src="/images/vite-vercel/vercel-dev-config.png"
-  alt={"Vercel dev special config"}
+src="/images/vite-vercel/vercel-dev-config.png"
+alt={"Vercel dev special config"}
 />
 
 The following is weird enough that I [stubbed out a commit with all the related changes to make it easier to apply to your project](https://github.com/TheoBr/vercel-vite-demo/commit/8fa15f3b4bfed02019a80fc68845a1e68ef5e196)
