@@ -31,7 +31,10 @@ const allPosts = Astro.fetchContent<{ date: string }>("./posts/*.md").sort(
   <body>
     <main>
       <div class="w-full h-full overflow-y-scroll flex flex-col items-center">
-        {allPosts.map((p) => <BlogPostPreview post={p} />)}
+        <div class="max-w-[40rem]">
+          <div class="text-xl pt-8">Theo's Blog</div>
+          {allPosts.map((p) => <BlogPostPreview post={p} />)}
+        </div>
       </div>
     </main>
   </body>
