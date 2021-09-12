@@ -1,0 +1,34 @@
+---
+import "../../style/global.css";
+
+import BlogPostPreview from "../../components/BlogPostPreview.astro";
+
+const siteTitle = "T3 Tools";
+const description = "We build things for creators.";
+
+
+// Data Fetching: List all Markdown posts in the repo.
+const allPosts = Astro.fetchContent<{date: string}>('./posts/*.md').sort((a, b) => (new Date(b.date) as unknown as number) - (new Date(a.date) as unknown as number));
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@t3dotgg" />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://t3.gg/images/twitter.png" />
+    <title>{siteTitle}</title>
+</head>
+<body>
+    <main>
+    <div>aaaaa</div>
+    <div>
+        {allPosts.map(p => <BlogPostPreview post={p} />)}</div>
+    </main>
+</body>
+</html>
