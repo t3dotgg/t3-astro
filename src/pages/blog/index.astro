@@ -3,8 +3,8 @@ import "../../style/global.css";
 
 import BlogPostPreview from "../../components/BlogPostPreview.astro";
 
-const siteTitle = "T3 Tools";
-const description = "We build things for creators.";
+const siteTitle = "Theo's Blog";
+const description = "Thought dumps and nerdy stuff";
 
 // Data Fetching: List all Markdown posts in the repo.
 const allPosts = Astro.fetchContent<{ date: string }>("./posts/*.md").sort(
