@@ -1,57 +1,61 @@
 ---
-// Component Imports
 import Tour from '../components/Tour.astro';
-// You can import components from any supported Framework here!
 
+import "../style/global.css";
 
-// Component Script:
-// You can write any JavaScript/TypeScript that you'd like here.
-// It will run during the build, but never in the browser.
-// All variables are available to use in the HTML template below.
 let title = 'My Astro Site';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
 ---
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>{title}</title>
-
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    
-    <link rel="stylesheet" href="/style/global.css">
-    <link rel="stylesheet" href="/style/home.css">
-
-    <style>
-        header {
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
-            max-width: min(100%, 68ch);
-        }
-    </style>
 </head>
 <body>
     <main>
-        <header>
-            <div>
-                <img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
-                <h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
+        <div class="bg-gray-600 bg-opacity-50">
+        <div class="flex flex-col items-center min-h-screen animate-fade-in-down text-gray-800 relative">
+          <div
+            class="flex flex-col justify-center items-center py-8 px-4 w-full shadow-xl bg-gray-900 bg-gradient-to-tr from-gray-900 to-gray-800 text-gray-200"
+            style={{ fontFamily: "Inter" }}
+          >
+            <img
+              src={"/assets/t3-block.svg"}
+              class="rounded-xl"
+              alt="T3 Tools logo"
+            />
+            <div class="text-4xl mt-4 font-medium text-center">
+              Welcome to T3 Tools
             </div>
-        </header>
+            <p class="text-gray-400">
+              Built by{" "}
+                <a href="/me">Theo</a>
+            </p>
+          </div>
+          <div class="pt-8" />
 
-        <Tour />
-
-        <!--
-           - You can also use imported framework components directly in your markup!
-           -
-           - Note: by default, these components are NOT interactive on the client.
-           - The `:visible` directive tells Astro to make it interactive.
-           -
-           - See https://docs.astro.build/core-concepts/component-hydration/ 
-           -->
+          <div class="flex flex-col justify-center max-w-2xl px-4 md:max-w-5xl ">
+            <h2 class="text-4xl font-medium text-center">
+              We Build Things For Creators
+            </h2>
+            <div class="pt-4" />
+            <a href="https://round.t3.gg">
+              <div class="bg-gray-800 p-4 rounded-xl flex flex-col justify-center items-center text-gray-200">
+                <img
+                  src={"/assets/Round Text Logo.svg"}
+                  class="rounded-xl"
+                  alt="T3 Tools logo"
+                  width={200}
+                />
+                <div class="pt-4" />
+                <p class="text-center">
+                  The best way to have multiple people on your stream.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
 
     </main>
 </body>
