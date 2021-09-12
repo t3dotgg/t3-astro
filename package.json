@@ -11,5 +11,8 @@
   "devDependencies": {
     "astro": "^0.20.5",
     "tailwindcss": "^2.2.15"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.4.1"
   }
 }

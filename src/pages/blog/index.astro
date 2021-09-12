@@ -26,9 +26,9 @@ const allPosts = Astro.fetchContent<{date: string}>('./posts/*.md').sort((a, b) 
 </head>
 <body>
     <main>
-    <div>aaaaa</div>
-    <div>
-        {allPosts.map(p => <BlogPostPreview post={p} />)}</div>
+    <div class="w-full h-full overflow-y-scroll flex flex-col items-center">
+        {allPosts.map(p => <BlogPostPreview post={p} />)}
+    </div>
     </main>
 </body>
 </html>
