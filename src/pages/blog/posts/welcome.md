@@ -1,6 +1,7 @@
 ---
 title: "Hello World"
 date: "2020-12-21"
+layout: "../../../layouts/BlogPost.astro"
 ---
 
 This is long, long overdue.

@@ -3,16 +3,14 @@ export interface Props {
   post: any;
 }
 
+import BlogPostHeader from "./BlogPostHeader.astro";
+
 const { post } = Astro.props;
 ---
 
 <article class="prose prose-lg lg:prose-xl w-full mb-8 max-w-[40rem]">
   <a href={post.url} class="no-line-link">
-    <h2
-      className="m-0 p-0 font-bold"
-      style={"margin-block-end: 0; margin-block-start: 1rem;"}>
-      {post.title}
-    </h2>
+    <BlogPostHeader post={post} />
   </a>
   <p>{post.description}</p>
   <a href={post.url}>Read more</a>

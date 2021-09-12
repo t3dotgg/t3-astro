@@ -1,0 +1,21 @@
+---
+export interface Props {
+  post: any;
+}
+
+import { parseISO, format } from "date-fns";
+
+const { post } = Astro.props;
+
+const date = parseISO(post.date);
+const formatted = format(date, "LLLL d, yyyy");
+---
+
+<div>
+  <h2
+    className="m-0 p-0 font-bold"
+    style={"margin-block-end: 0; margin-block-start: 1rem;"}>
+    {post.title}
+  </h2>
+  <time dateTime={date}>{formatted}</time>
+</div>
