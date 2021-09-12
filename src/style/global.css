@@ -11,3 +11,11 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.no-line-link {
+  text-decoration: none !important;
+}
+
+.no-line-link:hover {
+  text-decoration: underline !important;
+}
