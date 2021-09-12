@@ -1,27 +1,26 @@
 ---
-import "../style/global.css";
-
 export interface Props {
-  title: string;
-  author: string;
-  publishDate: string;
-  heroImage: string;
+  content: {
+    title: string;
+    author: string;
+    date: string;
+    heroImage: string;
+  };
 }
 
-const { title, author, publishDate, heroImage, alt } = Astro.props;
+import "../style/global.css";
+import BlogPostHeader from "../components/BlogPostHeader.astro";
 ---
 
 <html lang="en">
   <div class="w-full h-full overflow-y-scroll flex justify-center">
-    <article class="prose prose-lg">
-      <header>
-        {heroImage && <img width="720" height="420" class="hero-image" loading="lazy" src={heroImage} alt={alt} />}
-        <p class="publish-date">{publishDate}</p>
-        <h1 class="title">{title}</h1>
-      </header>
-      <main>
-        <slot />
-      </main>
-    </article>
+    <div class="max-w-[40rem]">
+      <article class="prose prose-lg lg:prose-xl">
+        <main>
+          <BlogPostHeader post={Astro.props.content} />
+          <slot />
+        </main>
+      </article>
+    </div>
   </div>
 </html>
