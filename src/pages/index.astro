@@ -1,19 +1,26 @@
 ---
-import Tour from '../components/Tour.astro';
-
 import "../style/global.css";
 
-let title = 'My Astro Site';
+const siteTitle = "T3 Tools";
+const description = "We build things for creators.";
 ---
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>{title}</title>
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@t3dotgg" />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://t3.gg/images/twitter.png" />
+    <title>{siteTitle}</title>
 </head>
 <body>
     <main>
-        <div class="bg-gray-600 bg-opacity-50">
+      <div class="bg-gray-600 bg-opacity-50">
         <div class="flex flex-col items-center min-h-screen animate-fade-in-down text-gray-800 relative">
           <div
             class="flex flex-col justify-center items-center py-8 px-4 w-full shadow-xl bg-gray-900 bg-gradient-to-tr from-gray-900 to-gray-800 text-gray-200"
@@ -56,7 +63,6 @@ let title = 'My Astro Site';
           </div>
         </div>
       </div>
-
     </main>
 </body>
 </html>
