@@ -7,7 +7,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "prettify": "prettier -w . --plugin=./node_modules/prettier-plugin-astro"
+    "prettify": "prettier -w ./src --plugin=./node_modules/prettier-plugin-astro"
   },
   "devDependencies": {
     "astro": "^0.20.5",
