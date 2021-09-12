@@ -5,6 +5,7 @@ export interface Props {
 
 const { post } = Astro.props;
 ---
+
 <article class="prose prose-lg w-full">
   <a href={post.url}><h1 class="title">{post.title}</h1></a>
   <p>{post.description}</p>

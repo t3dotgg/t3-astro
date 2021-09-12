@@ -4,10 +4,11 @@ import "../style/global.css";
 const siteTitle = "T3 Tools";
 const description = "We build things for creators.";
 ---
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.svg" />
     <meta name="description" content={description} />
     <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
@@ -17,44 +18,44 @@ const description = "We build things for creators.";
     <meta property="og:description" content={description} />
     <meta property="og:image" content="https://t3.gg/images/twitter.png" />
     <title>{siteTitle}</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
       <div class="bg-gray-600 bg-opacity-50">
-        <div class="flex flex-col items-center min-h-screen animate-fade-in-down text-gray-800 relative">
+        <div
+          class="flex flex-col items-center min-h-screen animate-fade-in-down text-gray-800 relative">
           <div
             class="flex flex-col justify-center items-center py-8 px-4 w-full shadow-xl bg-gray-900 bg-gradient-to-tr from-gray-900 to-gray-800 text-gray-200"
-            style={{ fontFamily: "Inter" }}
-          >
+            style={{ fontFamily: "Inter" }}>
             <img
               src={"/assets/t3-block.svg"}
               class="rounded-xl"
-              alt="T3 Tools logo"
-            />
+              alt="T3 Tools logo" />
             <div class="text-4xl mt-4 font-medium text-center">
               Welcome to T3 Tools
             </div>
             <p class="text-gray-400">
               Built by{" "}
-                <a href="/me">Theo</a>
+              <a href="/me">Theo</a>
             </p>
           </div>
-          <div class="pt-8" />
+          <div class="pt-8"></div>
 
-          <div class="flex flex-col justify-center max-w-2xl px-4 md:max-w-5xl ">
+          <div
+            class="flex flex-col justify-center max-w-2xl px-4 md:max-w-5xl ">
             <h2 class="text-4xl font-medium text-center">
               We Build Things For Creators
             </h2>
-            <div class="pt-4" />
+            <div class="pt-4"></div>
             <a href="https://round.t3.gg">
-              <div class="bg-gray-800 p-4 rounded-xl flex flex-col justify-center items-center text-gray-200">
+              <div
+                class="bg-gray-800 p-4 rounded-xl flex flex-col justify-center items-center text-gray-200">
                 <img
                   src={"/assets/Round Text Logo.svg"}
                   class="rounded-xl"
                   alt="T3 Tools logo"
-                  width={200}
-                />
-                <div class="pt-4" />
+                  width={200} />
+                <div class="pt-4"></div>
                 <p class="text-center">
                   The best way to have multiple people on your stream.
                 </p>
@@ -64,5 +65,5 @@ const description = "We build things for creators.";
         </div>
       </div>
     </main>
-</body>
+  </body>
 </html>

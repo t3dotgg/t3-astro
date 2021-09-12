@@ -6,10 +6,13 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "prettify": "prettier -w . --plugin=./node_modules/prettier-plugin-astro"
   },
   "devDependencies": {
     "astro": "^0.20.5",
+    "prettier": "^2.4.0",
+    "prettier-plugin-astro": "github:snowpackjs/prettier-plugin-astro",
     "tailwindcss": "^2.2.15"
   },
   "dependencies": {
