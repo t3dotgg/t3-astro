@@ -5,16 +5,31 @@ export interface Props {
     author: string;
     date: string;
     heroImage: string;
+    description: string;
   };
 }
 
 import "../style/global.css";
 import BlogPostHeader from "../components/BlogPostHeader.astro";
+const {description, title} = Astro.props.content;
 ---
 
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@t3dotgg" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://t3.gg/images/twitter.png" />
+    <title>{title}</title>
+  </head>
   <div class="w-full h-full overflow-y-scroll flex justify-center">
-    <div class="max-w-[40rem]">
+    <div class="max-w-full lg:max-w-[40rem] px-4 lg:px-0">
       <div class="text-xl pt-8">Theo's Blog</div>
       <article class="prose prose-lg lg:prose-xl">
         <main>
