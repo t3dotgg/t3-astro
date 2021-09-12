@@ -6,12 +6,18 @@ export interface Props {
 import BlogPostHeader from "./BlogPostHeader.astro";
 
 const { post } = Astro.props;
+console.log("post?", post);
 ---
 
-<article class="prose prose-lg lg:prose-xl w-full mb-8 max-w-[40rem]">
+<article
+  class="prose prose-lg lg:prose-xl w-full mb-8 max-w-[40rem] relative max-h-[600px] overflow-hidden">
   <a href={post.url} class="no-line-link">
     <BlogPostHeader post={post} />
   </a>
-  <p>{post.description}</p>
-  <a href={post.url}>Read more</a>
+  <div>{post.astro.html}</div>
+  <div
+    class="flex absolute bottom-0 w-full h-[200px] justify-center items-end"
+    style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 1.0) 85%)">
+    <a className="font-medium no-line-link" href={post.url}>Continue Reading</a>
+  </div>
 </article>
