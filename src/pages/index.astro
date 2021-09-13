@@ -19,40 +19,31 @@ const description = "We build things for creators.";
     <meta property="og:image" content="https://t3.gg/images/twitter.png" />
     <title>{siteTitle}</title>
 
-    <script defer data-domain="astro.t3.gg" src="https://t3.gg/js/script.js"></script>
+    <script defer data-domain="astro.t3.gg" src="https://t3.gg/js/script.js"
+    ></script>
   </head>
   <body>
     <main>
-      <div class="bg-gray-600 bg-opacity-50">
+      <div class="bg-light">
         <div
           class="flex flex-col items-center min-h-screen animate-fade-in-down text-gray-800 relative">
           <div
-            class="flex flex-col justify-center items-center py-8 px-4 w-full shadow-xl bg-gray-900 bg-gradient-to-tr from-gray-900 to-gray-800 text-gray-200"
+            class="flex flex-col justify-center items-center pt-2 pb-16 px-4 w-full animated-bg relative"
             style={{ fontFamily: "Inter" }}>
             <img
-              src={"/assets/t3-block.svg"}
-              class="rounded-xl"
+              src={"/assets/t3-text-block.svg"}
+              class="rounded-xl z-10"
               alt="T3 Tools logo" />
-            <div class="text-4xl mt-4 font-medium text-center">
-              Welcome to T3 Tools
-            </div>
-            <p class="text-gray-400">
-              Built by{" "}
-              <a href="/me">Theo</a>
-            </p>
-            <p class="text-gray-400">
-              {"Check out our "}
-              <a href="/blog">blog</a>
-            </p>
+            <div class="absolute w-full h-24 bottom-0 bg-blend z-0"></div>
           </div>
           <div class="pt-8"></div>
 
           <div
             class="flex flex-col justify-center max-w-2xl px-4 md:max-w-5xl ">
             <h2 class="text-4xl font-medium text-center">
-              We Build Things For Creators
+              We Build Creator Tools
             </h2>
-            <div class="pt-4"></div>
+            <div class="pt-8"></div>
             <a href="https://round.t3.gg">
               <div
                 class="bg-gray-800 p-4 rounded-xl flex flex-col justify-center items-center text-gray-200">
@@ -70,6 +61,20 @@ const description = "We build things for creators.";
           </div>
         </div>
       </div>
+      <div class="sticky bottom-0 flex justify-center py-4 text-xl"><span>Created by <a href="/me">Theo</a></span></div>
     </main>
   </body>
 </html>
+
+<style>
+  .bg-blend {
+    background-image: linear-gradient(to top, rgba(232, 220, 255, 1), rgba(232, 220, 255, 0));
+  }
+  .bg-light {
+    background-color: #e8dcff;
+  }
+  .animated-bg {
+    background-image: url(/assets/animated-bg.svg);
+    background-size: cover;
+  }
+</style>
