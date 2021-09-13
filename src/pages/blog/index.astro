@@ -45,7 +45,8 @@ const allPosts = Astro.fetchContent<{ date: string }>("./posts/*.md").sort(
 </html>
 
 <style>
-  .page {
+  html,
+  body {
     background-color: rgba(247, 242, 254, 1);
     height: 100%;
   }
