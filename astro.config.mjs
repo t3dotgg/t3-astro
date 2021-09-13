@@ -8,12 +8,12 @@ export default {
     sitemap: true, // Generate sitemap (set to "false" to disable)
   },
   devOptions: {
+    port: 3000,
+    hostname: "0.0.0.0",
+    tailwindConfig: "./tailwind.config.js",
     // hostname: 'localhost',  // The hostname to run the dev server on.
     // port: 3000,             // The port to run the dev server on.
     // tailwindConfig: '',     // Path to tailwind.config.js if used, e.g. './tailwind.config.js'
   },
   renderers: [],
-  devOptions: {
-    tailwindConfig: "./tailwind.config.js",
-  },
 };

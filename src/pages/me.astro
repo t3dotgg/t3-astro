@@ -20,11 +20,10 @@ const description = "We build things for creators.";
     <title>{siteTitle}</title>
   </head>
   <body>
-    <main>
-      <div
-        class="w-screen h-screen animated-bg">
-        <div class="w-full h-full flex justify-center items-center">
-          <div class="bg-gray-100 bg-opacity-40 p-4 rounded shadow-xl">
+    <main class="w-full h-full animated-bg">
+
+        <div class="w-full special-height flex justify-center items-center">
+          <div class="bg-gray-100 bg-opacity-40 p-4 m-4 rounded shadow-xl">
             <h1 class="font-bold text-2xl pb-4">Hiya</h1>
             <p>{"I'm Theo, and I like to build things"}</p>
             <p>
@@ -51,14 +50,21 @@ const description = "We build things for creators.";
             </div>
           </div>
         </div>
-      </div>
     </main>
   </body>
 </html>
 
 <style>
+html, body {
+  height: 100%;
+  overflow-y: none;
+}
   .animated-bg {
     background-image: url(/assets/animated-bg.svg);
     background-size: cover;
+  }
+
+  .special-height {
+    min-height: -webkit-fill-available;
   }
 </style>
