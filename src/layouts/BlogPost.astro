@@ -34,7 +34,7 @@ const { description, title } = Astro.props.content;
   <div class="w-full h-full overflow-y-scroll flex justify-center">
     <div class="max-w-full lg:max-w-[40rem] px-4 lg:px-0">
       <div class="text-xl pt-8">Theo's Blog</div>
-      <article class="prose prose-lg lg:prose-xl">
+      <article class="prose prose-lg lg:prose-xl pb-10">
         <main>
           <BlogPostHeader post={Astro.props.content} />
           <slot />
@@ -43,3 +43,11 @@ const { description, title } = Astro.props.content;
     </div>
   </div>
 </html>
+
+<style>
+  html,
+  body {
+    background-color: rgba(247, 242, 254, 1);
+    height: 100%;
+  }
+</style>
