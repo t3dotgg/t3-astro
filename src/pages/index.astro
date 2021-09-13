@@ -23,59 +23,68 @@ const description = "We build things for creators.";
     ></script>
   </head>
   <body>
-    <main>
-      <div class="bg-light">
+    <main class="w-full h-full special-height text-gray-800 relative">
+      <div class="absolute right-0 top-0 p-4 z-10 text-xl font-bold">
+        <a href="/blog">Blog</a>
+      </div>
+      <div class="flex flex-col items-center">
         <div
-          class="flex flex-col items-center min-h-screen animate-fade-in-down text-gray-800 relative">
-          <div class="absolute right-0 top-0 p-4 z-10 text-xl font-bold"><a href="/blog">Blog</a></div>
-          <div
-            class="flex flex-col justify-center items-center pt-2 pb-16 px-4 w-full animated-bg relative"
-            style={{ fontFamily: "Inter" }}>
-            <img
-              src={"/assets/t3-text-block.svg"}
-              class="rounded-xl z-10"
-              alt="T3 Tools logo" />
-            <div class="absolute w-full h-24 bottom-0 bg-blend z-0"></div>
-          </div>
-          <div class="pt-8"></div>
+          class="flex flex-col justify-center items-center pt-2 pb-16 px-4 w-full animated-bg relative"
+          style={{ fontFamily: "Inter" }}>
+          <img
+            src={"/assets/t3-text-block.svg"}
+            class="rounded-xl z-10"
+            alt="T3 Tools logo" />
+          <div class="absolute w-full h-24 bottom-0 bg-blend z-0"></div>
+        </div>
+        <div class="pt-8"></div>
 
-          <div
-            class="flex flex-col justify-center max-w-2xl px-4 md:max-w-5xl ">
-            <h2 class="text-4xl font-medium text-center">
-              We Build Creator Tools
-            </h2>
-            <div class="pt-8"></div>
-            <a href="https://round.t3.gg">
-              <div
-                class="bg-gray-800 p-4 rounded-xl flex flex-col justify-center items-center text-gray-200">
-                <img
-                  src={"/assets/Round Text Logo.svg"}
-                  class="rounded-xl"
-                  alt="T3 Tools logo"
-                  width={200} />
-                <div class="pt-4"></div>
-                <p class="text-center">
-                  The best way to have multiple people on your stream.
-                </p>
-              </div>
-            </a>
-          </div>
+        <div class="flex flex-col justify-center max-w-2xl px-4 md:max-w-5xl ">
+          <h2 class="text-4xl font-medium text-center">
+            We Build Creator Tools
+          </h2>
+          <div class="pt-8"></div>
+          <a href="https://round.t3.gg">
+            <div
+              class="bg-gray-800 p-4 rounded-xl flex flex-col justify-center items-center text-gray-200">
+              <img
+                src={"/assets/Round Text Logo.svg"}
+                class="rounded-xl"
+                alt="T3 Tools logo"
+                width={200} />
+              <div class="pt-4"></div>
+              <p class="text-center">
+                The best way to have multiple people on your stream.
+              </p>
+            </div>
+          </a>
         </div>
       </div>
-      <div class="sticky bottom-0 flex justify-center py-4 text-xl"><span>Created by <a href="/me">Theo</a></span></div>
+      <div class="absolute w-full bottom-0 flex justify-center py-4 text-xl">
+        <span>Created by <a href="/me">Theo</a></span>
+      </div>
     </main>
   </body>
 </html>
 
 <style>
-  .bg-blend {
-    background-image: linear-gradient(to top, rgba(232, 220, 255, 1), rgba(232, 220, 255, 0));
-  }
-  .bg-light {
+  html,
+  body {
     background-color: #e8dcff;
+    height: 100%;
+  }
+  .bg-blend {
+    background-image: linear-gradient(
+      to top,
+      rgba(232, 220, 255, 1),
+      rgba(232, 220, 255, 0)
+    );
   }
   .animated-bg {
     background-image: url(/assets/animated-bg.svg);
     background-size: cover;
+  }
+  .special-height {
+    min-height: -webkit-fill-available;
   }
 </style>
