@@ -7,6 +7,10 @@
     {
       "source": "/api/event",
       "destination": "https://plausible.io/api/event"
+    },
+    {
+      "source": "/projects",
+      "destination": "https://legacy.t3.gg/projects"
     }
   ]
 }
