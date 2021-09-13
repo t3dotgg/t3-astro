@@ -1,0 +1,62 @@
+---
+import "../style/global.css";
+
+const siteTitle = "T3 Tools";
+const description = "We build things for creators.";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@t3dotgg" />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://t3.gg/images/twitter.png" />
+    <title>{siteTitle}</title>
+  </head>
+  <body>
+    <main>
+      <div class="w-screen h-screen flex justify-center items-center animated-bg">
+        <div class="bg-gray-100 bg-opacity-40 p-4 rounded shadow-xl">
+          <h1 class="font-bold text-2xl pb-4">Hiya</h1>
+          <p>{"I'm Theo, and I like to build things"}</p>
+          <p>
+            {"Full stack engineer at "}
+            <a href="https://tt.fm">Turntable</a>
+            {" since February 2021"}
+          </p>
+          <p>
+            Alumni of <a href="https://twitch.tv">Twitch</a> and{" "}
+            <a href="https://rpi.edu">RPI</a>
+          </p>
+          <p>I like skateboards, music, art, and various nonsense</p>
+          <p>Check out my...</p>
+          <div class="flex flex-col">
+            <div>
+              -{" "}
+                <a href="/blog">Blog</a>
+            </div>
+            <div>
+              - <a href="https://github.com/theobr">Github</a>
+            </div>
+            <div>
+              - <a href="https://twitter.com/t3dotgg">Twitter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+<style>
+.animated-bg {
+background-image: url(/assets/animated-bg.svg);
+background-size: cover;
+}
+</style>

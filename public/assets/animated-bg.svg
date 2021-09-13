@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg fill="none" viewBox="0 0 355 200" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#a)">
+<circle cx="72" cy="52" r="800" fill="#E8DDFF"></circle>
+<circle r="260" fill="#AEA6BF">
+<animate attributeName="cx" dur="12s" from="-500" repeatCount="indefinite" to="0"/>
+<animate attributeName="cy" dur="12s" from="-400" repeatCount="indefinite" to="100"/>
+</circle>
+<circle r="260" fill="#AEA6BF">
+<animate attributeName="cx" dur="12s" from="0" repeatCount="indefinite" to="500"/>
+<animate attributeName="cy" dur="12s" from="100" repeatCount="indefinite" to="600"/>
+</circle>
+<circle r="160" fill="#D1C8E6">
+<animate attributeName="cx" dur="12s" from="-400" repeatCount="indefinite" to="200"/>
+<animate attributeName="cy" dur="12s" from="-600" repeatCount="indefinite" to="0"/>
+</circle>
+<circle r="160" fill="#D1C8E6">
+<animate attributeName="cx" dur="12s" from="200" repeatCount="indefinite" to="800"/>
+<animate attributeName="cy" dur="12s" from="0" repeatCount="indefinite" to="600"/>
+</circle>
+<circle r="100" fill="#AEA6BF">
+<animate attributeName="cx" dur="12s" from="-200" repeatCount="indefinite" to="600"/>
+<animate attributeName="cy" dur="12s" from="-400" repeatCount="indefinite" to="400"/>
+</circle>
+<circle r="100" fill="#D1C8E6">
+<animate attributeName="cx" dur="12s" from="-200" repeatCount="indefinite" to="600"/>
+<animate attributeName="cy" dur="12s" from="-400" repeatCount="indefinite" to="400"/>
+</circle>
+<circle r="60" fill="#E8DDFF">
+<animate attributeName="cx" dur="6s" from="-400" repeatCount="indefinite" to="0"/>
+<animate attributeName="cy" dur="6s" from="-400" repeatCount="indefinite" to="0"/>
+</circle>
+<circle r="60" fill="#E8DDFF">
+<animate attributeName="cx" dur="6s" from="0" repeatCount="indefinite" to="400"/>
+<animate attributeName="cy" dur="6s" from="0" repeatCount="indefinite" to="400"/>
+</circle>
+</g>
+<defs>
+<clipPath id="a">
+<rect width="355" height="200" fill="#fff"/>
+</clipPath>
+</defs>
+</svg>
