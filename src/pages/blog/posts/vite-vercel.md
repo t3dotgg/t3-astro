@@ -9,6 +9,14 @@ layout: "../../../layouts/BlogPost.astro"
 
 ![Vite + Vercel](https://t3.gg/images/vite-vercel/twitter.png)
 
+### UPDATE (7/13/21)
+
+Vite is [officially supported on Vercel now](https://vercel.com/changelog/vite-projects-can-now-be-deployed-with-zero-configuration). That means the rest of this post is out of date and should be ignored.
+
+For history's sake....
+
+### Original
+
 I like fast, simple dev environments. [Vite](https://vitejs.dev) has quickly become my go-to build tool for any new single page app project. [Vercel](https://vercel.com) is my host of choice, greatly simplifying the deployment experience for both static web apps and associated APIs.
 
 I've been loving Vercel's [serverless function implementation](https://vercel.com/docs/serverless-functions/introduction), which enables quick deploys of lambdas by adding JS (or TS) files to the `/api` directory in your repo. You can even run these locally with the Vercel CLI.
