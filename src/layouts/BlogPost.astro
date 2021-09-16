@@ -31,7 +31,7 @@ const { description, title } = Astro.props.content;
     <script defer data-domain="astro.t3.gg" src="https://t3.gg/js/script.js"
     ></script>
   </head>
-  <body class="blog-post-body">
+  <body style="background-color: rgba(247, 242, 254, 1)">
     <div class="w-full h-full overflow-y-scroll flex justify-center page">
       <div class="max-w-full lg:max-w-[40rem] px-4 lg:px-0">
         <div class="text-xl pt-8">Theo's Blog</div>
@@ -47,9 +47,6 @@ const { description, title } = Astro.props.content;
 </html>
 
 <style>
-  .blog-post-body {
-    background-color: rgba(247, 242, 254, 1);
-  }
   .page {
     background-color: rgba(247, 242, 254, 1);
     height: 100%;
