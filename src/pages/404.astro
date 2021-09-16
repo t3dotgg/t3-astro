@@ -1,0 +1,48 @@
+---
+import "../style/global.css";
+
+const siteTitle = "404 Not Found";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@t3dotgg" />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:image" content="https://t3.gg/images/twitter.png" />
+    <title>{siteTitle}</title>
+
+    <script defer data-domain="astro.t3.gg" src="https://t3.gg/js/script.js"
+    ></script>
+  </head>
+  <body>
+    <main class="w-full h-full animated-bg">
+      <div class="w-full special-height flex justify-center items-center">
+        <div class="text-6xl font-bold text-gray-800 text-center flex flex-col">
+          <div>404</div>
+          <div class="text-xl text-gray-700 font-light">(Page Not Found)</div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    height: 100%;
+    overflow-y: none;
+    background-color: #aea5bf;
+  }
+  .animated-bg {
+    background-image: url(/assets/animated-bg.svg);
+    background-size: cover;
+  }
+  .special-height {
+    min-height: -webkit-fill-available;
+  }
+</style>
