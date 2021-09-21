@@ -18,6 +18,7 @@ const description = "We build things for creators.";
     <meta property="og:description" content={description} />
     <meta property="og:image" content="https://t3.gg/images/twitter.png" />
     <title>{siteTitle}</title>
+    <meta name="theme-color" content="#000000" />
 
     <script defer data-domain="astro.t3.gg" src="https://t3.gg/js/script.js"
     ></script>
@@ -31,7 +32,7 @@ const description = "We build things for creators.";
         <br />
         <a href="/blog">Blog</a>
       </div>
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center overflow-visible">
         <div
           class="flex flex-col justify-center items-center pt-2 pb-16 px-4 w-full h-[40vh] animated-bg relative">
           <img
@@ -91,6 +92,7 @@ const description = "We build things for creators.";
   .animated-bg {
     background-image: url(/assets/animated-bg.svg);
     background-size: cover;
+    margin-top: -20px;
   }
   .special-height {
     min-height: -webkit-fill-available;
