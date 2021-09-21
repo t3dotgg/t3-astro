@@ -13,6 +13,10 @@
     {
       "source": "/projects",
       "destination": "https://legacy.t3.gg/projects"
+    },
+    {
+      "source": "/pitch",
+      "destination": "https://round.t3.gg/pitch"
     }
   ]
 }
