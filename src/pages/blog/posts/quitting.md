@@ -18,7 +18,7 @@ I stayed at Twitch for four years, hopping from team to team, building dozens of
 
 ### The First Resignation
 
-Realizing that I had outgrown my role was a long, painful process. My last year was particularly rough. I saw so many points that hurt both creators and users. I wanted to _destroy, rebuild, and improve everywhere I could._ My ambitions helped me get some [pretty](https://blog.twitch.tv/en/2020/03/31/introducing-mod-view/) [cool](https://www.twitch.tv/broadcast/soundtrack) [stuff](https://www.twitch.tv/broadcast/studio) out, but I was getting tired. My work was no longer fulfilling. My time wasn't spent building; it was spent convincing people that we needed to _build and ship the right things_.
+Realizing that I had outgrown my role was a long, painful process. My last year was particularly rough. I saw so many points that hurt both creators and users. I wanted to _destroy, rebuild, and improve everywhere I could._ My ambitions helped me get some [pretty ](https://blog.twitch.tv/en/2020/03/31/introducing-mod-view/) [cool ](https://www.twitch.tv/broadcast/soundtrack)[stuff ](https://www.twitch.tv/broadcast/studio) out, but I was getting tired. My work was no longer fulfilling. My time wasn't spent building; it was spent convincing people that we needed to _build and ship the right things_.
 
 My desire to build overpowered the comfort I got from my role at Twitch. One of my favorite sites from my childhood, Turntable, announced they were coming back and had begun hiring. The opportunity to build was being dangled in front of me, and I had to bite. I left Twitch on the last Friday in January 2021 and started at TTFM Labs the following Monday.
 
