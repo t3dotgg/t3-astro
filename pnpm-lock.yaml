@@ -5,7 +5,7 @@ specifiers:
   astro: ^0.20.5
   date-fns: ^2.23.0
   prettier: ^2.4.0
-  prettier-plugin-astro: github:snowpackjs/prettier-plugin-astro
+  prettier-plugin-astro: 0.0.7
   tailwindcss: ^2.2.15
 
 dependencies:
@@ -15,7 +15,7 @@ dependencies:
 devDependencies:
   astro: 0.20.5
   prettier: 2.4.0
-  prettier-plugin-astro: github.com/snowpackjs/prettier-plugin-astro/64f677bb7b7a60fb4aafa60cf6ab4f6047189fc8
+  prettier-plugin-astro: 0.0.7
   tailwindcss: 2.2.15
 
 packages:
@@ -4295,8 +4295,21 @@ packages:
     resolution: {integrity: sha512-KojoltCrshZ099ksUZ2OQKfbH66uquFoxHSbnwKbTJHeQNvx42EmC7wQVWNuDt6vC5s3nudRHFtKbpY4ijKlaQ==}
     dev: true
 
+  /prettier-plugin-astro/0.0.7:
+    resolution: {integrity: sha512-bdPOwEyNMn6VkFXZwWl7VS14I7qnIcj8pHbVA9gQHB/2Jbmx6+ejE8QRM+1RPnADqVLjqabX/ikBXwm0faRCdA==}
+    dependencies:
+      '@astrojs/parser': 0.15.4
+      prettier: 2.4.1
+    dev: true
+
   /prettier/2.4.0:
     resolution: {integrity: sha512-DsEPLY1dE5HF3BxCRBmD4uYZ+5DCbvatnolqTqcxEgKVZnL2kUfyu7b8pPQ5+hTBkdhU9SLUmK0/pHb07RE4WQ==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
+
+  /prettier/2.4.1:
+    resolution: {integrity: sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
@@ -5687,13 +5700,4 @@ packages:
 
   /zwitch/2.0.2:
     resolution: {integrity: sha512-JZxotl7SxAJH0j7dN4pxsTV6ZLXoLdGME+PsjkL/DaBrVryK9kTGq06GfKrwcSOqypP+fdXGoCHE36b99fWVoA==}
-    dev: true
-
-  github.com/snowpackjs/prettier-plugin-astro/64f677bb7b7a60fb4aafa60cf6ab4f6047189fc8:
-    resolution: {tarball: https://codeload.github.com/snowpackjs/prettier-plugin-astro/tar.gz/64f677bb7b7a60fb4aafa60cf6ab4f6047189fc8}
-    name: prettier-plugin-astro
-    version: 0.0.6
-    dependencies:
-      '@astrojs/parser': 0.15.4
-      prettier: 2.4.0
     dev: true

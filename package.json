@@ -12,7 +12,7 @@
   "devDependencies": {
     "astro": "^0.20.5",
     "prettier": "^2.4.0",
-    "prettier-plugin-astro": "github:snowpackjs/prettier-plugin-astro",
+    "prettier-plugin-astro": "0.0.7",
     "tailwindcss": "^2.2.15"
   },
   "dependencies": {
