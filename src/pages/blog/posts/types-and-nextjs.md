@@ -151,7 +151,7 @@ Sadly, since the page component _presumed the entire User was coming down the wi
 
 ### Manually typing API endpoints
 
-This path is [vaguely hinted at in the Next.js docs](https://nextjs.org/docs/basic-features/typescript#api-routes), but will require we break up our solution a bit. I will also be including [React Query](https://react-query.tanstack.com/) to make this example significantly less burdensome (I would have used Vercel's [swr](https://swr.vercel.app/) package, but I literally can not find a single Typescript example in their docs).
+This path is [vaguely hinted at in the Next.js docs](https://nextjs.org/docs/basic-features/typescript#api-routes), but will require we break up our solution a bit. I will also be including [React Query](https://react-query.tanstack.com/) to make this example significantly less burdensome (I would have used Vercel's [swr](https://swr.vercel.app/) package, but I was unable to find a Typescript example in their docs).
 
 ```tsx
 // pages/api/get-user-by-id.ts
