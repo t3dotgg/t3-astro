@@ -6,6 +6,36 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            pre: {
+              color: theme("colors.grey.100"),
+              backgroundColor: theme("colors.grey.100"),
+            },
+            "pre code::before": {
+              "padding-left": "unset",
+            },
+            "pre code::after": {
+              "padding-right": "unset",
+            },
+            code: {
+              backgroundColor: theme("colors.grey.100"),
+              color: "#DD1144",
+              fontWeight: "400",
+              "border-radius": "0.25rem",
+            },
+            "code::before": {
+              content: '""',
+              "padding-left": "0.25rem",
+            },
+            "code::after": {
+              content: '""',
+              "padding-right": "0.25rem",
+            },
+          },
+        },
+      }),
       keyframes: {
         "fade-in-down": {
           "0%": {
