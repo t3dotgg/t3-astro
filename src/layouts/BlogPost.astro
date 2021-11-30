@@ -36,7 +36,7 @@ const { description, title } = Astro.props.content;
     <div class="w-full h-full overflow-y-scroll flex justify-center page">
       <div class="max-w-full lg:w-[42rem] xl:w-[64rem] px-4 lg:px-0">
         <div class="text-xl pt-8">Theo's Blog</div>
-        <article class="prose prose-lg lg:prose-xl pb-10">
+        <article class="prose prose-lg lg:prose-xl pb-10 max-w-none">
           <main>
             <BlogPostHeader post={Astro.props.content} />
             <slot />

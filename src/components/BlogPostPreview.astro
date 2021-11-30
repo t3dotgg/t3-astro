@@ -9,7 +9,7 @@ const { post } = Astro.props;
 ---
 
 <article
-  class="prose prose-lg lg:prose-xl w-full mb-8 lg:w-[42rem] xl:w-[64rem] relative max-h-[600px] overflow-hidden">
+  class="prose prose-lg lg:prose-xl max-w-none w-full mb-8 lg:w-[42rem] xl:w-[64rem] relative max-h-[600px] overflow-hidden">
   <a href={post.url} class="no-line-link">
     <BlogPostHeader {post} />
   </a>
