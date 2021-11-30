@@ -18,9 +18,9 @@ Type safety goes deeper than Typescript support.
 
 > ...type safety is the extent to which a programming language discourages or prevents type errors ([Wikipedia](https://en.wikipedia.org/wiki/Type_safety))
 
-It's important to recognize first and foremost that type safety isn't a boolean 'on/off' state. Type safety is a set of pipes from your furthest off dependency and your user.
+It's important to recognize first and foremost that type safety isn't a boolean 'on/off' state. Type safety is the result of correctly orchestrating a set of pipes between your user and your furthest off dependency.
 
-Throughout my career, I've seen a number of systems that handle types in various ways. For the sake of simplicity, I'm going to over-generalize the structure of a system into a few parts
+I've seen many systems that handle types in various ways. For the sake of simplicity, I'm going to over-generalize the structure of a system into a few parts
 
 - Data store (SQL, Mongo, Worker KV)
 - Backend (interface to data store)
@@ -284,7 +284,7 @@ export default function UserInfo() {
 }
 ```
 
-It's important to note that the `trpc.useQuery` call is as close to 100% typesafe as you can get (hell, even in this case it will type error because `[query.id](http://query.id)` isn't guaranteed to exist).
+It's important to note that the `trpc.useQuery` call is as close to 100% typesafe as you can get (hell, even in this case it will type error because `query.id` isn't guaranteed to exist).
 
 The `"get-user-by-id"` string will auto-complete, and type error if it is not a real query in your tRPC router. The input will error if it doesn't match the [zod schema](https://github.com/colinhacks/zod) in your query/mutation. The data is typed identically to the return types of your `resolve` function (even if you use `Map` and `Date`, [superjson](https://github.com/blitz-js/superjson) can convert those too). Also - unlike the earlier example, this one [can also work with SSR](https://trpc.io/docs/ssr#configure-_apptsx-for-ssr).
 
