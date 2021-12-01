@@ -411,6 +411,6 @@ Shoutout to [Alex (tRPC)](https://twitter.com/alexdotjs), [Brandon (Blitz.jz)](h
 
 ### Extra stuff
 
-If you got this far, you [\*\*might like my rants on Twitter as well](https://twitter.com/t3dotgg).\*\*
+If you got this far, you **[might like my rants on Twitter as well](https://twitter.com/t3dotgg).**
 
 If you want to see this tech in action, check out this 2+ hour deep dive [building a full stack app with Prisma, PlanetScale, Next.js, TypeScript, Vercel, tRPC, and Tailwind](https://www.youtube.com/watch?v=PKy2lYEnhgs).
