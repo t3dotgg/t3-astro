@@ -8,19 +8,21 @@ layout: "../../../layouts/BlogPost.astro"
 
 Imagine a world where Next.js was architected around type safety.
 
-> But doesn't Next.js already work with Typescript?
+> But doesn't Next.js already work with TypeScript?
 
-Yes. I even [recommend the Next.js Typescript template on init.tips](https://init.tips/).
+Yes. I even [recommend the Next.js TypeScript template on init.tips](https://init.tips/).
 
-Type safety goes deeper than Typescript support.
+Type safety goes deeper than TypeScript support.
 
 ## What is Type Safety?
 
-> ...type safety is the extent to which a programming language discourages or prevents type errors ([Wikipedia](https://en.wikipedia.org/wiki/Type_safety))
+Weirdly enough, I dig the [Wikipedia definition](https://en.wikipedia.org/wiki/Type_safety)
 
-It's important to recognize first and foremost that type safety isn't a boolean 'on/off' state. Type safety is the result of correctly orchestrating a set of pipes between your user and your furthest off dependency.
+> ...type safety is the extent to which a programming language discourages or prevents type errors
 
-I've seen many systems that handle types in various ways. For the sake of simplicity, I'm going to over-generalize the structure of a system into a few parts
+It's important to recognize first and foremost that type safety isn't a boolean 'on/off' state. Type safety is a set of pipes from your furthest off dependency and your user.
+
+Throughout my career, I've seen a number of systems that handle types in various ways. For the sake of simplicity, I'm going to over-generalize the structure of a system into a few parts
 
 - Data store (SQL, Mongo, Worker KV)
 - Backend (interface to data store)
@@ -41,7 +43,7 @@ When working in a type safe system, should you be writing more types, or less?
 
 This question may seem dumb. "Of course you would have more type definitions in the better typed system!"
 
-The best typed systems should require no types be written at all.
+The best type systems should require no types to be written at all.
 
 _But how??!_
 
@@ -62,7 +64,7 @@ model User {
 }
 ```
 
-We know, given a `User`, that we have an `id` string that is unique and we _might_ have a `name` that is a string. If we were interfacing with this in Typescript, the TS definition would look something like
+We know, given a `User`, that we have an `id` string that is unique and we _might_ have a `name` that is a string. If we were interfacing with this in TypeScript, the TS definition would look something like
 
 ```tsx
 type User {
@@ -73,9 +75,9 @@ type User {
 
 Here's where the Theo spice comes in: _you should never have to write types that look this much like your data models_
 
-Tools like [Prisma](https://www.prisma.io/) serve as a beautiful "translation layer" between your SQL data and your Typescript backend.
+Tools like [Prisma](https://www.prisma.io/) serve as a beautiful "translation layer" between your SQL data and your TypeScript backend.
 
-```typescript
+```tsx
 export const getUserById = (userId: string) => {
   return await prisma.user.findFirst({ where: { id: userId } });
 };
@@ -85,9 +87,9 @@ That's it.
 
 The type safety doesn't come from defining our own types. It comes from _the source of truth being honored and all further contracts being inferred from that source_.
 
-Next.js breaks that contract.
+Next.js often breaks that contract.
 
-## Next is a (type) safety risk
+## Next can be a (type) safety risk
 
 This statement is bold, but this problem is large enough to justify it IMO. Know that it comes from a place of love.
 
@@ -149,9 +151,47 @@ Note: we only made one change here, we _started selecting the values we needed m
 
 Sadly, since the page component _presumed the entire User was coming down the wire_, this will silently pass type checks. Since the `user?.name` call is optionally chained, this case will not throw an error, but that will only make debugging more painful.
 
+### Update: `InferGetServerSidePropsType`
+
+```tsx
+// pages/user-info/[id].ts
+import type {
+  GetServerSidePropsContext,
+  InferGetServerSidePropsType,
+} from "next";
+
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
+  const id = context.params?.id;
+  const user = await prisma.user.findFirst({ where: { id: id } });
+
+  return { props: { user } };
+};
+
+// Infer types from getServerSideProps
+type ServerSideProps = InferGetServerSidePropsType<typeof getServerSideProps>;
+
+// Assign inferred props in exported page component
+export default function UserInfo(props: ServerSideProps) {
+  return <div>Hello {props.user?.name}</div>;
+}
+```
+
+Shout out to [Brandon (Blitz.js)](https://twitter.com/flybayer) and [Luis (Vercel)](https://twitter.com/luis_fades) for pointing out that I [entirely missed the provided inference type in the Next.js docs](https://nextjs.org/docs/basic-features/data-fetching#typescript-use-getserversideprops).
+
+As happy I am to know this exists, I've already ran into some painful edges with Next's provided `InferGetServerSidePropsType`
+
+- It [overrides inferable types](https://t3.gg/images/next-typesafety/infer-props-fail-1.png) as `{[key: string]: any}` generic objects if you cast function as `GetServerSideProps` w/o also manually assigning a type
+- It infers to `props: never` if you [don't specify input types as it expects](https://github.com/vercel/next.js/issues/15913)
+
+To use this correctly, I had to have decent familiarity with Next's internal typings and read through [this GitHub issue thoroughly](https://github.com/vercel/next.js/issues/15913). Even with that prerequisite, I found it shockingly easy to accidentally return a non-implicit `any` type, which _does not throw any errors under the provided Next.js `tsconfig`_ .
+
+This method also requires you to manually type both the server-side function and the component props. There's nothing implicit about the relationship, those prop types could easily be re-assigned or mis-assigned :(
+
 ### Manually typing API endpoints
 
-This path is [vaguely hinted at in the Next.js docs](https://nextjs.org/docs/basic-features/typescript#api-routes), but will require we break up our solution a bit. I will also be including [React Query](https://react-query.tanstack.com/) to make this example significantly less burdensome (I would have used Vercel's [swr](https://swr.vercel.app/) package, but I was unable to find a Typescript example in their docs).
+This path is [vaguely hinted at in the Next.js docs](https://nextjs.org/docs/basic-features/typescript#api-routes), but will require we break up our solution a bit. I will also be including [React Query](https://react-query.tanstack.com/) to make this example significantly less burdensome (I would have used Vercel's [swr](https://swr.vercel.app/) package, but I was unable to find a TypeScript example in their docs).
 
 ```tsx
 // pages/api/get-user-by-id.ts
@@ -162,7 +202,10 @@ export type UserRequestData = {
   user: User;
 };
 
-export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
+export default async (
+  req: NextApiRequest,
+  res: NextApiResponse<UserRequestData>
+) => {
   const { userId } = req.query;
 
   const user = await prisma.user.findFirst({ where: { id: userId } });
@@ -243,9 +286,25 @@ export default function UserInfo(props: ServerSideProps) {
 }
 ```
 
-The only major change from the first example is the inference of prop types through the server-side function types. **At this point in time, I think Next.js should provide a helper to generate safe types from server-side prop functions**. It is the _safest way to honor the contracts inherent to Typescript across the client and server barrier while using server side function helpers in Next._
+The only major change from the first example is the inference of prop types through the server-side function types. **At this point in time, I think Next.js should provide a helper to generate safe types from server-side prop functions**. It is the _safest way to honor the contracts inherent to TypeScript across the client and server barrier while using server side function helpers in Next._
 
-I still think we can do better though.
+**Update:** This was written before I was introduced to the provided `InferGetServerSidePropsType`. This solved the problem I raised here (and almost perfectly matches what I'm doing with `AsyncReturnType`). Sadly, it also introduced me to danger within Next's `GetServerSideProps` generic type
+
+```tsx
+export type GetServerSideProps<
+  P extends { [key: string]: any } = { [key: string]: any },
+  Q extends ParsedUrlQuery = ParsedUrlQuery,
+  D extends PreviewData = PreviewData
+> = (
+  context: GetServerSidePropsContext<Q, D>
+) => Promise<GetServerSidePropsResult<P>>;
+```
+
+In particular, the `P extends` bit that auto-assigns a generic object as the return type is....very scary. Way too easy to trigger. IMO, this first arg should be mandatory if this prop is going to be used.
+
+After chatting with some folks at Vercel, it's clear they're working to make this better. A lot of the generic export type issues I've laid out here can be [sourced back to a more generic export typing issue in TypeScript itself](https://github.com/microsoft/TypeScript/issues/38511) (ty [Balázs](https://twitter.com/balazsorban44) for pointing me to this).
+
+_All that said_, I think we can work around these problems :)
 
 ## Exploring Other Solutions
 
@@ -354,7 +413,7 @@ export default function UserInfo(props: Props) {
 
 This is a very rough sketch of what I have in mind. My "general thought" is a file-level barrier between "the thing run on the server" and "the thing run on server AND client", with an implicit type contract (potentially generated) through the creation of these files.
 
-Under the hood I would expect this to use something similar to the `AsyncInferType` example earlier. I can see potential ways to extend this further, such as additional keys you can return or other named files i.e. `_serverSideProps.ts` or `_staticProps.ts`.
+Under the hood I would expect this to use something similar to the `AsyncInferType` example earlier. I can see potential ways to extend this further, such as additional keys you can return or other named files i.e. `_dynamicProps.ts` or `_staticProps.ts`.
 
 Generally, I like the idea of "files with an underscore run on the server", and that thought brought me here.
 
@@ -362,4 +421,12 @@ Generally, I like the idea of "files with an underscore run on the server", and 
 
 This was a long one. I know it may seem harsh towards Next and Vercel, but that was not my intent at all. I'm critical out of love. I would never have written this much about something _I didn't intend to use for years_. I bet my company on this stack. I feel like we're working in a stack from the future.
 
-That said, I'd expect a little more type safety from [React in 2025](https://react2025.com/).
+Want to shout out a bunch of people who gave feedback on this article, I would have looked way stupider without y'all
+
+Shoutout to [Alex (tRPC)](https://twitter.com/alexdotjs), [Brandon (Blitz.jz)](https://twitter.com/flybayer), [Balász (NextAuth.js)](https://twitter.com/balazsorban44), [Jonas (ThirdWeb)](https://twitter.com/jnsdls), [Lee (Vercel)](https://twitter.com/leeerob), [Luis (Vercel)](https://twitter.com/luis_fades), [Jacob (CloudFlare)](https://twitter.com/JacobMGEvans), [Tanner (TanStack/ React-Query)](https://twitter.com/tannerlinsley) and everyone else who I'm forgetting.
+
+### Extra stuff
+
+If you got this far, you [\*\*might like my rants on Twitter as well](https://twitter.com/t3dotgg).\*\*
+
+If you want to see this tech in action, check out this 2+ hour deep dive [building a full stack app with Prisma, PlanetScale, Next.js, TypeScript, Vercel, tRPC, and Tailwind](https://www.youtube.com/watch?v=PKy2lYEnhgs).
