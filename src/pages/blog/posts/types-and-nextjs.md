@@ -37,7 +37,7 @@ Given the separation of concerns and focus, combined with the varied technologie
 
 Given a full-stack TypeScript app using Next.js, I think we can do much better.
 
-### What isn't Type Safety?
+## Building Better Type Systems
 
 Going to start this with a question:
 
@@ -49,7 +49,11 @@ The best type systems should require no types to be written at all.
 
 _But how??!_
 
-Inference.
+### Type Inference
+
+<img src="/images/next-typesafety/drake.jpeg" style="margin-bottom:-1.5rem;" />
+
+Credits to [Alex for this fantastic meme](https://twitter.com/alexdotjs/status/1465975816370728963)
 
 _Writing type definitions for every piece of your code does not make a type safe system._
 
