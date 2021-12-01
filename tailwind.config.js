@@ -9,9 +9,14 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            blockquote: { "border-color": theme("colors.gray.800") },
+            "ul > li::before": { "background-color": theme("colors.gray.800") },
+            "blockquote p:first-of-type::before": { content: "none" },
+            "blockquote p:first-of-type::after": { content: "none" },
+            color: theme("colors.gray.800"),
             pre: {
-              color: theme("colors.grey.100"),
-              backgroundColor: theme("colors.grey.100"),
+              color: theme("colors.gray.100"),
+              backgroundColor: theme("colors.gray.100"),
             },
             "pre code::before": {
               "padding-left": "unset",
@@ -20,7 +25,7 @@ module.exports = {
               "padding-right": "unset",
             },
             code: {
-              backgroundColor: theme("colors.grey.100"),
+              backgroundColor: theme("colors.gray.100"),
               color: "#DD1144",
               fontWeight: "400",
               "border-radius": "0.25rem",

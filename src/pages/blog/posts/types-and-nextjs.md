@@ -8,7 +8,7 @@ layout: "../../../layouts/BlogPost.astro"
 
 Imagine a world where Next.js was architected around type safety.
 
-> But doesn't Next.js already work with TypeScript?
+> "But doesn't Next.js already work with TypeScript?"
 
 Yes. I even [recommend the Next.js TypeScript template on init.tips](https://init.tips/).
 
@@ -16,9 +16,9 @@ Type safety goes deeper than TypeScript support.
 
 ## What is Type Safety?
 
-[Wikipedia's definition is solid:](https://en.wikipedia.org/wiki/Type_safety)
-
-> ...type safety is the extent to which a programming language discourages or prevents type errors
+> "...type safety is the extent to which a programming language discourages or prevents type errors"
+>
+> [Wikipedia](https://en.wikipedia.org/wiki/Type_safety)
 
 It's important to recognize first and foremost that type safety isn't a boolean 'on/off' state. Type safety is a set of pipes from your furthest off dependency and your user.
 
@@ -37,9 +37,9 @@ Given a full-stack TypeScript app using Next.js, I think we can do much better.
 
 ### What isn't Type Safety?
 
-Going to start this with a question for you:
+Going to start this with a question:
 
-When working in a type safe system, should you be writing more types, or less?
+_When working in a type safe system, should you be writing more types, or less?_
 
 This question may seem dumb. "Of course you would have more type definitions in the better typed system!"
 
