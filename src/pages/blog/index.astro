@@ -36,7 +36,7 @@ const allPosts = Astro.fetchContent<{ date: string }>("./posts/*.md").sort(
     <main>
       <div
         class="w-full h-full overflow-y-scroll flex flex-col items-center page">
-        <div class="max-w-full lg:max-w-[40rem] px-4 lg:px-0">
+        <div class="max-w-full lg:w-[42rem] xl:w-[64rem] px-4 lg:px-0">
           <div class="text-xl pt-8">Theo's Blog</div>
           {allPosts.map((p) => <BlogPostPreview post={p} />)}
         </div>
@@ -49,6 +49,7 @@ const allPosts = Astro.fetchContent<{ date: string }>("./posts/*.md").sort(
   html,
   body {
     background-color: rgba(247, 242, 254, 1);
+    background-image: url("/images/bg-texture.png");
     height: 100%;
   }
 </style>

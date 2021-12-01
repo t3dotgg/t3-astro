@@ -6,6 +6,48 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            blockquote: { "border-color": theme("colors.gray.800") },
+            "ul > li::before": { "background-color": theme("colors.gray.800") },
+            "blockquote p:first-of-type::before": { content: "none" },
+            "blockquote p:first-of-type::after": { content: "none" },
+            color: theme("colors.gray.800"),
+            pre: {
+              color: theme("colors.gray.100"),
+              backgroundColor: theme("colors.gray.200"),
+            },
+            "pre code::before": {
+              "padding-left": "unset",
+            },
+            "pre code::after": {
+              "padding-right": "unset",
+            },
+            code: {
+              backgroundColor: theme("colors.gray.200"),
+              color: "#DD1144",
+              fontWeight: "400",
+              "border-radius": "0.25rem",
+            },
+            "code::before": {
+              content: '""',
+              "padding-left": "0.25rem",
+            },
+            "code::after": {
+              content: '""',
+              "padding-right": "0.25rem",
+            },
+            a: {
+              color: theme(`colors.blue.600`),
+              textDecoration: `none`,
+              "&:hover": {
+                textDecoration: `underline`,
+              },
+            },
+          },
+        },
+      }),
       keyframes: {
         "fade-in-down": {
           "0%": {
