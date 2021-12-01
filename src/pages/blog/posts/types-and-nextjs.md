@@ -1,6 +1,6 @@
 ---
 title: "An Inconsistent Truth: Next.js and Type Safety"
-date: "2021-12-01"
+date: "2021-12-02"
 description: "Next.js is a great framework. The frontend and backend have never been closer. Can we bridge the remaining gap in a typesafe way?"
 imageURL: "https://t3.gg/images/next-typesafety/twitter.png"
 readMore: true
@@ -58,8 +58,6 @@ Credits to [Alex for this fantastic meme](https://twitter.com/alexdotjs/status/1
 _Writing type definitions for every piece of your code does not make a type safe system._
 
 _Good type systems are built on top of strongly typed dependencies and models. Type safety comes when the rest is inferred from there_.
-
-### What It Looks Like
 
 Say I have a model in SQL:
 
