@@ -4,6 +4,7 @@ date: "2021-12-01"
 description: "Next.js is a great framework. It's a shame about that type safety..."
 readMore: true
 layout: "../../../layouts/BlogPost.astro"
+hide: true
 ---
 
 Imagine a world where Next.js was architected around type safety.

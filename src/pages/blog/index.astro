@@ -11,7 +11,7 @@ const allPosts = Astro.fetchContent<{ date: string }>("./posts/*.md").sort(
   (a, b) =>
     (new Date(b.date) as unknown as number) -
     (new Date(a.date) as unknown as number)
-);
+).filter(post => !(post as {hide?: boolean}).hide);
 ---
 
 <html lang="en">
