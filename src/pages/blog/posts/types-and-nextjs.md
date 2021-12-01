@@ -16,7 +16,7 @@ Type safety goes deeper than TypeScript support.
 
 ## What is Type Safety?
 
-Weirdly enough, I dig the [Wikipedia definition](https://en.wikipedia.org/wiki/Type_safety)
+[Wikipedia's definition is solid:](https://en.wikipedia.org/wiki/Type_safety)
 
 > ...type safety is the extent to which a programming language discourages or prevents type errors
 
@@ -151,7 +151,7 @@ Note: we only made one change here, we _started selecting the values we needed m
 
 Sadly, since the page component _presumed the entire User was coming down the wire_, this will silently pass type checks. Since the `user?.name` call is optionally chained, this case will not throw an error, but that will only make debugging more painful.
 
-### Update: `InferGetServerSidePropsType`
+### Next's provided inference helper:`InferGetServerSidePropsType`
 
 ```tsx
 // pages/user-info/[id].ts
@@ -179,6 +179,8 @@ export default function UserInfo(props: ServerSideProps) {
 ```
 
 Shout out to [Brandon (Blitz.js)](https://twitter.com/flybayer) and [Luis (Vercel)](https://twitter.com/luis_fades) for pointing out that I [entirely missed the provided inference type in the Next.js docs](https://nextjs.org/docs/basic-features/data-fetching#typescript-use-getserversideprops).
+
+The goal here is to use the types of your `getServerSideProps` function as a source of truth via inference. Funny enough, I've written a number of helpers to do this myself before.
 
 As happy I am to know this exists, I've already ran into some painful edges with Next's provided `InferGetServerSidePropsType`
 
@@ -262,33 +264,11 @@ Let's repeat that for those in the back.
 
 This is a big part of why I love Prisma so much. Your "source of truth" is the `schema.prisma` file. Everything else is inferred from there. You will not be writing your own type defs with Prisma.
 
-`getServerSideProps` should work the same way.
+To be clear, Next is solving a very different problem and can't generate a bunch of types out of a model file. Still though, I'd love if `getServerSideProps` worked similarly.
 
-### The Types Were With Us All Along
+The closest we can get right now is `InferGetServerSidePropsType`. It is the _safest way to honor the contracts inherent to TypeScript across the client and server barrier while using server side function helpers in Next._
 
-The funny thing about the first example I gave is that _the types we need are inferable_. Take a look at this (using [AsyncReturnType](https://stackoverflow.com/a/59774743) inference):
-
-```tsx
-// pages/user-info/[id].ts
-export async function getServerSideProps(context) {
-  const id = context.params.id;
-  const user = await prisma.user.findFirst({ where: { id: id } });
-
-  return { props: { user } };
-}
-
-// Infer types from getServerSideProps
-type ServerSideProps = AsyncReturnType<typeof getServerSideProps>["props"];
-
-// Assign inferred props in exported page component
-export default function UserInfo(props: ServerSideProps) {
-  return <div>Hello {props.user?.name}</div>;
-}
-```
-
-The only major change from the first example is the inference of prop types through the server-side function types. **At this point in time, I think Next.js should provide a helper to generate safe types from server-side prop functions**. It is the _safest way to honor the contracts inherent to TypeScript across the client and server barrier while using server side function helpers in Next._
-
-**Update:** This was written before I was introduced to the provided `InferGetServerSidePropsType`. This solved the problem I raised here (and almost perfectly matches what I'm doing with `AsyncReturnType`). Sadly, it also introduced me to danger within Next's `GetServerSideProps` generic type
+Sadly, digging deeper into the provided types has only made me more cynical. There are some scary typedefs within Next's provided types, `GetServerSideProps` in particular
 
 ```tsx
 export type GetServerSideProps<
@@ -300,19 +280,21 @@ export type GetServerSideProps<
 ) => Promise<GetServerSidePropsResult<P>>;
 ```
 
-In particular, the `P extends` bit that auto-assigns a generic object as the return type is....very scary. Way too easy to trigger. IMO, this first arg should be mandatory if this prop is going to be used.
+The `P extends` bit that auto-assigns a generic object as the return type is....very scary. Way too easy to trigger. IMO, this first arg should be mandatory if this prop is going to be used.
 
 After chatting with some folks at Vercel, it's clear they're working to make this better. A lot of the generic export type issues I've laid out here can be [sourced back to a more generic export typing issue in TypeScript itself](https://github.com/microsoft/TypeScript/issues/38511) (ty [Balázs](https://twitter.com/balazsorban44) for pointing me to this).
 
 _All that said_, I think we can work around these problems :)
 
-## Exploring Other Solutions
+## Exploring Outside Of Next
 
 ### Typesafe APIs
 
 Before I go too deep here, I should make my bias clear. I'm a [tRPC fanboy](https://twitter.com/t3dotgg/status/1438434802839945220).
 
 [tRPC](https://trpc.io/) takes full stack type inference to the next level by relying on the types defined in your router as a "schema" on your client. [Blitz.js](https://blitzjs.com/) does [something similar with queries](https://blitzjs.com/docs/query-resolvers). Both wrap React Query with typesafe definitions at the API level, which enables some "magic" with type consistency.
+
+While this example uses Next, tRPC does not require you use it. It doesn't even require React. Any typescript server and client can serve and consume a tRPC router
 
 ```tsx
 // pages/api/trpc/[trpc].ts
@@ -411,11 +393,13 @@ export default function UserInfo(props: Props) {
 }
 ```
 
-This is a very rough sketch of what I have in mind. My "general thought" is a file-level barrier between "the thing run on the server" and "the thing run on server AND client", with an implicit type contract (potentially generated) through the creation of these files.
+This is a very rough sketch of what I have in mind. My "general thought" is a file-level barrier between "the thing run on the server" and "the thing run on server AND client", with an implicit type contract (potentially generated) through the creation of these files. Could even spit out a `useServerSideProps` hook 🤔
 
 Under the hood I would expect this to use something similar to the `AsyncInferType` example earlier. I can see potential ways to extend this further, such as additional keys you can return or other named files i.e. `_dynamicProps.ts` or `_staticProps.ts`.
 
-Generally, I like the idea of "files with an underscore run on the server", and that thought brought me here.
+Generally, I like the idea of "files with an underscore run on the server", and that thought brought me here. I think it can go really far, especially when combined with a compiler. Not many other companies are in a position to change all the pieces to build something like this.
+
+**It's been proven that full stack type inference is possible with modern TypeScript tooling. Let's work towards a future where that's the default 🙂**
 
 ## Thank You
 
