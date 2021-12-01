@@ -97,7 +97,7 @@ Next.js often breaks that contract.
 
 This statement is bold, but this problem is large enough to justify it IMO. Know that it comes from a place of love.
 
-It is hard to believe that the biggest breach in contract for my type system exists within any given file in the Next.js `pages` directory, but it's the reality I'm here to shout about.
+It is hard to believe that the biggest breach in contract for my type system exists within any given file in the Next.js `pages` directory, but it's the concern I'm here to shout about.
 
 ```tsx
 // pages/user-info/[id].ts
