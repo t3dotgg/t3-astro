@@ -151,7 +151,7 @@ Note: we only made one change here, we _started selecting the values we needed m
 
 Sadly, since the page component _presumed the entire User was coming down the wire_, this will silently pass type checks. Since the `user?.name` call is optionally chained, this case will not throw an error, but that will only make debugging more painful.
 
-### Next's provided inference helper:`InferGetServerSidePropsType`
+### Next's provided inference helper: `InferGetServerSidePropsType`
 
 ```tsx
 // pages/user-info/[id].ts
