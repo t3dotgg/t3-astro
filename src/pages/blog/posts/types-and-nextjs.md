@@ -1,7 +1,7 @@
 ---
 title: "An Inconsistent Truth: Next.js and Type Safety"
 date: "2021-12-01"
-description: "Next.js is a great framework. It's a shame about that type safety..."
+description: "Next.js is a great framework. The frontend and backend have never been closer. Can we bridge the remaining gap in a typesafe way?"
 imageURL: "https://t3.gg/images/next-typesafety/twitter.png"
 readMore: true
 layout: "../../../layouts/BlogPost.astro"
