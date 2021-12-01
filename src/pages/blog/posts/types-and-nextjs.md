@@ -411,7 +411,7 @@ This was a long one. I know it may seem harsh towards Next and Vercel, but that 
 
 Want to shout out a bunch of people who gave feedback on this article, I would have looked way stupider without y'all
 
-Shoutout to [Alex (tRPC)](https://twitter.com/alexdotjs), [Brandon (Blitz.jz)](https://twitter.com/flybayer), [Balász (NextAuth.js)](https://twitter.com/balazsorban44), [Jonas (ThirdWeb)](https://twitter.com/jnsdls), [Lee (Vercel)](https://twitter.com/leeerob), [Luis (Vercel)](https://twitter.com/luis_fades), [Jacob (CloudFlare)](https://twitter.com/JacobMGEvans), [Tanner (TanStack/ React-Query)](https://twitter.com/tannerlinsley) and everyone else who I'm forgetting.
+Shoutout to [Alex (tRPC)](https://twitter.com/alexdotjs), [Balázs (NextAuth.js)](https://twitter.com/balazsorban44), [Luis (Vercel)](https://twitter.com/luis_fades), [Lee (Vercel)](https://twitter.com/leeerob), [Brandon (Blitz.jz)](https://twitter.com/flybayer), [Jacob (CloudFlare)](https://twitter.com/JacobMGEvans), [Tanner (TanStack/ React-Query)](https://twitter.com/tannerlinsley), [Jonas (ThirdWeb)](https://twitter.com/jnsdls) and everyone else who I'm forgetting.
 
 ### Extra stuff
 
