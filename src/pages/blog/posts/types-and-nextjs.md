@@ -5,7 +5,6 @@ description: "Next.js is a great framework. The frontend and backend have never 
 imageURL: "https://t3.gg/images/next-typesafety/twitter.png"
 readMore: true
 layout: "../../../layouts/BlogPost.astro"
-hide: true
 ---
 
 Imagine a world where Next.js was architected around type safety.
