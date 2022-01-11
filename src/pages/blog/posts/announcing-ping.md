@@ -45,7 +45,7 @@ We don’t compromise on quality for users with compromised connections. Low lat
 
 ### Integration
 
-Most creator tooling companies are eager to reinvent the car. We’re trying to build the world’s best tires.
+Creator tooling companies are often eager to reinvent the car. We're building the world’s best tires.
 
 Ping integrates directly with the tools you already know and love. Every participant in a Ping call can be [added as a separate source](https://ping.t3.gg/info/help) (via browser embeds). This enables have full control of your layout _without assumptions about what you want_.
 
