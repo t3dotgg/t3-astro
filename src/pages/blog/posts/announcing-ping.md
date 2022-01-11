@@ -17,7 +17,7 @@ At T3 Tools, we’re building a team of people who are passionate about media an
 
 After collective decades of dealing with these problems, we’re building solutions.
 
-Introducing our first creator-focused tool, [Ping](https://ping.t3.gg)
+Introducing our first creator-focused tool, [Ping](https://ping.t3.gg).
 
 [<img src="/images/announcing-ping/twitter.png" alt="Ping brand" />](https://ping.t3.gg)
 
@@ -41,7 +41,7 @@ Simple means _the thing does what it says on the label._ It’s sad that this is
 
 ### Quality
 
-Most applications are built around breaking down barriers for the lowest common denominator. Discord can’t increase call quality if someone might call in from 3g on their phone.
+Most applications are built around breaking down barriers for the lowest common denominator. Discord can’t increase call quality if someone might call in from 3G on their phone.
 
 We don’t compromise on quality for users with compromised connections. Low latency, high quality feeds are the default experience when you’re using our products.
 
@@ -59,4 +59,4 @@ We have lots of fun things in our future. Hang tight.
 
 If you’d like access to Ping early, be sure to [request a demo on the homepage](https://ping.t3.gg)!
 
-If you want to stay up to date on what we’re building, [join the Discord server](https://discord.gg/geqK8VEdSb) and [follow Theo on Twitter](https://twitter.com/t3dotgg)
+If you want to stay up to date on what we’re building, [join the Discord server](https://discord.gg/geqK8VEdSb) and [follow Theo on Twitter](https://twitter.com/t3dotgg).
