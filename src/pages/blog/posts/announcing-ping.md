@@ -55,7 +55,7 @@ By building software that compliments OBS instead of replacing it, we’ve built
 
 ## What’s Next?
 
-Hang tight. We have so many fun things in our future.
+We have lots of fun things in our future. Hang tight.
 
 If you’d like access to Ping early, be sure to [request a demo on the homepage](https://ping.t3.gg)!
 
