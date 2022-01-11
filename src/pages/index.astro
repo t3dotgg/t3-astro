@@ -43,22 +43,22 @@ const description = "We build things for creators.";
         </div>
         <div class="pt-8"></div>
 
-        <div class="flex flex-col justify-center max-w-2xl px-4 md:max-w-5xl ">
+        <div class="flex flex-col justify-center max-w-2xl px-4 md:max-w-5xl">
           <h2 class="text-4xl font-medium text-center">
             We Build Creator Tools
           </h2>
           <div class="pt-8"></div>
-          <a href="https://round.t3.gg">
+          <a href="https://round.t3.gg" class="hover:no-underline">
             <div
-              class="bg-gray-800 p-4 rounded-xl flex flex-col justify-center items-center text-gray-200">
+              class="px-4 py-8 rounded-xl flex flex-col justify-center items-center text-gray-200 ping-card">
               <img
-                src={"/assets/Round Text Logo.svg"}
-                class="rounded-xl"
+                src={"/assets/ping/logo.svg"}
+                class="w-36"
                 alt="T3 Tools logo"
                 width={200} />
               <div class="pt-4"></div>
               <p class="text-center">
-                The best way to have multiple people on your stream.
+                The best way to stream with friends.
               </p>
             </div>
           </a>
@@ -76,6 +76,15 @@ const description = "We build things for creators.";
   body {
     background-color: #e8dcff;
     height: 100%;
+  }
+  .ping-card {
+    background-image: url(/assets/ping/background.svg);
+    background-size: 70em;
+    background-position: top;
+    background-color: #27272A;
+  }
+  .ping-card:hover {
+    background-color: #3F3F46;
   }
   .bg-blend {
     background-image: linear-gradient(
