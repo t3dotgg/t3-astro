@@ -19,7 +19,7 @@ After collective decades of dealing with these problems, we’re building soluti
 
 Introducing our first creator-focused tool, [Ping](https://ping.t3.gg)
 
-![twitter-banner.png](/images/announcing-ping/twitter.png)
+[<img src="/images/announcing-ping/twitter.png" alt="Ping brand" />](https://ping.t3.gg)
 
 Have you ever tried streaming with your friends before? If you have, then you know it’s one of the most painful processes in content creation. Interaction is the life blood of live content, and the tools to interact with your friends live are rough.
 
