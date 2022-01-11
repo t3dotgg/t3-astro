@@ -7,7 +7,7 @@ readMore: true
 layout: "../../../layouts/BlogPost.astro"
 ---
 
-Content creation is hard. _Really hard._
+Content creation is hard.
 
 Most of the tools creators use every day were _not built for creators_. Even fewer were built _by_ creators.
 
@@ -21,9 +21,9 @@ Introducing our first creator-focused tool, [Ping](https://ping.t3.gg)
 
 ![twitter-banner.png](/images/announcing-ping/twitter.png)
 
-Have you ever tried streaming with your friends before? If you have, then you know it’s one of the most painful processes in content creation. Interaction is the life blood of live content, and _the tools to interact with your friends live are terrible_.
+Have you ever tried streaming with your friends before? If you have, then you know it’s one of the most painful processes in content creation. Interaction is the life blood of live content, and the tools to interact with your friends live are rough.
 
-Existing solutions like [StreamYard](https://streamyard.com/) and [Stream Club](https://www.stream.club/) were built for people who _want to be creators_, but sadly they fail those who already create. Most professional creators avoid them entirely, instead using a combination of Zoom/Discord, OBS, screen capture and duct tape.
+Existing solutions like [StreamYard](https://streamyard.com/) and [Stream Club](https://www.stream.club/) were built for people who _want_ to be creators, but sadly they fail those who already create. Most professional creators avoid them entirely, instead using a combination of Zoom/Discord, OBS, screen capture and duct tape.
 
 We think we can do better.
 
@@ -47,11 +47,11 @@ We don’t compromise on quality for users with compromised connections. Low lat
 
 Most creator tooling companies are eager to reinvent the car. We’re trying to build the world’s best tires.
 
-Jokes aside, Ping integrates directly with the tools you already know and love. Every participant in a Ping call can be [added as a separate source](https://ping.t3.gg/info/help) (via browser embeds). This enables have full control of your layout _without assumptions about what you want_.
+Ping integrates directly with the tools you already know and love. Every participant in a Ping call can be [added as a separate source](https://ping.t3.gg/info/help) (via browser embeds). This enables have full control of your layout _without assumptions about what you want_.
 
 By “unbundling video conferencing”, we've enabled some super cool use cases we never imagined while building. Many blur the lines between the virtual world, real world, and internet, like [Ironmouse interviewing Sykkuno in a virtual anime room](https://www.youtube.com/watch?v=VlmBYFNnZ84) or [ProjektMelody collaborating with a real-world chef](https://clips.twitch.tv/ColorfulMotionlessEggplantYouDontSay-xc0PKPFGp_UB3s-K).
 
-By building software that _compliments_ OBS instead of _replacing_ it, we’ve built something much more powerful than any existing solution.
+By building software that compliments OBS instead of replacing it, we’ve built something much more powerful than any existing solution.
 
 ## What’s Next?
 
