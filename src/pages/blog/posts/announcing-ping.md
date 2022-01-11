@@ -29,6 +29,8 @@ We think we can do better.
 
 ## We [Build Different](https://www.youtube.com/watch?v=EtbkbEiV7vs)
 
+Creator tooling companies are often eager to reinvent the car. We'd rather build the world’s best tires.
+
 When T3 builds, we stay focused on three things: Simplicity, Quality, and Integration.
 
 ### Simplicity
@@ -44,8 +46,6 @@ Most applications are built around breaking down barriers for the lowest common 
 We don’t compromise on quality for users with compromised connections. Low latency, high quality feeds are the default experience when you’re using our products.
 
 ### Integration
-
-Creator tooling companies are often eager to reinvent the car. We're building the world’s best tires.
 
 Ping integrates directly with the tools you already know and love. Every participant in a Ping call can be [added as a separate source](https://ping.t3.gg/info/help) (via browser embeds). This enables have full control of your layout _without assumptions about what you want_.
 
