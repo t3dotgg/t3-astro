@@ -47,7 +47,7 @@ We don’t compromise on quality for users with compromised connections. Low lat
 
 ### Integration
 
-Ping integrates directly with the tools you already know and love. Every participant in a Ping call can be [added as a separate source](https://ping.t3.gg/info/help) (via browser embeds). This enables have full control of your layout _without assumptions about what you want_.
+Ping integrates directly with the tools you already know and love. Every participant in a Ping call can be [added as a separate source](https://ping.t3.gg/info/help) (via browser embeds). This enables full control of your layout _without assumptions about what you want_.
 
 By “unbundling video conferencing”, we've enabled some super cool use cases we never imagined while building. Many blur the lines between the virtual world, real world, and internet, like [Ironmouse interviewing Sykkuno in a virtual anime room](https://www.youtube.com/watch?v=VlmBYFNnZ84) or [ProjektMelody collaborating with a real-world chef](https://clips.twitch.tv/ColorfulMotionlessEggplantYouDontSay-xc0PKPFGp_UB3s-K).
 
