@@ -8,11 +8,7 @@ const { post } = Astro.props;
 
 const { Content } = post;
 
-console.log("post?", post.file);
-
 const url = "/blog/post/" + post.file.split("/").at(-1).replace(".md", "");
-
-console.log("url?", url);
 ---
 
 <article
