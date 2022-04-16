@@ -36,8 +36,6 @@ export async function getStaticPaths({ paginate, rss }) {
 }
 
 // page
-const title = "Don’s Blog";
-const description = "An example blog on Astro";
 const { canonicalURL } = Astro;
 const { post } = Astro.props;
 console.log("post???", post.frontmatter)
@@ -48,15 +46,15 @@ console.log("post???", post.frontmatter)
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.svg" />
-    <meta name="description" content={description} />
+    <meta name="description" content={post.frontmatter.description} />
     <meta name="twitter:image" content={post.frontmatter.contentImageUrl} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="@t3dotgg" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={post.frontmatter.title} />
+    <meta property="og:description" content={post.frontmatter.description} />
     <meta property="og:image" content={post.frontmatter.contentImageUrl} />
     <meta name="theme-color" content="#000000" />
-    <title>{title}</title>
+    <title>{post.frontmatter.title}</title>
 
     <script defer data-domain="astro.t3.gg" src="https://t3.gg/js/script.js"
     ></script>
