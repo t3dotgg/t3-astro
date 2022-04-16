@@ -15,6 +15,8 @@ import BlogPostHeader from "../components/BlogPostHeader.astro";
 const { description, title, imageURL } = Astro.props.content;
 
 const contentImageUrl = imageURL ?? "https://t3.gg/images/twitter.png";
+
+console.log("External props through builtin", Astro.props)
 ---
 
 <html lang="en">
