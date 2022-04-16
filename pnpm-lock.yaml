@@ -5,8 +5,8 @@ specifiers:
   '@tailwindcss/typography': ^0.4.1
   astro: ^1.0.0-beta.12
   date-fns: ^2.23.0
-  prettier: ^2.4.0
-  prettier-plugin-astro: 0.0.12
+  prettier: ^2.6.2
+  prettier-plugin-astro: 0.1.0-next.4
   tailwindcss: ^2.2.15
 
 dependencies:
@@ -16,8 +16,8 @@ dependencies:
 devDependencies:
   '@astrojs/tailwind': 0.2.0
   astro: 1.0.0-beta.12
-  prettier: 2.4.0
-  prettier-plugin-astro: 0.0.12
+  prettier: 2.6.2
+  prettier-plugin-astro: 0.1.0-next.4
   tailwindcss: 2.2.15
 
 packages:
@@ -27,6 +27,13 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       '@jridgewell/trace-mapping': 0.3.4
+    dev: true
+
+  /@astrojs/compiler/0.13.2:
+    resolution: {integrity: sha512-0Un4CtLbhJljisFf9WaxK1TSV1oakR3Mh4x1Uyg1JHdyQ5te/1xcq+PWVaOyQc4lq4z8MYNFQb7hG66m0CeMtw==}
+    dependencies:
+      tsm: 2.2.1
+      uvu: 0.5.3
     dev: true
 
   /@astrojs/compiler/0.14.1:
@@ -79,17 +86,6 @@ packages:
       unist-util-visit: 4.1.0
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@astrojs/parser/0.22.2:
-    resolution: {integrity: sha512-j4p5a1BXDObVsrNyDvooJQPWoomb0WZk63rKeE3MaZcqq4g9x50sqq+EPMkesgDvCcWFgHSo07i4y1Do3Qj69A==}
-    engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
-    dependencies:
-      '@types/node': 14.18.13
-      acorn: 8.7.0
-      locate-character: 2.0.5
-      magic-string: 0.25.9
     dev: true
 
   /@astrojs/prism/0.4.1:
@@ -468,10 +464,6 @@ packages:
       '@types/unist': 2.0.6
     dev: true
 
-  /@types/node/14.18.13:
-    resolution: {integrity: sha512-Z6/KzgyWOga3pJNS42A+zayjhPbf2zM3hegRQaOPnLOzEi86VV++6FLDWgR1LGrVCRufP/ph2daa3tEa5br1zA==}
-    dev: true
-
   /@types/node/16.9.1:
     resolution: {integrity: sha512-QpLcX9ZSsq3YYUUnD3nFDY8H7wctAhQj/TFKL8Ya8v5fMm3CFXxo8zStsLAl780ltoYoo1WvKUVGBQK+1ifr7g==}
     dev: true
@@ -532,12 +524,6 @@ packages:
 
   /acorn/7.4.1:
     resolution: {integrity: sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
-    dev: true
-
-  /acorn/8.7.0:
-    resolution: {integrity: sha512-V/LGr1APy+PXIwKebEWrkZPwoeoF+w1jiOBUmuxuiUIaOHtob8Qc9BTrYo7VuI5fR8tqsy+buA2WFooR5olqvQ==}
     engines: {node: '>=0.4.0'}
     hasBin: true
     dev: true
@@ -1126,7 +1112,7 @@ packages:
     dependencies:
       globby: 10.0.2
       graceful-fs: 4.2.8
-      is-glob: 4.0.1
+      is-glob: 4.0.3
       is-path-cwd: 2.2.0
       is-path-inside: 3.0.3
       p-map: 3.0.0
@@ -2335,10 +2321,6 @@ packages:
       strip-bom: 3.0.0
     dev: true
 
-  /locate-character/2.0.5:
-    resolution: {integrity: sha512-n2GmejDXtOPBAZdIiEFy5dJ5N38xBCXLNOtw2WpB9kGh6pnrEuKlwYI+Tkpofc4wDtVXHtoAOJaMRlYG/oYaxg==}
-    dev: true
-
   /locate-path/5.0.0:
     resolution: {integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==}
     engines: {node: '>=8'}
@@ -3383,23 +3365,18 @@ packages:
       which-pm: 2.0.0
     dev: true
 
-  /prettier-plugin-astro/0.0.12:
-    resolution: {integrity: sha512-ZSNvHuyQ+fxgqA4qoiOf2FvN8FdWcBrAmnik3gPL466TFtMcOV2hVNVVErBcnG/qMyPf7WLwPvBLtTyWpDEUHg==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0, npm: '>=6.14.0'}
+  /prettier-plugin-astro/0.1.0-next.4:
+    resolution: {integrity: sha512-M1Pi6e8+yxa8I+bDCnGXdGI8XywNiHKA9tQwGvBaBYme0pcm2BUV+Tv9rxvQLqUyLMC2A4dzWa7JbcwwpSKEig==}
+    engines: {node: ^14.13.1 || >=16.0.0, npm: '>=6.14.0'}
     dependencies:
-      '@astrojs/parser': 0.22.2
-      prettier: 2.4.1
+      '@astrojs/compiler': 0.13.2
+      prettier: 2.6.2
       sass-formatter: 0.7.3
+      synckit: 0.6.2
     dev: true
 
-  /prettier/2.4.0:
-    resolution: {integrity: sha512-DsEPLY1dE5HF3BxCRBmD4uYZ+5DCbvatnolqTqcxEgKVZnL2kUfyu7b8pPQ5+hTBkdhU9SLUmK0/pHb07RE4WQ==}
-    engines: {node: '>=10.13.0'}
-    hasBin: true
-    dev: true
-
-  /prettier/2.4.1:
-    resolution: {integrity: sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==}
+  /prettier/2.6.2:
+    resolution: {integrity: sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
@@ -4020,6 +3997,13 @@ packages:
       pascal-case: 3.1.2
       svelte: 3.42.5
       typescript: 4.6.3
+    dev: true
+
+  /synckit/0.6.2:
+    resolution: {integrity: sha512-Vhf+bUa//YSTYKseDiiEuQmhGCoIF3CVBhunm3r/DQnYiGT4JssmnKQc44BIyOZRK2pKjXXAgbhfmbeoC9CJpA==}
+    engines: {node: '>=12.20'}
+    dependencies:
+      tslib: 2.3.1
     dev: true
 
   /tailwindcss/2.2.15:

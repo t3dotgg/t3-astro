@@ -2,7 +2,8 @@
 import "../style/global.css";
 
 const siteTitle = "Theo Browne - CEO @ Ping Labs (prev T3 Tools)";
-const description = "Software developer, skater, youtuber, nerd. Alum of Twitch, Turntable and RPI. CEO @ Ping Labs (formerly T3 Tools)";
+const description =
+  "Software developer, skater, youtuber, nerd. Alum of Twitch, Turntable and RPI. CEO @ Ping Labs (formerly T3 Tools)";
 ---
 
 <html lang="en">
@@ -34,11 +35,13 @@ const description = "Software developer, skater, youtuber, nerd. Alum of Twitch,
       </div>
       <div class="flex flex-col items-center overflow-visible">
         <div
-          class="flex flex-col justify-center items-center pt-2 pb-16 px-4 w-full h-[40vh] animated-bg relative">
+          class="flex flex-col justify-center items-center pt-2 pb-16 px-4 w-full h-[40vh] animated-bg relative"
+        >
           <img
             src={"/assets/t3-text-block.svg"}
             class="rounded-xl z-10 h-full"
-            alt="T3 logo" />
+            alt="T3 logo"
+          />
           <div class="absolute w-full h-24 bottom-0 bg-blend z-0"></div>
         </div>
         <div class="pt-8"></div>
@@ -53,57 +56,56 @@ const description = "Software developer, skater, youtuber, nerd. Alum of Twitch,
           </h2>
           <a href="https://ping.gg" class="hover:no-underline">
             <div
-              class="px-4 py-8 rounded-xl flex flex-col justify-center items-center text-gray-200 ping-card">
+              class="px-4 py-8 rounded-xl flex flex-col justify-center items-center text-gray-200 ping-card"
+            >
               <img
                 src={"/assets/ping/logo.svg"}
                 class="w-36"
                 alt="T3 logo"
-                width={200} />
+                width={200}
+              />
               <div class="pt-4"></div>
-              <p class="text-center">
-                The best way to stream with friends.
-              </p>
+              <p class="text-center">The best way to stream with friends.</p>
             </div>
           </a>
         </div>
       </div>
     </main>
+    <style>
+      html,
+      body {
+        background-color: #e8dcff;
+        height: 100%;
+      }
+      .ping-card {
+        background-image: url(/assets/ping/background.svg);
+        background-size: 70em;
+        background-position: top;
+        background-color: #27272a;
+      }
+      .ping-card:hover {
+        background-color: #3f3f46;
+      }
+      .bg-blend {
+        background-image: linear-gradient(
+          to top,
+          rgba(232, 220, 255, 1) 0%,
+          rgba(232, 220, 255, 0.3) 50%,
+          rgba(232, 220, 255, 0.15) 65%,
+          rgba(232, 220, 255, 0.075) 75.5%,
+          rgba(232, 220, 255, 0.037) 82.85%,
+          rgba(232, 220, 255, 0.019) 88%,
+          rgba(232, 220, 255, 0) 100%
+        );
+      }
+      .animated-bg {
+        background-image: url(/assets/animated-bg.svg);
+        background-size: cover;
+        margin-top: -20px;
+      }
+      .special-height {
+        min-height: -webkit-fill-available;
+      }
+    </style>
   </body>
 </html>
-
-<style>
-  html,
-  body {
-    background-color: #e8dcff;
-    height: 100%;
-  }
-  .ping-card {
-    background-image: url(/assets/ping/background.svg);
-    background-size: 70em;
-    background-position: top;
-    background-color: #27272A;
-  }
-  .ping-card:hover {
-    background-color: #3F3F46;
-  }
-  .bg-blend {
-    background-image: linear-gradient(
-      to top,
-      rgba(232, 220, 255, 1) 0%,
-      rgba(232, 220, 255, 0.3) 50%,
-      rgba(232, 220, 255, 0.15) 65%,
-      rgba(232, 220, 255, 0.075) 75.5%,
-      rgba(232, 220, 255, 0.037) 82.85%,
-      rgba(232, 220, 255, 0.019) 88%,
-      rgba(232, 220, 255, 0) 100%
-    );
-  }
-  .animated-bg {
-    background-image: url(/assets/animated-bg.svg);
-    background-size: cover;
-    margin-top: -20px;
-  }
-  .special-height {
-    min-height: -webkit-fill-available;
-  }
-</style>

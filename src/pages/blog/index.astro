@@ -8,8 +8,12 @@ const description = "Thought dumps and nerdy stuff";
 
 // Data Fetching: List all Markdown posts in the repo.
 
-const allPosts = await Astro.glob('./posts/*.md');
-const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+const allPosts = await Astro.glob("./posts/*.md");
+const sortedPosts = allPosts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf()
+);
 ---
 
 <html lang="en">
@@ -33,7 +37,8 @@ const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf
   <body>
     <main>
       <div
-        class="w-full h-full overflow-y-scroll flex flex-col items-center page">
+        class="w-full h-full overflow-y-scroll flex flex-col items-center page"
+      >
         <div class="max-w-full lg:w-[42rem] xl:w-[64rem] px-4 lg:px-0">
           <div class="text-xl pt-8">Theo's Blog</div>
           {sortedPosts.map((p) => <BlogPostPreview post={p} />)}
