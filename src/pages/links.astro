@@ -1,0 +1,61 @@
+---
+import "../style/global.css";
+
+const siteTitle = "Theo Browne - CEO @ Ping Labs (prev T3 Tools)";
+const description =
+  "Software developer, skater, youtuber, nerd. Alum of Twitch, Turntable and RPI. CEO @ Ping Labs (formerly T3 Tools)";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@t3dotgg" />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://t3.gg/images/twitter.png" />
+    <title>{siteTitle}</title>
+    <meta name="theme-color" content="#000000" />
+
+    <script defer data-domain="astro.t3.gg" src="https://t3.gg/js/script.js"
+    ></script>
+  </head>
+  <body>
+    <main
+      class="w-full h-full text-gray-800 relative flex flex-col items-center"
+    >
+      <div class="flex flex-col items-center px-4 text-center">
+        <div class="py-4" />
+        <picture
+          class="rounded-full overflow-hidden w-48 md:w-96 h-48 md:h-96 flex-shrink-0"
+        >
+          <source type="image/webp" srcset="/images/theo.webp" />
+          <img src="/images/theo.jpeg" />
+        </picture>
+        <h1 class="text-4xl font-bold pt-2">Theo - t3.gg</h1>
+        <h2 class="text-2xl">
+          CEO @ <a href="https://ping.gg">Ping Labs (YC W22)</a>
+        </h2>
+        <h4 class="text-xl">
+          I like skateboards, code, music and content creation
+        </h4>
+      </div>
+      <div class="py-2" />
+      <div class="text-xl font-bold text-center flex flex-col underline">
+        <a href="https://www.youtube.com/c/theobrowne1017" class="py-3"
+          >Youtube
+        </a>
+        <a href="https://twitter.com/t3dotgg" class="py-2 my-1">Twitter</a>
+        <a href="https://www.tiktok.com/@t3dotgg" class="py-2 my-1">TikTok</a>
+        <a href="https://twitch.tv/Theo" class="py-2 my-1">Twitch</a>
+        <a href="https://t3.gg" class="py-2 my-1">t3.gg</a>
+        <a href="/blog" class="py-2 my-1">My Blog</a>
+        <a href="https://ping.gg" class="py-2 my-1">Ping Labs</a>
+      </div>
+    </main>
+  </body>
+</html>
