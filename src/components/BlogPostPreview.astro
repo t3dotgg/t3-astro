@@ -1,11 +1,15 @@
 ---
+import type {MarkdownInstance} from "astro"
 export interface Props {
-  post: any;
+  post: MarkdownInstance<{ date: string }>;
 }
 
 import BlogPostHeader from "./BlogPostHeader.astro";
+import { Markdown } from 'astro/components';
 
 const { post } = Astro.props;
+
+console.log("post?", post);
 ---
 
 <article
@@ -13,10 +17,10 @@ const { post } = Astro.props;
   <a href={post.url} class="no-line-link">
     <BlogPostHeader {post} />
   </a>
-  <div>{post.astro.html}</div>
+  <div><Markdown content={post.content} /></div>
   <div
     class="flex absolute bottom-0 w-full h-[200px] justify-center items-end preview-fade">
-    <a className="font-medium no-line-link" href={post.url}>Continue Reading</a>
+    <a class="font-medium no-line-link" href={post.url}>Continue Reading</a>
   </div>
 </article>
 
