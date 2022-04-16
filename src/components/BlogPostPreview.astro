@@ -4,11 +4,12 @@ export interface Props {
 }
 
 import BlogPostHeader from "./BlogPostHeader.astro";
-const { post } = Astro.props;
+import { getSlugFromPath } from "../utils/get-slug-from-path";
 
+const { post } = Astro.props;
 const { Content } = post;
 
-const url = "/blog/post/" + post.file.split("/").at(-1).replace(".md", "");
+const url = "/blog/post/" + getSlugFromPath(post.file);
 ---
 
 <article

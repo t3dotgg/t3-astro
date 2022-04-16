@@ -1,17 +1,18 @@
 ---
 import "../../../style/global.css";
 import BlogPostHeader from "../../../components/BlogPostHeader.astro";
+import { getSlugFromPath } from "../../../utils/get-slug-from-path";
 
 export async function getStaticPaths({ paginate, rss }) {
   const allPosts = await Astro.glob("../../../content/posts/*.md");
 
   const paths = allPosts.map((post) => {
-    const slug = post.file.split("/").at(-1).replace(".md", "");
+    const slug = getSlugFromPath(post.file);
     return {
       params: {
         slug,
       },
-      props: {post}
+      props: { post },
     };
   });
 
