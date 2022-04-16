@@ -6,6 +6,11 @@
 body {
   -webkit-font-smoothing: antialiased;
 }
+html,
+body {
+  background-color: #e8dcff;
+  height: 100%;
+}
 
 a {
   color: #746f80;
