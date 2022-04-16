@@ -10,9 +10,10 @@
     "prettify": "prettier -w ./src --plugin=./node_modules/prettier-plugin-astro"
   },
   "devDependencies": {
-    "astro": "^0.20.5",
-    "prettier": "^2.4.0",
-    "prettier-plugin-astro": "0.0.7",
+    "@astrojs/tailwind": "^0.2.0",
+    "astro": "^1.0.0-beta.12",
+    "prettier": "^2.6.2",
+    "prettier-plugin-astro": "0.1.0-next.4",
     "tailwindcss": "^2.2.15"
   },
   "dependencies": {

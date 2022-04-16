@@ -4,7 +4,6 @@ date: "2020-12-22"
 description: "An Audiophile who happens to love Apple comes to terms with this terrible product"
 imageURL: "https://t3.gg/images/airpods-max/miles.jpg"
 readMore: true
-layout: "../../../layouts/BlogPost.astro"
 ---
 
 ![Cat wearing airpods max](https://t3.gg/images/airpods-max/miles.jpg)

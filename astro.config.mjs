@@ -1,12 +1,7 @@
-export default {
-  buildOptions: {
-    site: "https://astro.t3.gg",
-    sitemap: true, // Generate sitemap (set to "false" to disable)
-  },
-  devOptions: {
-    port: 3000,
-    hostname: "0.0.0.0",
-    tailwindConfig: "./tailwind.config.js",
-  },
-  renderers: [],
-};
+import { defineConfig } from "astro/config";
+import tailwind from "@astrojs/tailwind";
+
+// https://astro.build/config
+export default defineConfig({
+  integrations: [tailwind()]
+});
