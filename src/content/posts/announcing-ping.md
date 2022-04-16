@@ -4,7 +4,6 @@ date: "2022-01-11"
 description: "Streaming with your friends is way too difficult. We're going to fix it. What if Zoom was built for streamers? 🤔"
 imageURL: "https://t3.gg/images/announcing-ping/twitter.png"
 readMore: true
-layout: "../../../layouts/BlogPost.astro"
 ---
 
 Content creation is hard.

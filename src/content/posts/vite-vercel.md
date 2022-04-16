@@ -4,7 +4,6 @@ date: "2021-06-14"
 description: "Vite and Vercel are fun new technologies that sadly don't play nice. This is a guide on how to work around that"
 imageURL: "https://t3.gg/images/vite-vercel/twitter.png"
 readMore: true
-layout: "../../../layouts/BlogPost.astro"
 ---
 
 ![Vite + Vercel](https://t3.gg/images/vite-vercel/twitter.png)

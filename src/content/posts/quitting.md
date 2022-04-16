@@ -3,7 +3,6 @@ title: "Quitting Your Dream Job (Twice)"
 date: "2021-09-02"
 description: "Quitting is never easy. Building things can be. I'm leaving TTFM Labs to start a company."
 readMore: true
-layout: "../../../layouts/BlogPost.astro"
 ---
 
 > Sometimes it's important to do the thing that feels a little stupid.

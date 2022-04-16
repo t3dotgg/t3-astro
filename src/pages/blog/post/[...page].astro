@@ -1,0 +1,78 @@
+---
+
+import "../style/global.css";
+import BlogPostHeader from "../../../components/BlogPostHeader.astro";
+
+export async function getStaticPaths({ paginate, rss }) {
+	const allPosts = await Astro.glob('../../../content/posts/*.md');
+	const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+
+	console.log("sorted?", sortedPosts);
+
+	// Generate an RSS feed from this collection of posts.
+	// NOTE: This is disabled by default, since it requires `site` to be set in your "astro.config.mjs" file.
+	//   rss({
+	//     title: 'Don’s Blog',
+	//     description: 'An example blog on Astro',
+	//     customData: `<language>en-us</language>`,
+	//     items: sortedPosts.map(item => ({
+	//       title: item.title,
+	//       description: item.description,
+	//       link: item.url,
+	//       pubDate: item.date,
+	//     })),
+	//   });
+
+	// Return a paginated collection of paths for all posts
+	return paginate(sortedPosts, { pageSize: 1 });
+}
+
+// page
+const title = 'Don’s Blog';
+const description = 'An example blog on Astro';
+const { canonicalURL } = Astro;
+const { page } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="twitter:image" content={contentImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@t3dotgg" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={contentImageUrl} />
+    <meta name="theme-color" content="#000000" />
+    <title>{title}</title>
+
+    <script defer data-domain="astro.t3.gg" src="https://t3.gg/js/script.js"
+    ></script>
+  </head>
+  <body style="background-color: rgba(247, 242, 254, 1)">
+    <div class="w-full h-full overflow-y-scroll flex justify-center page">
+      <div class="max-w-full lg:w-[42rem] xl:w-[64rem] px-4 lg:px-0">
+        <div class="text-xl pt-8">Theo's Blog</div>
+        <article class="prose prose-lg lg:prose-xl pb-10 max-w-none">
+          <main>
+            <BlogPostHeader post={Astro.props.content} />
+            <slot></slot>
+          </main>
+        </article>
+        <div class="pb-8">
+          <a href="/">{"<- Back Home"}</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  .page {
+    background-color: rgba(247, 242, 254, 1);
+    background-image: url("/images/bg-texture.png");
+    height: 100%;
+  }
+</style>

@@ -8,7 +8,7 @@ const description = "Thought dumps and nerdy stuff";
 
 // Data Fetching: List all Markdown posts in the repo.
 
-const allPosts = await Astro.glob("./posts/*.md");
+const allPosts = await Astro.glob("../../content/posts/*.md");
 const sortedPosts = allPosts.sort(
   (a, b) =>
     new Date(b.frontmatter.date).valueOf() -
