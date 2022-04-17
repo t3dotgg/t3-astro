@@ -5,28 +5,35 @@ export interface Props {
 
 import BlogPostHeader from "./BlogPostHeader.astro";
 import { getSlugFromPath } from "../utils/get-slug-from-path";
+import { parseISO, format } from "date-fns";
 
 const { post } = Astro.props;
-const { Content } = post;
-
 const url = "/blog/post/" + getSlugFromPath(post.file);
+
+const date = parseISO(post.frontmatter.date);
+const formattedDate = format(date, "LLLL d, yyyy");
 ---
 
-<article
-  class="prose prose-lg lg:prose-xl max-w-none w-full mb-8 lg:w-[42rem] xl:w-[64rem] relative max-h-[600px] overflow-hidden"
->
-  <a href={url} class="no-line-link">
-    <BlogPostHeader
-      post={{ title: post.frontmatter.title, date: post.frontmatter.date }}
-    />
-  </a>
-  <div><Content /></div>
-  <div
-    class="flex absolute bottom-0 w-full h-[200px] justify-center items-end preview-fade"
-  >
-    <a class="font-medium no-line-link" href={url}>Continue Reading</a>
+<a href={url} class="no-line-link">
+  <div class="w-full">
+    <div
+      class="flex relative h-48 xl:h-96 aspect-video opacity-70 hover:opacity-100 transition-opacity rounded-xl overflow-hidden"
+      style={`background-image: url(${
+        post.frontmatter.imageURL ?? "https://t3.gg/images/social-media.png"
+      }); background-size: cover; background-repeat: no-repeat; background-position: center;`}
+    >
+      <div class="bg-color absolute text-2xl p-2 rounded-br-lg">
+        {post.frontmatter.title}
+      </div>
+      {post.frontmatter.description && (
+        <div class="absolute bottom-0 w-full flex flex-col justify-center bg-color p-2">
+          <div>{formattedDate}</div>
+          <div class="text-xl">{post.frontmatter.description}</div>
+        </div>
+      )}
+    </div>
   </div>
-</article>
+</a>
 
 <style>
   .preview-fade {
@@ -35,5 +42,8 @@ const url = "/blog/post/" + getSlugFromPath(post.file);
       rgba(247, 242, 254, 0),
       rgba(247, 242, 254, 1) 85%
     );
+  }
+  .bg-color {
+    background-color: rgba(232, 220, 255, 0.8);
   }
 </style>
