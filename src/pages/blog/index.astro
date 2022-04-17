@@ -39,8 +39,8 @@ const sortedPosts = allPosts.sort(
       <div
         class="w-full h-full overflow-y-scroll flex flex-col items-center page"
       >
-        <div class="grid grid-cols-1 xl:grid-cols-2 p-2 xl:p-8 gap-4 xl:gap-8">
-          <div class="text-xl pt-8">Theo's Blog</div>
+        <div class="text-xl pt-8">Theo's Blog</div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 p-4 lg:p-8 gap-4 xl:gap-8 w-full">
           {sortedPosts.map((p) => <BlogPostPreview post={p} />)}
         </div>
       </div>

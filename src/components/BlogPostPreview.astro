@@ -17,18 +17,22 @@ const formattedDate = format(date, "LLLL d, yyyy");
 <a href={url} class="no-line-link">
   <div class="w-full">
     <div
-      class="flex relative h-48 xl:h-96 aspect-video opacity-70 hover:opacity-100 transition-opacity rounded-xl overflow-hidden"
+      class="flex relative w-full h-auto aspect-video opacity-100 hover:opacity-70 transition-opacity rounded-xl overflow-hidden"
       style={`background-image: url(${
         post.frontmatter.imageURL ?? "https://t3.gg/images/social-media.png"
       }); background-size: cover; background-repeat: no-repeat; background-position: center;`}
     >
-      <div class="bg-color absolute text-2xl p-2 rounded-br-lg">
+      <div
+        class="bg-color absolute max-w-full text-lg lg:text-2xl p-2 lg:p-4 rounded-br-lg truncate"
+      >
         {post.frontmatter.title}
       </div>
       {post.frontmatter.description && (
-        <div class="absolute bottom-0 w-full flex flex-col justify-center bg-color p-2">
-          <div>{formattedDate}</div>
-          <div class="text-xl">{post.frontmatter.description}</div>
+        <div class="absolute bottom-0 w-full flex flex-col justify-center bg-color p-2 lg:p-4">
+          <div class="hidden sm:block">{formattedDate}</div>
+          <div class="text-md lg:text-xl description">
+            {post.frontmatter.description}
+          </div>
         </div>
       )}
     </div>
@@ -45,5 +49,12 @@ const formattedDate = format(date, "LLLL d, yyyy");
   }
   .bg-color {
     background-color: rgba(232, 220, 255, 0.8);
+  }
+
+  .description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 </style>
