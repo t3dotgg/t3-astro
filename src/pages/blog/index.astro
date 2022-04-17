@@ -2,6 +2,7 @@
 import "../../style/global.css";
 
 import BlogPostPreview from "../../components/BlogPostPreview.astro";
+import TheoHeaderImage from "../../components/theo-header-image.astro";
 
 const siteTitle = "Theo's Blog";
 const description = "Thought dumps and nerdy stuff";
@@ -39,8 +40,12 @@ const sortedPosts = allPosts.sort(
       <div
         class="w-full h-full overflow-y-scroll flex flex-col items-center page"
       >
-        <div class="text-xl pt-8">Theo's Blog</div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 p-4 lg:p-8 gap-4 xl:gap-8 w-full">
+        <div class="w-48 mt-8"><TheoHeaderImage /></div>
+        <div class="text-2xl font-bold">Theo's Blog</div>
+        <div class="text-xl px-8 xl:px-0 text-center">I write about tech and content creation. It usually goes to Twitter. Sometimes it goes here instead :)</div>
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 p-4 lg:p-8 gap-4 xl:gap-8 w-full"
+        >
           {sortedPosts.map((p) => <BlogPostPreview post={p} />)}
         </div>
       </div>
