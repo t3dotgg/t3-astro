@@ -28,12 +28,12 @@ const { post } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.svg" />
     <meta name="description" content={post.frontmatter.description} />
-    <meta name="twitter:image" content={post.frontmatter.contentImageUrl} />
+    <meta name="twitter:image" content={post.frontmatter.imageURL} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="@t3dotgg" />
     <meta property="og:title" content={post.frontmatter.title} />
     <meta property="og:description" content={post.frontmatter.description} />
-    <meta property="og:image" content={post.frontmatter.contentImageUrl} />
+    <meta property="og:image" content={post.frontmatter.imageURL} />
     <meta name="theme-color" content="#000000" />
     <title>{post.frontmatter.title}</title>
 
