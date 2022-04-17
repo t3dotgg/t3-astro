@@ -23,14 +23,14 @@ const formattedDate = format(date, "LLLL d, yyyy");
       }); background-size: cover; background-repeat: no-repeat; background-position: center;`}
     >
       <div
-        class="bg-color absolute max-w-full text-lg lg:text-2xl p-2 lg:p-4 rounded-br-lg truncate"
+        class="bg-color absolute max-w-full text-lg md:text-2xl p-2 md:p-4 rounded-br-lg truncate"
       >
         {post.frontmatter.title}
       </div>
       {post.frontmatter.description && (
-        <div class="absolute bottom-0 w-full flex flex-col justify-center bg-color p-2 lg:p-4">
+        <div class="absolute bottom-0 w-full flex flex-col justify-center bg-color p-2 md:p-4">
           <div class="hidden sm:block">{formattedDate}</div>
-          <div class="text-md lg:text-xl description">
+          <div class="text-md md:text-xl description">
             {post.frontmatter.description}
           </div>
         </div>
