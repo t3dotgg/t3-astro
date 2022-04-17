@@ -2,8 +2,7 @@
 import "../style/global.css";
 
 const siteTitle = "Theo's Links";
-const description =
-  "All the places you can find Theo";
+const description = "All the places you can find Theo";
 ---
 
 <html lang="en">
@@ -29,13 +28,142 @@ const description =
       class="w-full h-full text-gray-800 relative flex flex-col items-center"
     >
       <div class="flex flex-col items-center px-4 text-center">
-        <div class="py-4" />
-        <picture
+        <div class="py-4"></div>
+
+        <!-- Header image w/ blur hash svg -->
+        <div
           class="rounded-full overflow-hidden w-48 md:w-96 h-48 md:h-96 flex-shrink-0"
         >
-          <source type="image/webp" srcset="/images/theo.webp" />
-          <img src="/images/theo.jpeg" />
-        </picture>
+          <picture class="z-10">
+            <source type="image/webp" srcset="/images/theo.webp" />
+            <img src="/images/theo.jpeg" />
+          </picture>
+
+          <!-- blur hash svg -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="100%"
+            height="100%"
+            shape-rendering="crispEdges"
+            preserveAspectRatio="none"
+            viewBox="0 0 4 4"
+            style="top: 50%;left: 50%;transform-origin: top left;transform: scale(1.5);right: 0;bottom: 0;filter: blur(40px);"
+          >
+            <rect
+              fill="rgb(73,59,88)"
+              fill-opacity="1"
+              width="1"
+              height="1"
+              x="0"
+              y="0"></rect>
+            <rect
+              fill="rgb(112,94,101)"
+              fill-opacity="1"
+              width="1"
+              height="1"
+              x="1"
+              y="0"></rect>
+            <rect
+              fill="rgb(79,65,92)"
+              fill-opacity="1"
+              width="1"
+              height="1"
+              x="2"
+              y="0"></rect>
+            <rect
+              fill="rgb(87,70,89)"
+              fill-opacity="1"
+              width="1"
+              height="1"
+              x="3"
+              y="0"></rect>
+            <rect
+              fill="rgb(104,80,96)"
+              fill-opacity="1"
+              width="1"
+              height="1"
+              x="0"
+              y="1"></rect>
+            <rect
+              fill="rgb(186,139,116)"
+              fill-opacity="1"
+              width="1"
+              height="1"
+              x="1"
+              y="1"></rect>
+            <rect
+              fill="rgb(123,94,108)"
+              fill-opacity="1"
+              width="1"
+              height="1"
+              x="2"
+              y="1"></rect>
+            <rect
+              fill="rgb(88,66,70)"
+              fill-opacity="1"
+              width="1"
+              height="1"
+              x="3"
+              y="1"></rect>
+            <rect
+              fill="rgb(58,46,53)"
+              fill-opacity="1"
+              width="1"
+              height="1"
+              x="0"
+              y="2"></rect>
+            <rect
+              fill="rgb(87,66,69)"
+              fill-opacity="1"
+              width="1"
+              height="1"
+              x="1"
+              y="2"></rect>
+            <rect
+              fill="rgb(48,37,43)"
+              fill-opacity="1"
+              width="1"
+              height="1"
+              x="2"
+              y="2"></rect>
+            <rect
+              fill="rgb(50,39,64)"
+              fill-opacity="1"
+              width="1"
+              height="1"
+              x="3"
+              y="2"></rect>
+            <rect
+              fill="rgb(12,12,10)"
+              fill-opacity="1"
+              width="1"
+              height="1"
+              x="0"
+              y="3"></rect>
+            <rect
+              fill="rgb(15,17,14)"
+              fill-opacity="1"
+              width="1"
+              height="1"
+              x="1"
+              y="3"></rect>
+            <rect
+              fill="rgb(28,25,31)"
+              fill-opacity="1"
+              width="1"
+              height="1"
+              x="2"
+              y="3"></rect>
+            <rect
+              fill="rgb(66,52,90)"
+              fill-opacity="1"
+              width="1"
+              height="1"
+              x="3"
+              y="3"></rect>
+          </svg>
+        </div>
+
         <h1 class="text-4xl font-bold pt-2">Theo - t3.gg</h1>
         <h2 class="text-2xl">
           CEO @ <a href="https://ping.gg">Ping Labs (YC W22)</a>
@@ -44,7 +172,7 @@ const description =
           I like skateboards, code, music and content creation
         </h4>
       </div>
-      <div class="py-2" />
+      <div class="py-2"></div>
       <div class="text-xl font-bold text-center flex flex-col links">
         <div class="text-2xl font-bold">Main Things</div>
         <a href="https://www.youtube.com/c/theobrowne1017">Youtube</a>
@@ -59,12 +187,10 @@ const description =
         <a href="https://t3.gg">My Site (t3.gg)</a>
       </div>
     </main>
+    <style>
+      .links a {
+        @apply py-2 my-1 text-blue-800;
+      }
+    </style>
   </body>
 </html>
-
-<style>
-  .links a {
-    @apply py-2 my-1 text-blue-800
-  }
-
-</style>
