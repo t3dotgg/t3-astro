@@ -7,7 +7,9 @@
     {
       "source": "/api/event",
       "destination": "https://plausible.io/api/event"
-    },
+    }
+  ],
+  "redirects": [
     {
       "source": "/blog/posts/:slug*",
       "destination": "/blog/post/:slug*"
