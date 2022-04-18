@@ -7,16 +7,10 @@
     {
       "source": "/api/event",
       "destination": "https://plausible.io/api/event"
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/projects",
-      "destination": "https://legacy.t3.gg/projects"
     },
     {
-      "source": "/pitch",
-      "destination": "https://round.t3.gg/pitch"
+      "source": "/blog/posts/:slug",
+      "destination": "/blog/post/:slug"
     }
   ]
 }
