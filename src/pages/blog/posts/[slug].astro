@@ -1,0 +1,65 @@
+---
+import "../../../style/global.css";
+import BlogPostHeader from "../../../components/BlogPostHeader.astro";
+import { getSlugFromPath } from "../../../utils/get-slug-from-path";
+
+export async function getStaticPaths({ paginate, rss }) {
+  const allPosts = await Astro.glob("../../../content/posts/*.md");
+
+  const paths = allPosts.map((post) => {
+    const slug = getSlugFromPath(post.file);
+    return {
+      params: {
+        slug,
+      },
+      props: { post },
+    };
+  });
+
+  return paths;
+}
+
+const { post } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="description" content={post.frontmatter.description} />
+    <meta name="twitter:image" content={post.frontmatter.imageURL} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@t3dotgg" />
+    <meta property="og:title" content={post.frontmatter.title} />
+    <meta property="og:description" content={post.frontmatter.description} />
+    <meta property="og:image" content={post.frontmatter.imageURL} />
+    <meta name="theme-color" content="#000000" />
+    <title>{post.frontmatter.title}</title>
+
+    <script defer data-domain="astro.t3.gg" src="https://t3.gg/js/script.js"
+    ></script>
+  </head>
+  <body style="background-color: rgba(247, 242, 254, 1)">
+    <div class="w-full h-full overflow-y-scroll flex justify-center page">
+      <div class="max-w-full lg:w-[42rem] xl:w-[64rem] px-4 lg:px-0">
+        <a href="/blog"><div class="text-xl pt-8">Theo's Blog</div></a>
+        <article class="prose prose-lg lg:prose-xl pb-10 max-w-none">
+          <main>
+            <BlogPostHeader post={post.frontmatter} />
+            <post.Content />
+          </main>
+        </article>
+        <div class="pb-8">
+          <a href="/blog">{"<- Back to Theo's blog"}</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  .page {
+    background-image: url("/images/bg-texture.png");
+  }
+</style>
