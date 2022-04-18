@@ -9,8 +9,8 @@
       "destination": "https://plausible.io/api/event"
     },
     {
-      "source": "/blog/posts/:slug",
-      "destination": "/blog/post/:slug"
+      "source": "/blog/posts/:slug*",
+      "destination": "/blog/post/:slug*"
     }
   ]
 }
