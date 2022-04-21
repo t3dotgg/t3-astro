@@ -13,6 +13,11 @@
     {
       "source": "/blog/posts/:slug*",
       "destination": "/blog/post/:slug*"
+    },
+
+    {
+      "source": "/discord",
+      "destination": "https://discord.gg/xHdCpcPHRE"
     }
   ]
 }
