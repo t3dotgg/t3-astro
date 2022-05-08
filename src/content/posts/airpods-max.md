@@ -112,4 +112,4 @@ If you want a good portable bluetooth headphone, AirPods Pro are still the best 
 
 If you _really want wireless over ears_, grab some refurbished Sony XM1000's for under $200. These have qualities I vastly prefer to the Sony's, but not for a $350 price increase.
 
-If you just want some good over ear headphones for your desk and don't mind a cable, the [Phillips SHP9500](https://www.amazon.com/Philips-SHP9500S-Precision-Over-ear-Headphones/dp/B00ENMK1DW/) is still my favorite headphone. Surprisingly neutral, incredibly comfy, easy recommendation.
+If you just want some good over ear headphones for your desk and don't mind a cable, the [Phillips SHP9500](https://www.amazon.com/Philips-SHP9500S-Precision-Over-ear-Headphones/dp/B00ENMK1DW/?tag=t309-20) is still my favorite headphone. Surprisingly neutral, incredibly comfy, easy recommendation.
