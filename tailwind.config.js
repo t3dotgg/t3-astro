@@ -73,6 +73,9 @@ module.exports = {
         "fade-in-down": "fade-in-down 0.5s ease-out",
         "fade-in": "fade-in 0.2s ease-out",
       },
+      boxShadow: {
+        'ring': '0 0 0 3px rgba(255, 255, 255, 0.8), 0 0 2px 3px rgba(0, 0, 0, 0.2)',
+      }
     },
   },
   plugins: [
