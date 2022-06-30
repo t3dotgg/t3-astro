@@ -81,6 +81,8 @@ To address this, we’ve introduced a new, granular pricing model where you can 
 
 **Ping now starts at $16/month.**
 
+<div style="display: flex; justify-content: center; align-items: center;"><a href="https://ping.gg" style="width: 100%; max-width: 40rem;"><img src="/images/ping-1.0.png" alt="Ping brand" /></a></div>
+
 You can use the same video collaboration tech as [Linus Tech Tips](https://www.youtube.com/watch?v=5YBIr3j5B9w) for just $16. Best in class video quality, latency, security, and OBS integration.
 
 We don’t want to hold back the quality of experience based on your “tier”, we just want you to put on the best possible show.
