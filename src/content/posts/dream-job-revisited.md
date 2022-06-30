@@ -85,7 +85,7 @@ To address this, we’ve introduced a new, granular pricing model where you can 
 
 You can use the same video collaboration tech as [Linus Tech Tips](https://www.youtube.com/watch?v=5YBIr3j5B9w) for just $16. Best in class video quality, latency, security, and OBS integration.
 
-We don’t want to hold back the quality of experience based on your “tier”, we just want you to put on the best possible show.
+We don’t want to hold back the quality of experience based on an arbitrary tiering system. We just want you to put on the best possible show.
 
 ## Ping is for Professionals
 
