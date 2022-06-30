@@ -73,6 +73,8 @@ We can.
 
 ## Ping.gg 1.0 Launches Today, Starting at $16
 
+<div style="display: flex; justify-content: center; align-items: center;"><a href="https://ping.gg" style="width: 100%; max-width: 40rem;"><img src="/images/ping-1.0.png" alt="Ping brand" /></a></div>
+
 We’re so hyped to announce that Ping has **OFFICIALLY LAUNCHED** as of today.
 
 We learned so much from the last few months of early access. Specifically, we learned that our pricing sucked and the range of use cases was way, way wider than we originally thought.
@@ -80,8 +82,6 @@ We learned so much from the last few months of early access. Specifically, we le
 To address this, we’ve introduced a new, granular pricing model where you can construct the perfect tier for your use case.
 
 **Ping now starts at $16/month.**
-
-<div style="display: flex; justify-content: center; align-items: center;"><a href="https://ping.gg" style="width: 100%; max-width: 40rem;"><img src="/images/ping-1.0.png" alt="Ping brand" /></a></div>
 
 You can use the same video collaboration tech as [Linus Tech Tips](https://www.youtube.com/watch?v=5YBIr3j5B9w) for just $16. Best in class video quality, latency, security, and OBS integration.
 
