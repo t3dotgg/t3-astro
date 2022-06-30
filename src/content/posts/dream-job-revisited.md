@@ -2,7 +2,7 @@
 title: "I'm So Happy I Quit My Dream Job"
 date: "2022-06-30"
 description: "It's been a wild 9 months."
-imageURL: "https://t3.gg/images/announcing-ping/ping-1.0.png"
+imageURL: "https://t3.gg/images/ping-1.0.png"
 readMore: true
 ---
 
