@@ -27,42 +27,48 @@ const description = "All the places you can find Theo";
   </head>
   <body>
     <main
-      class="w-full h-full text-gray-800 relative flex flex-col items-center"
+      class="w-full lg:w-1/2 mx-auto min-h-full text-gray-800 relative flex flex-col items-center pt-8"
     >
-      <div class="flex flex-col items-center px-4 text-center">
-        <div class="py-4"></div>
+      <div class="w-full flex flex-col gap-8 items-center lg:items-start px-4">
 
         <!-- Header image w/ blur hash svg -->
-        <div class="w-48 xl:w-96"><TheoHeaderImage /></div>
+        <div class="flex flex-col lg:flex-row items-center gap-4 lg:gap-8">
+          <div class="w-48 xl:w-48"><TheoHeaderImage /></div>
 
-        <h1 class="text-4xl font-bold pt-2">Theo - t3.gg</h1>
-        <h2 class="text-2xl">
-          CEO @ <a href="https://ping.gg">Ping Labs (YC W22)</a>
-        </h2>
-        <h4 class="text-xl">
-          I like skateboards, code, music and content creation
-        </h4>
-      </div>
-      <div class="py-2"></div>
-      <div class="text-xl font-bold text-center flex flex-col links">
-        <div class="text-2xl font-bold">Main Things</div>
-        <a href="https://www.youtube.com/c/theobrowne1017">Youtube</a>
-        <a href="https://twitter.com/t3dotgg">Twitter</a>
-        <a href="https://discord.gg/xHdCpcPHRE">Discord Server</a>
-        <a href="https://ping.gg">Ping Labs (ping.gg)</a>
-        <a href="/blog">My Blog</a>
-        <div class="text-2xl font-bold">More Things</div>
-        <a href="https://www.tiktok.com/@t3dotgg">TikTok</a>
-        <a href="https://twitch.tv/Theo">Twitch</a>
-        <a href="https://www.instagram.com/fakiebigfoot/">Instagram</a>
-        <a href="https://github.com/theobr">Github</a>
-        <a href="https://t3.gg">My Site (t3.gg)</a>
+          <div class="h-full flex flex-col justify-around text-center lg:text-left drop-shadow-sm">
+            <h1 class="text-4xl font-bold">Theo - t3.gg</h1>
+            <h2 class="text-2xl">
+              CEO @ <a href="https://ping.gg">Ping Labs (YC W22)</a>
+            </h2>
+            <h3 class="mt-4 text-lg">
+              I like skateboards, code, music and content creation
+            </h3>
+          </div>
+        </div>
+        <b class="w-full h-0.5 bg-stone-500/60 rounded"></b>
+        <div class="w-full text-xl font-bold text-center flex flex-col justify-between lg:flex-row gap-8 links">
+          <div>
+            <h2 class="mb-4 text-2xl font-bold">Main Things</h2>
+            <div class="grid gap-4 text-blue-800">
+              <a href="https://www.youtube.com/c/theobrowne1017">Youtube</a>
+              <a href="https://twitter.com/t3dotgg">Twitter</a>
+              <a href="https://discord.gg/xHdCpcPHRE">Discord Server</a>
+              <a href="https://ping.gg">Ping Labs (ping.gg)</a>
+              <a href="/blog">My Blog</a>
+            </div>
+          </div>
+          <div>
+            <h2 class="mb-4 text-2xl font-bold">More Things</h2>
+            <div class="grid gap-4 text-blue-800">
+              <a href="https://www.tiktok.com/@t3dotgg">TikTok</a>
+              <a href="https://twitch.tv/Theo">Twitch</a>
+              <a href="https://www.instagram.com/fakiebigfoot/">Instagram</a>
+              <a href="https://github.com/theobr">Github</a>
+              <a href="https://t3.gg">My Site (t3.gg)</a>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
-    <style>
-      .links a {
-        @apply py-2 my-1 text-blue-800;
-      }
-    </style>
   </body>
 </html>
