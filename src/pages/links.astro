@@ -1,6 +1,4 @@
 ---
-import "../style/global.css";
-
 import TheoHeaderImage from "../components/theo-header-image.astro";
 
 const siteTitle = "Theo's Links";
@@ -27,7 +25,7 @@ const description = "All the places you can find Theo";
   </head>
   <body>
     <main
-      class="w-full h-full text-gray-800 relative flex flex-col items-center"
+      class="relative flex flex-col items-center w-full h-full text-gray-800"
     >
       <div class="flex flex-col items-center px-4 text-center">
         <div class="py-4"></div>
@@ -35,22 +33,24 @@ const description = "All the places you can find Theo";
         <!-- Header image w/ blur hash svg -->
         <div class="w-48 xl:w-96"><TheoHeaderImage /></div>
 
-        <h1 class="text-4xl font-bold pt-2">Theo - t3.gg</h1>
+        <h1 class="pt-2 text-4xl font-bold">Theo - t3.gg</h1>
         <h2 class="text-2xl">
-          CEO @ <a href="https://ping.gg">Ping Labs (YC W22)</a>
+          CEO @ <a class="text-black" href="https://ping.gg"
+            >Ping Labs (YC W22)</a
+          >
         </h2>
         <h4 class="text-xl">
           I like skateboards, code, music and content creation
         </h4>
       </div>
       <div class="py-2"></div>
-      <div class="text-xl font-bold text-center flex flex-col links">
+      <div class="flex flex-col text-xl font-bold text-center links">
         <div class="text-2xl font-bold">Main Things</div>
         <a href="https://www.youtube.com/c/theobrowne1017">Youtube</a>
         <a href="https://twitter.com/t3dotgg">Twitter</a>
         <a href="https://discord.gg/xHdCpcPHRE">Discord Server</a>
         <a href="https://ping.gg">Ping Labs (ping.gg)</a>
-        <a href="/blog">My Blog</a>
+        <a href="/blog" rel="prefetch">My Blog</a>
         <div class="text-2xl font-bold">More Things</div>
         <a href="https://www.tiktok.com/@t3dotgg">TikTok</a>
         <a href="https://twitch.tv/Theo">Twitch</a>
@@ -59,10 +59,5 @@ const description = "All the places you can find Theo";
         <a href="https://t3.gg">My Site (t3.gg)</a>
       </div>
     </main>
-    <style>
-      .links a {
-        @apply py-2 my-1 text-blue-800;
-      }
-    </style>
   </body>
 </html>

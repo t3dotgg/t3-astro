@@ -3,30 +3,40 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  -webkit-font-smoothing: antialiased;
-}
-html,
-body {
-  background-color: #e8dcff;
-  height: 100%;
-}
+@layer base {
+  body {
+    @apply h-full bg-theo-purple antialiased;
+  }
 
-a {
-  color: #746f80;
-  text-decoration: none;
-  cursor: pointer;
-}
-a:hover {
-  text-decoration: underline;
-}
+  a {
+    @apply py-2 my-1 text-theo-blue hover:underline appearance-none outline-none focus:ring ring-theo-blue rounded-md;
+  }
 
-.no-line-link {
-  text-decoration: none !important;
-}
+  .bg-blend {
+    background-image: linear-gradient(
+      to top,
+      rgba(232, 220, 255, 1) 0%,
+      rgba(232, 220, 255, 0.3) 50%,
+      rgba(232, 220, 255, 0.15) 65%,
+      rgba(232, 220, 255, 0.075) 75.5%,
+      rgba(232, 220, 255, 0.037) 82.85%,
+      rgba(232, 220, 255, 0.019) 88%,
+      rgba(232, 220, 255, 0) 100%
+    );
+  }
 
-.no-line-link:hover {
-  text-decoration: underline !important;
+  .animated-bg {
+    background-image: url(/assets/animated-bg.svg);
+    background-size: cover;
+  }
+
+  .no-line-link {
+    text-decoration: none !important;
+  }
+
+  .no-line-link:hover {
+    text-decoration: underline !important;
+  }
 }
 
 /**

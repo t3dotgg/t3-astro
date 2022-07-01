@@ -1,5 +1,4 @@
 ---
-import "../../style/global.css";
 
 import BlogPostPreview from "../../components/BlogPostPreview.astro";
 import TheoHeaderImage from "../../components/theo-header-image.astro";
@@ -37,7 +36,7 @@ const sortedPosts = allPosts.sort(
   </head>
   <body style="background-color: rgba(247, 242, 254, 1)">
     <main>
-      <div class="absolute right-0 top-0 p-4 z-10 text-xl font-bold text-right">
+      <div class="absolute top-0 right-0 z-10 p-4 text-xl font-bold text-right">
         <a href="https://www.youtube.com/c/theobrowne1017">Youtube</a>
         <br />
         <a href="https://twitter.com/t3dotgg">Twitter</a>
@@ -45,16 +44,16 @@ const sortedPosts = allPosts.sort(
         <a href="/links">More</a>
       </div>
       <div
-        class="w-full h-full overflow-y-scroll flex flex-col items-center page"
+        class="flex flex-col items-center w-full h-full overflow-y-scroll page"
       >
         <div class="w-48 mt-8"><TheoHeaderImage /></div>
-        <h1 class="text-4xl font-bold pt-2">Theo's Blog</h1>
-        <h2 class="text-xl px-8 xl:px-0 text-center">
+        <h1 class="pt-2 text-4xl font-bold">Theo's Blog</h1>
+        <h2 class="px-8 text-xl text-center xl:px-0">
           I write about tech and content creation. It usually goes to Twitter.
           Sometimes it goes here instead :)
         </h2>
         <div
-          class="grid grid-cols-1 lg:grid-cols-2 p-4 lg:p-8 gap-4 xl:gap-8 w-full"
+          class="grid w-full grid-cols-1 gap-4 p-4 lg:grid-cols-2 lg:p-8 xl:gap-8"
         >
           {sortedPosts.map((p) => <BlogPostPreview post={p} />)}
         </div>
