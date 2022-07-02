@@ -4,22 +4,22 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
+    "start": "TAILWIND_MODE=watch astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "prettify": "prettier -w ./src --plugin=./node_modules/prettier-plugin-astro"
   },
   "devDependencies": {
-    "@astrojs/tailwind": "^0.2.0",
-    "@tailwindcss/typography": "^0.4.1",
+    "@tailwindcss/typography": "^0.5.2",
+    "astro": "1.0.0-beta.62",
     "autoprefixer": "^10.4.7",
-    "astro": "^1.0.0-beta.12",
     "postcss": "^8.4.14",
-    "prettier": "^2.6.2",
+    "prettier": "^2.7.1",
     "prettier-plugin-astro": "0.0.12",
-    "tailwindcss": "^2.2.15"
+    "tailwindcss": "^3.1.4"
   },
   "dependencies": {
-    "date-fns": "^2.23.0"
+    "@astrojs/prefetch": "^0.0.3",
+    "date-fns": "^2.28.0"
   }
 }

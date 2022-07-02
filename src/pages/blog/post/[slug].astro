@@ -40,14 +40,14 @@ const { post } = Astro.props;
     <script defer data-domain="astro.t3.gg" src="https://t3.gg/js/script.js"
     ></script>
   </head>
-  <body style="background-color: rgba(247, 242, 254, 1)">
-    <div class="w-full h-full overflow-y-scroll flex justify-center page">
-      <div class="max-w-full lg:w-[42rem] xl:w-[64rem] px-4 lg:px-0">
-        <a href="/blog"><div class="text-xl pt-8">Theo's Blog</div></a>
-        <article class="prose prose-lg lg:prose-xl pb-10 max-w-none">
+  <body class="bg-theo-purple/40">
+    <div class="flex justify-center w-full h-full page">
+      <div class="max-w-full lg:w-[42rem] xl:w-[64rem] px-4 lg:px-0 pt-8">
+        <a class="pt-8 text-xl" href="/blog">Theo's Blog</a>
+        <article class="pb-10 prose prose-lg lg:prose-xl max-w-none">
           <main>
             <BlogPostHeader post={post.frontmatter} />
-            <post.Content />
+            <post.Content></post.Content>
           </main>
         </article>
         <div class="pb-8">
@@ -61,5 +61,8 @@ const { post } = Astro.props;
 <style>
   .page {
     background-image: url("/images/bg-texture.png");
+  }
+  a {
+    @apply text-black
   }
 </style>
