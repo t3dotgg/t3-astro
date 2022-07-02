@@ -1,4 +1,5 @@
 ---
+import "../../../style/global.css";
 import BlogPostHeader from "../../../components/BlogPostHeader.astro";
 import { getSlugFromPath } from "../../../utils/get-slug-from-path";
 
@@ -39,10 +40,10 @@ const { post } = Astro.props;
     <script defer data-domain="astro.t3.gg" src="https://t3.gg/js/script.js"
     ></script>
   </head>
-  <body style="background-color: rgba(247, 242, 254, 1)">
-    <div class="flex justify-center w-full h-full overflow-y-scroll page">
-      <div class="max-w-full lg:w-[42rem] xl:w-[64rem] px-4 lg:px-0">
-        <a href="/blog"><div class="pt-8 text-xl">Theo's Blog</div></a>
+  <body class="bg-theo-purple/40">
+    <div class="flex justify-center w-full h-full page">
+      <div class="max-w-full lg:w-[42rem] xl:w-[64rem] px-4 lg:px-0 pt-8">
+        <a class="pt-8 text-xl" href="/blog">Theo's Blog</a>
         <article class="pb-10 prose prose-lg lg:prose-xl max-w-none">
           <main>
             <BlogPostHeader post={post.frontmatter} />
@@ -60,5 +61,8 @@ const { post } = Astro.props;
 <style>
   .page {
     background-image: url("/images/bg-texture.png");
+  }
+  a {
+    @apply text-black
   }
 </style>

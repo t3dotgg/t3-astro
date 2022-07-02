@@ -30,13 +30,6 @@
     background-size: cover;
   }
 
-  .no-line-link {
-    text-decoration: none !important;
-  }
-
-  .no-line-link:hover {
-    text-decoration: underline !important;
-  }
 }
 
 /**
@@ -47,7 +40,7 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #f8f8f2;
+  color: #F4F4F5;
   background: none;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   text-align: left;
@@ -77,7 +70,6 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: #2b2b2b;
 }
 
 /* Inline code */
@@ -152,6 +144,7 @@ pre[class*="language-"] {
 .token.italic {
   font-style: italic;
 }
+
 
 .token.entity {
   cursor: help;
