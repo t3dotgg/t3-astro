@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg fill="none" viewBox="0 0 355 200" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#a)">
-<circle cx="72" cy="52" r="800" fill="#E8DDFF"></circle>
+<circle cx="72" cy="52" r="800" fill="#E8DDFF"/>
 <circle r="260" fill="#AEA6BF">
 <animate attributeName="cx" dur="12s" from="-500" repeatCount="indefinite" to="0"/>
 <animate attributeName="cy" dur="12s" from="-400" repeatCount="indefinite" to="100"/>

@@ -1,6 +1,5 @@
 ---
 import "../style/global.css";
-
 const siteTitle = "404 Not Found";
 ---
 
@@ -20,29 +19,17 @@ const siteTitle = "404 Not Found";
     <script defer data-domain="astro.t3.gg" src="https://t3.gg/js/script.js"
     ></script>
   </head>
-  <body>
+  <body class="h-screen min-h-full">
     <main class="w-full h-full animated-bg">
-      <div class="w-full special-height flex justify-center items-center">
-        <div class="text-6xl font-bold text-gray-800 text-center flex flex-col">
+      <div class="flex items-center justify-center w-full">
+        <div class="flex flex-col text-6xl font-bold text-center">
           <div>404</div>
-          <div class="text-xl text-gray-700 font-light">(Page Not Found)</div>
+          <div class="text-xl font-light text-black">(Page Not Found)</div>
         </div>
       </div>
     </main>
     <style>
-      html,
-      body {
-        height: 100%;
-        overflow-y: none;
-        background-color: #aea5bf;
-      }
-      .animated-bg {
-        background-image: url(/assets/animated-bg.svg);
-        background-size: cover;
-      }
-      .special-height {
-        min-height: -webkit-fill-available;
-      }
+
     </style>
   </body>
 </html>
