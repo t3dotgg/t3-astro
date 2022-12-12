@@ -163,7 +163,7 @@ import type {
 } from "next";
 
 export const getServerSideProps = async (
-  context: GetServerSidePropsContext
+  context: GetServerSidePropsContext,
 ) => {
   const id = context.params?.id;
   const user = await prisma.user.findFirst({ where: { id: id } });
@@ -208,7 +208,7 @@ export type UserRequestData = {
 
 export default async (
   req: NextApiRequest,
-  res: NextApiResponse<UserRequestData>
+  res: NextApiResponse<UserRequestData>,
 ) => {
   const { userId } = req.query;
 
@@ -233,7 +233,7 @@ export function UserInfo(props) {
   // Fetch from server with loading and error state
   const { data, isLoading } = useQuery<UserRequestData>(
     ["user", query.id],
-    () => getUserById(query.id)
+    () => getUserById(query.id),
   );
 
   if (isLoading) return null;
@@ -276,9 +276,9 @@ Sadly, digging deeper into the provided types has only made me more cynical. The
 export type GetServerSideProps<
   P extends { [key: string]: any } = { [key: string]: any },
   Q extends ParsedUrlQuery = ParsedUrlQuery,
-  D extends PreviewData = PreviewData
+  D extends PreviewData = PreviewData,
 > = (
-  context: GetServerSidePropsContext<Q, D>
+  context: GetServerSidePropsContext<Q, D>,
 ) => Promise<GetServerSidePropsResult<P>>;
 ```
 

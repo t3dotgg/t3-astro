@@ -10,7 +10,7 @@ specifiers:
   postcss: ^8.4.20
   prettier: ^2.8.1
   prettier-plugin-astro: 0.7.0
-  prettier-plugin-tailwindcss: ^0.2.1
+  prettier-plugin-tailwindcss: 0.2.0-beta.3
   tailwindcss: ^3.2.4
 
 dependencies:
@@ -25,7 +25,7 @@ devDependencies:
   postcss: 8.4.20
   prettier: 2.8.1
   prettier-plugin-astro: 0.7.0
-  prettier-plugin-tailwindcss: 0.2.1_prettier@2.8.1
+  prettier-plugin-tailwindcss: 0.2.0-beta.3_prettier@2.8.1
   tailwindcss: 3.2.4
 
 packages:
@@ -2949,8 +2949,8 @@ packages:
       synckit: 0.8.4
     dev: true
 
-  /prettier-plugin-tailwindcss/0.2.1_prettier@2.8.1:
-    resolution: {integrity: sha512-aIO8IguumORyRsmT+E7JfJ3A9FEoyhqZR7Au7TBOege3VZkgMvHJMkufeYp4zjnDK2iq4ktkvGMNOQR9T8lisQ==}
+  /prettier-plugin-tailwindcss/0.2.0-beta.3_prettier@2.8.1:
+    resolution: {integrity: sha512-aq8gjelLGg/XGSHgxcJJhw4uaxvy7Ikdd6fcYE4X4I6wkDSiaPmnuSik+lkW4R9xbuTcekdZAkxXh7TeOl+eXg==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
       prettier: '>=2.2.0'

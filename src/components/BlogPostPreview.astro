@@ -13,22 +13,28 @@ const date = parseISO(post.frontmatter.date);
 const formattedDate = format(date, "LLLL d, yyyy");
 ---
 
-<a href={url} class="relative flex w-full h-auto overflow-hidden text-black transition-opacity opacity-100 group aspect-video hover:opacity-70 rounded-xl bg-theo-purple/80" style={`background-image: url(${
-        post.frontmatter.imageURL ?? "https://t3.gg/images/social-media.png"
-      }); background-size: cover; background-repeat: no-repeat; background-position: center;`}>
-      <div
-        class="absolute top-0 max-w-full p-2 text-lg truncate rounded-br-lg bg-theo-purple/80 md:text-2xl md:p-4 group-hover:underline"
-      >
-        {post.frontmatter.title}
-      </div>
-      {post.frontmatter.description && (
-        <div class="absolute bottom-0 flex flex-col justify-center w-full p-2 bg-theo-purple/80 md:p-4">
-          <div class="hidden sm:block">{formattedDate}</div>
-          <div class="text-md md:text-xl description">
-            {post.frontmatter.description}
-          </div>
+<a
+  href={url}
+  class="group relative flex aspect-video h-auto w-full overflow-hidden rounded-xl bg-theo-purple/80 text-black opacity-100 transition-opacity hover:opacity-70"
+  style={`background-image: url(${
+    post.frontmatter.imageURL ?? "https://t3.gg/images/social-media.png"
+  }); background-size: cover; background-repeat: no-repeat; background-position: center;`}
+>
+  <div
+    class="absolute top-0 max-w-full truncate rounded-br-lg bg-theo-purple/80 p-2 text-lg group-hover:underline md:p-4 md:text-2xl"
+  >
+    {post.frontmatter.title}
+  </div>
+  {
+    post.frontmatter.description && (
+      <div class="absolute bottom-0 flex w-full flex-col justify-center bg-theo-purple/80 p-2 md:p-4">
+        <div class="hidden sm:block">{formattedDate}</div>
+        <div class="text-md description md:text-xl">
+          {post.frontmatter.description}
         </div>
-      )}
+      </div>
+    )
+  }
 </a>
 
 <style>
