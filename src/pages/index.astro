@@ -5,6 +5,9 @@ const description =
   "Theo is known for a few things. Creator of the T3 Stack. CEO of Ping.gg. Alum of Twitch, Y Combinator and RPI. Your Favorite Dev's Favorite Youtuber.";
 
 import T3SVG from "../components/t3.astro";
+import Youtubesvg from "../assets/platforms/youtube.svg.astro";
+import Twittersvg from "../assets/platforms/twitter.svg.astro";
+import Twitchsvg from "../assets/platforms/twitch.svg.astro";
 ---
 
 <html lang="en">
@@ -33,7 +36,7 @@ import T3SVG from "../components/t3.astro";
         <div class="grid grid-cols-1 md:grid-cols-[1fr_auto]">
           <T3SVG />
           <div class="px-4 text-center py-4 md:py-0 md:text-left">
-            <h1 class="text-xl font-bold">T3 Stuff</h1>
+            <h1 class="text-xl leading-none font-bold">T3 Stuff</h1>
             <a target="_blank" href="https://create.t3.gg">
               <h3 class="text-lg">Create T3 App</h3>
             </a>
@@ -45,12 +48,6 @@ import T3SVG from "../components/t3.astro";
             <a target="_blank" href="https://t3.gg/blog">
               <h3 class="text-lg">Blog</h3>
             </a>
-            <a target="_blank" href="https://youtube.com/@t3dotgg">
-              <h3 class="text-lg">YouTube</h3>
-            </a>
-            <a target="_blank" href="https://twitter.com/t3dotgg">
-              <h3 class="text-lg">Twitter</h3>
-            </a>
 
             <h1 class="text-xl font-bold">Support Theo</h1>
             <a target="_blank" href="https://patreon.com/t3dotgg">
@@ -58,16 +55,39 @@ import T3SVG from "../components/t3.astro";
             </a>
           </div>
         </div>
+
+        <div class="absolute bottom-0 flex h-16 p-4 text-slate-200 gap-6">
+          <a
+            href="https://youtube.com/@t3dotgg"
+            class="flex align-baseline gap-2"
+          >
+            <Youtubesvg />
+            <span>YouTube</span>
+          </a>
+
+          <a
+            href="https://twitter.com/t3dotgg"
+            class="flex align-baseline gap-2"
+          >
+            <Twittersvg />
+            <span>Twitter</span>
+          </a>
+
+          <a href="https://twitch.tv/theo" class="flex align-baseline gap-2">
+            <Twitchsvg />
+            <span>Twitch</span>
+          </a>
+        </div>
       </div>
     </main>
   </body>
-
-  <style>
-    .title {
-      font-family: "Inter", sans-serif;
-    }
-    a {
-      @apply text-slate-200;
-    }
-  </style>
 </html>
+
+<style>
+  .title {
+    font-family: "Inter", sans-serif;
+  }
+  a {
+    @apply text-slate-200;
+  }
+</style>
