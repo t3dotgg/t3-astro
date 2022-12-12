@@ -5,7 +5,7 @@
 
 @layer base {
   body {
-    @apply h-full bg-theo-purple antialiased;
+    @apply h-full antialiased;
   }
 
   a {
@@ -29,7 +29,6 @@
     background-image: url(/assets/animated-bg.svg);
     background-size: cover;
   }
-
 }
 
 /**
@@ -40,7 +39,7 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #F4F4F5;
+  color: #f4f4f5;
   background: none;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   text-align: left;
@@ -144,7 +143,6 @@ pre[class*="language-"] {
 .token.italic {
   font-style: italic;
 }
-
 
 .token.entity {
   cursor: help;
