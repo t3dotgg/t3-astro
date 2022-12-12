@@ -28,7 +28,7 @@ When I started pushing for these simpler solutions, I was surprised by the respo
 
 I started to realize, quickly, that I had what it took to _really start something of my own_. I dove straight into what I loved, great tools for video creation. The biggest pain point I’ve had has always been collaborative content. The crapshoot of screen capturing a Zoom call, virtual-audio-cable, OBS and prayer was not a stable solution for creators.
 
-I started building [Ping.gg](https://ping.gg) to make live video collaboration easier. I started my [youtube channel](https://www.youtube.com/c/theobrowne1017) back up. I was making the things I always wanted to make.
+I started building [Ping.gg](https://ping.gg) to make live video collaboration easier. I started my [youtube channel](https://www.youtube.com/@t3dotgg) back up. I was making the things I always wanted to make.
 
 And then things started moving really, really fast.
 
