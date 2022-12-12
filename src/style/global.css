@@ -7,11 +7,6 @@
   body {
     @apply h-full antialiased;
   }
-
-  a {
-    @apply py-2 my-1 text-theo-blue hover:underline appearance-none outline-none focus:ring ring-theo-blue rounded-md;
-  }
-
   .bg-blend {
     background-image: linear-gradient(
       to top,
@@ -189,5 +184,11 @@ pre[class*="language-"] {
   .token.attr-value,
   .token.url {
     font-weight: normal;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
   }
 }

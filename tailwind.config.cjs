@@ -1,16 +1,20 @@
 // tailwind.config.js
+const colors = require("tailwindcss/colors");
+
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue,svg}"],
   theme: {
+    colors: {
+      ...colors,
+      transparent: "transparent",
+      current: "currentColor",
+      "theo-purple": "#E8DCFF",
+      "theo-blue": "#1F11E4",
+      black: "#27272a",
+      white: "#F4F4F5",
+    },
     extend: {
-      colors: {
-        transparent: "transparent",
-        current: "currentColor",
-        "theo-purple": "#E8DCFF",
-        "theo-blue": "#1F11E4",
-        black: "#27272a",
-        white: "#F4F4F5",
-      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
@@ -47,7 +51,7 @@ module.exports = {
               "padding-right": "0.25rem",
             },
             a: {
-              color: "text-theo-blue",
+              color: "#1F11E4",
               textDecoration: `none`,
               "&:hover": {
                 textDecoration: `underline`,

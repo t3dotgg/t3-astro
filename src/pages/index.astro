@@ -3,6 +3,8 @@ import "../style/global.css";
 const siteTitle = "Theo Browne - T3 Stack, Ping.gg, YouTuber";
 const description =
   "Theo is known for a few things. Creator of the T3 Stack. CEO of Ping.gg. Alum of Twitch, Y Combinator and RPI. Your Favorite Dev's Favorite Youtuber.";
+
+import T3SVG from "../components/t3.astro";
 ---
 
 <html lang="en">
@@ -36,17 +38,28 @@ const description =
         <a class="text-slate-200" href="/blog">Blog</a>
       </div>
       <div
-        class="flex h-full w-full items-center justify-center p-4 text-slate-100"
+        class="flex h-screen w-full items-center justify-center align-middle p-4 text-slate-200"
       >
         <div class="flex max-w-lg">
-          <img src="/images/t3/500.svg" />
-          <div class="p-4">
-            <h1 class="title text-2xl">Theo - t3.gg</h1>
+          <T3SVG />
+          <div class="px-4">
+            <h1 class="text-xl font-bold">T3 Stuff</h1>
+            <a target="_blank" href="https://create.t3.gg">
+              <h3 class="text-lg">Create T3 App</h3>
+            </a>
 
-            <p>I'm a dev, CEO and YouTuber.</p>
-            <p>Check out...</p>
+            <h1 class="text-xl font-bold">Theo Stuff</h1>
+            <a target="_blank" href="https://t3.gg/faq">
+              <h3 class="text-lg">FAQ</h3>
+            </a>
+            <a target="_blank" href="https://youtube.com/@t3dotgg">
+              <h3 class="text-lg">YouTube</h3>
+            </a>
 
-            <h3 class="text-xl font-bold">Create T3 App</h3>
+            <h1 class="text-xl font-bold">Theo Support</h1>
+            <a target="_blank" href="https://patreon.com/t3dotgg">
+              <h3 class="text-lg">Patreon</h3>
+            </a>
           </div>
         </div>
       </div>
@@ -56,6 +69,9 @@ const description =
   <style>
     .title {
       font-family: "Inter", sans-serif;
+    }
+    a {
+      @apply text-slate-200;
     }
   </style>
 </html>

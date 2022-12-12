@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "start": "TAILWIND_MODE=watch astro dev",
+    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "format": "prettier --write --plugin-search-dir=. **/*.{cjs,mjs,ts,md,json,astro} --ignore-path .gitignore"
+    "format": "prettier --write --plugin-search-dir=. **/*.{cjs,mjs,ts,md,json,astro,css} --ignore-path .gitignore"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.2",
