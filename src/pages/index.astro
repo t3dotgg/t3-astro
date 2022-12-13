@@ -1,8 +1,14 @@
 ---
 import "../style/global.css";
-const siteTitle = "Theo Browne - CEO @ Ping Labs (prev T3 Tools)";
+const siteTitle = "Theo Browne - T3 Stack, Ping.gg, YouTuber";
 const description =
-  "Software developer, skater, youtuber, nerd. Alum of Twitch, Y Combinator and RPI. CEO @ Ping Labs (formerly T3 Tools)";
+  "Theo is known for a few things. Creator of the T3 Stack. CEO of Ping.gg. Alum of Twitch, Y Combinator and RPI. Your Favorite Dev's Favorite Youtuber.";
+
+import T3SVG from "../components/t3.astro";
+import Youtubesvg from "../assets/platforms/youtube.svg.astro";
+import Twittersvg from "../assets/platforms/twitter.svg.astro";
+import Twitchsvg from "../assets/platforms/twitch.svg.astro";
+import Discordsvg from "../assets/platforms/discord.svg.astro";
 ---
 
 <html lang="en">
@@ -23,55 +29,105 @@ const description =
     <script defer data-domain="astro.t3.gg" src="https://t3.gg/js/script.js"
     ></script>
   </head>
-  <body>
+  <body class="min-h-screen bg-gradient-to-b from-[#300171] to-gray-900">
     <main>
-      <div class="absolute right-0 z-10 p-4 text-xl font-bold text-right">
-        <a class="text-black" href="https://www.youtube.com/@t3dotgg">Youtube</a
-        >
+      <div
+        class="flex h-screen w-full items-center justify-center p-4 align-middle text-slate-200"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_auto]">
+          <T3SVG />
+          <div class="px-4 py-4 text-center md:py-0 md:text-left">
+            <h1 class="text-2xl font-bold leading-none">T3 Stuff</h1>
+            <a target="_blank" href="https://create.t3.gg">
+              <h3 class="text-xl">Create T3 App</h3>
+            </a>
 
-        <br />
-        <a class="text-black" href="https://twitter.com/t3dotgg">Twitter</a>
-        <br />
-        <a class="text-black" href="/blog">Blog</a>
-      </div>
-      <div class="flex flex-col items-center overflow-visible">
-        <div
-          class="relative flex flex-col items-center justify-center w-full px-4 pt-2 pb-16 animated-bg h-[40vh]"
-        >
-          <img
-            src={"/assets/t3-text-block.svg"}
-            class="z-10 h-full pointer-events-none select-none rounded-xl"
-            alt="T3 logo"
-          />
-          <div class="absolute bottom-0 z-0 w-full h-24 bg-blend"></div>
+            <h1 class="text-2xl font-bold">Theo's Stuff</h1>
+            <a target="_blank" href="https://t3.gg/faq">
+              <h3 class="text-xl">FAQ</h3>
+            </a>
+            <a target="_blank" href="https://t3.gg/blog">
+              <h3 class="text-xl">Blog</h3>
+            </a>
+
+            <h1 class="text-2xl font-bold">Support Theo</h1>
+            <a target="_blank" href="https://patreon.com/t3dotgg">
+              <h3 class="text-xl">Patreon</h3>
+            </a>
+          </div>
         </div>
-        <div class="pt-2"></div>
-        <div class="flex flex-col justify-center px-4">
-          <h4 class="text-2xl text-center">Theo's Homepage</h4>
 
-          <div class="py-4">If you're here, you're probably looking for...</div>
-          <h4 class="text-xl text-center text-theo-blue">
-            <a href="/links" rel="prefetch">Theo (CEO @ Ping Labs)</a>
-          </h4>
-          <div class="text-xl font-bold text-center">OR</div>
-          <h4 class="mb-2 text-xl text-center text-theo-blue">
-            <a href="https://ping.gg">Ping Labs (prev. T3 Tools)</a>
-          </h4>
+        <div class="absolute bottom-0 flex h-16 gap-6 p-4 text-slate-200">
           <a
-            href="https://ping.gg"
-            class="flex flex-col items-center justify-center px-4 py-8 text-white bg-black hover:no-underline rounded-xl ping-card hover:bg-black/90"
+            href="https://youtube.com/@t3dotgg"
+            class="flex gap-2 align-baseline"
           >
-            <img
-              src={"/assets/ping/logo.svg"}
-              class="w-36"
-              alt="T3 logo"
-              width={200}
-            />
-            <div class="pt-4"></div>
-            <p class="text-center">The best way to stream with friends.</p>
+            <Youtubesvg />
+            <span class="hidden md:block">YouTube</span>
+          </a>
+
+          <a
+            href="https://twitter.com/t3dotgg"
+            class="flex gap-2 align-baseline"
+          >
+            <Twittersvg />
+            <span class="hidden md:block">Twitter</span>
+          </a>
+
+          <a href="https://twitch.tv/theo" class="flex gap-2 align-baseline">
+            <Twitchsvg />
+            <span class="hidden md:block">Twitch</span>
+          </a>
+
+          <a href="https://t3.gg/discord" class="flex gap-2 align-baseline">
+            <Discordsvg />
+            <span class="hidden md:block">Discord</span>
           </a>
         </div>
       </div>
     </main>
   </body>
 </html>
+
+<style>
+  .title {
+    font-family: "Inter", sans-serif;
+  }
+  a {
+    @apply text-slate-200 hover:text-slate-100 hover:underline;
+  }
+
+  /* background */
+  main {
+    position: relative;
+    overflow: hidden;
+  }
+  /* Create the animation */
+  @keyframes breathing {
+    0% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.03;
+    }
+    100% {
+      opacity: 0.3;
+    }
+  }
+
+  main::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: -1;
+    background-image: url("data:image/svg+xml,%3Csvg width='100%' height='100%' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23300171' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+
+    transform: rotate(180deg);
+
+    /* animate opacity */
+    animation: breathing 15s ease-in-out infinite;
+  }
+</style>

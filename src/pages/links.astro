@@ -24,7 +24,7 @@ const description = "All the places you can find Theo";
     ></script>
   </head>
   <body>
-    <main class="relative flex flex-col items-center w-full h-full text-black">
+    <main class="relative flex h-full w-full flex-col items-center text-black">
       <div class="flex flex-col items-center px-4 text-center">
         <div class="py-4"></div>
 
@@ -43,7 +43,7 @@ const description = "All the places you can find Theo";
       </div>
       <div class="py-2"></div>
       <div
-        class="flex flex-col space-y-4 text-xl font-bold text-center links text-theo-blue"
+        class="links flex flex-col space-y-4 text-center text-xl font-bold text-theo-blue"
       >
         <ul class="text-2xl font-bold text-black">Main Things</ul>
         <li>
@@ -89,5 +89,9 @@ const description = "All the places you can find Theo";
   ul,
   li {
     @apply list-none;
+  }
+  body {
+    background-color: rgba(247, 242, 254, 1);
+    background-image: url("/images/bg-texture.png");
   }
 </style>

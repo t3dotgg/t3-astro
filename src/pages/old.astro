@@ -1,0 +1,77 @@
+---
+import "../style/global.css";
+const siteTitle = "Theo Browne - T3 Stack, Ping.gg, YouTuber";
+const description =
+  "Theo is known for a few things. Creator of the T3 Stack. CEO of Ping.gg. Alum of Twitch, Y Combinator and RPI. Your Favorite Dev's Favorite Youtuber.";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@t3dotgg" />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://t3.gg/images/twitter.png" />
+    <title>{siteTitle}</title>
+    <meta name="theme-color" content="#000000" />
+
+    <script defer data-domain="astro.t3.gg" src="https://t3.gg/js/script.js"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <div class="absolute right-0 z-10 p-4 text-right text-xl font-bold">
+        <a class="text-black" href="https://www.youtube.com/@t3dotgg">Youtube</a
+        >
+
+        <br />
+        <a class="text-black" href="https://twitter.com/t3dotgg">Twitter</a>
+        <br />
+        <a class="text-black" href="/blog">Blog</a>
+      </div>
+      <div class="flex flex-col items-center overflow-visible">
+        <div
+          class="animated-bg relative flex h-[40vh] w-full flex-col items-center justify-center px-4 pt-2 pb-16"
+        >
+          <img
+            src={"/assets/t3-text-block.svg"}
+            class="pointer-events-none z-10 h-full select-none rounded-xl"
+            alt="T3 logo"
+          />
+          <div class="bg-blend absolute bottom-0 z-0 h-24 w-full"></div>
+        </div>
+        <div class="pt-2"></div>
+        <div class="flex flex-col justify-center px-4">
+          <h4 class="text-center text-2xl">Theo's Homepage</h4>
+
+          <div class="py-4">If you're here, you're probably looking for...</div>
+          <h4 class="text-center text-xl text-theo-blue">
+            <a href="/links" rel="prefetch">Theo (CEO @ Ping Labs)</a>
+          </h4>
+          <div class="text-center text-xl font-bold">OR</div>
+          <h4 class="mb-2 text-center text-xl text-theo-blue">
+            <a href="https://ping.gg">Ping Labs (prev. T3 Tools)</a>
+          </h4>
+          <a
+            href="https://ping.gg"
+            class="ping-card flex flex-col items-center justify-center rounded-xl bg-black px-4 py-8 text-white hover:bg-black/90 hover:no-underline"
+          >
+            <img
+              src={"/assets/ping/logo.svg"}
+              class="w-36"
+              alt="T3 logo"
+              width={200}
+            />
+            <div class="pt-4"></div>
+            <p class="text-center">The best way to stream with friends.</p>
+          </a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

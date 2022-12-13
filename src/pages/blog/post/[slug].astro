@@ -41,13 +41,13 @@ const { post } = Astro.props;
     ></script>
   </head>
   <body class="bg-theo-purple/40">
-    <div class="flex justify-center w-full h-full page">
-      <div class="max-w-full lg:w-[42rem] xl:w-[64rem] px-4 lg:px-0 pt-8">
+    <div class="page flex h-full w-full justify-center">
+      <div class="max-w-full px-4 pt-8 lg:w-[42rem] lg:px-0 xl:w-[64rem]">
         <a class="pt-8 text-xl" href="/blog">Theo's Blog</a>
-        <article class="pb-10 prose prose-lg lg:prose-xl max-w-none">
+        <article class="prose prose-lg max-w-none pb-10 lg:prose-xl">
           <main>
             <BlogPostHeader post={post.frontmatter} />
-            <post.Content></post.Content>
+            <post.Content />
           </main>
         </article>
         <div class="pb-8">
@@ -62,7 +62,8 @@ const { post } = Astro.props;
   .page {
     background-image: url("/images/bg-texture.png");
   }
-  a {
-    @apply text-black
+
+  a :global(a) {
+    @apply my-1 appearance-none rounded-md py-2 text-blue-200 outline-none ring-theo-blue hover:underline focus:ring;
   }
 </style>

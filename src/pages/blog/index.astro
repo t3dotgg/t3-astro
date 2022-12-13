@@ -12,7 +12,7 @@ const allPosts = await Astro.glob("../../content/posts/*.md");
 const sortedPosts = allPosts.sort(
   (a, b) =>
     new Date(b.frontmatter.date).valueOf() -
-    new Date(a.frontmatter.date).valueOf()
+    new Date(a.frontmatter.date).valueOf(),
 );
 ---
 
@@ -36,17 +36,17 @@ const sortedPosts = allPosts.sort(
   </head>
   <body style="background-color: rgba(247, 242, 254, 1)">
     <main>
-      <div class="absolute right-0 z-10 p-4 text-xl font-bold text-right">
+      <div class="absolute right-0 z-10 p-4 text-right text-xl font-bold">
         <a href="https://www.youtube.com/@t3dotgg">Youtube</a>
         <br />
         <a href="https://twitter.com/t3dotgg">Twitter</a>
         <br />
         <a href="/links">More</a>
       </div>
-      <div class="flex flex-col items-center w-full h-full page">
-        <div class="w-48 mt-8"><TheoHeaderImage /></div>
+      <div class="page flex h-full w-full flex-col items-center">
+        <div class="mt-8 w-48"><TheoHeaderImage /></div>
         <h1 class="pt-2 text-4xl font-bold">Theo's Blog</h1>
-        <h2 class="px-8 text-xl text-center xl:px-0">
+        <h2 class="px-8 text-center text-xl xl:px-0">
           I write about tech and content creation. It usually goes to Twitter.
           Sometimes it goes here instead :)
         </h2>
