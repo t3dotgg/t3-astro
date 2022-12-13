@@ -8,6 +8,7 @@ import T3SVG from "../components/t3.astro";
 import Youtubesvg from "../assets/platforms/youtube.svg.astro";
 import Twittersvg from "../assets/platforms/twitter.svg.astro";
 import Twitchsvg from "../assets/platforms/twitch.svg.astro";
+import Discordsvg from "../assets/platforms/discord.svg.astro";
 ---
 
 <html lang="en">
@@ -62,7 +63,7 @@ import Twitchsvg from "../assets/platforms/twitch.svg.astro";
             class="flex gap-2 align-baseline"
           >
             <Youtubesvg />
-            <span>YouTube</span>
+            <span class="hidden md:block">YouTube</span>
           </a>
 
           <a
@@ -70,12 +71,17 @@ import Twitchsvg from "../assets/platforms/twitch.svg.astro";
             class="flex gap-2 align-baseline"
           >
             <Twittersvg />
-            <span>Twitter</span>
+            <span class="hidden md:block">Twitter</span>
           </a>
 
           <a href="https://twitch.tv/theo" class="flex gap-2 align-baseline">
             <Twitchsvg />
-            <span>Twitch</span>
+            <span class="hidden md:block">Twitch</span>
+          </a>
+
+          <a href="https://t3.gg/discord" class="flex gap-2 align-baseline">
+            <Discordsvg />
+            <span class="hidden md:block">Discord</span>
           </a>
         </div>
       </div>
@@ -88,7 +94,7 @@ import Twitchsvg from "../assets/platforms/twitch.svg.astro";
     font-family: "Inter", sans-serif;
   }
   a {
-    @apply text-slate-200;
+    @apply text-slate-200 hover:text-slate-100 hover:underline;
   }
 
   /* background */
