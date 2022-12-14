@@ -28,6 +28,11 @@
     {
       "source": "/twitter",
       "destination": "https://twitter.com/t3dotgg"
+    },
+
+    {
+      "source": "/links",
+      "destination": "/"
     }
   ]
 }

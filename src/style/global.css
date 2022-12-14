@@ -5,7 +5,7 @@
 
 @layer base {
   body {
-    @apply h-full antialiased;
+    @apply antialiased;
   }
   .bg-blend {
     background-image: linear-gradient(
