@@ -1,4 +1,5 @@
 import rss from '@astrojs/rss';
+import sanitizeHtml from 'sanitize-html';
 import {getSlugFromPath} from "../../utils/get-slug-from-path";
 
 const postImportResult = import.meta.glob('../../content/posts/*.md', { eager: true });
@@ -17,5 +18,6 @@ export const get = () => rss({
         link: "blog/post/" + getSlugFromPath(post.file),
         title: post.frontmatter.title,
         pubDate: post.frontmatter.pubDate,
+        content: sanitizeHtml(post.compiledContent()),
     }))
 });
