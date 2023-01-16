@@ -5,5 +5,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "http://localhost:3000",
   integrations: [prefetch(), tailwind()],
 });
