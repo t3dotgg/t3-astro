@@ -17,7 +17,7 @@ export const get = () => rss({
     items: sortedPosts.map((post) => ({
         link: "blog/post/" + getSlugFromPath(post.file),
         title: post.frontmatter.title,
-        pubDate: post.frontmatter.pubDate,
+        pubDate: post.frontmatter.date,
         content: sanitizeHtml(post.compiledContent()),
     }))
 });
