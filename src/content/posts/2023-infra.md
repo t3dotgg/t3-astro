@@ -9,7 +9,7 @@ hidden: true
 
 The products you build can never be better than the infrastructure you build them on. I have tried a LOT of different infra, and I'm really happy with what I've landed on.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/G3rJC799L2Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/v-9AZKp-Ljo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Primary Infra
 
