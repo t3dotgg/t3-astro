@@ -31,10 +31,13 @@ Sometimes, things don't go how they should. When you don't understand what's goi
 
 Upstash is the missing piece to most serverless stacks. If you feel like you HAVE to use AWS for some reason, see if they have it covered. Redis, CRONs, event queues, kafka, rate limiting, and so much more.
 
+### [Clerk](https://clerk.dev/?ref=theo)
+
+Auth is obnoxious. Well...auth WAS obnoxious. Clerk gets our stack. They even maintain a [t3-turbo fork](https://github.com/clerkinc/t3-turbo-and-clerk) with working auth on Next AND React Native 🤯
+
 ## Everything Else
 
 - Railway
-- Clerk
 - Pusher
 - GitHub
 - Stripe
