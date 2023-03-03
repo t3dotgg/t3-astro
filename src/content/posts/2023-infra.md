@@ -4,6 +4,7 @@ date: "2023-03-03"
 description: "You can never be better than your infrastructure"
 imageURL: "https://img.youtube.com/vi/G3rJC799L2Q/maxresdefault.jpg"
 readMore: true
+hidden: true
 ---
 
 The products you build can never be better than the infrastructure you build them on. I have tried a LOT of different infra, and I'm really happy with what I've landed on.
