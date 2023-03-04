@@ -1,6 +1,6 @@
 ---
 title: "Infra I'm Building On In 2023"
-date: "2023-03-03"
+date: "2023-03-06"
 description: "You can never be better than your infrastructure"
 imageURL: "https://img.youtube.com/vi/G3rJC799L2Q/maxresdefault.jpg"
 readMore: true
