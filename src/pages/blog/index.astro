@@ -9,11 +9,13 @@ const description = "Thought dumps and nerdy stuff";
 // Data Fetching: List all Markdown posts in the repo.
 
 const allPosts = await Astro.glob("../../content/posts/*.md");
-const sortedPosts = allPosts.sort(
-  (a, b) =>
-    new Date(b.frontmatter.date).valueOf() -
-    new Date(a.frontmatter.date).valueOf(),
-);
+const sortedPosts = allPosts
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).valueOf() -
+      new Date(a.frontmatter.date).valueOf(),
+  )
+  .filter((p) => p.frontmatter.hidden !== true);
 ---
 
 <html lang="en">
