@@ -8,10 +8,9 @@ module.exports = {
   trailingComma: "all",
   tabWidth: 2,
   plugins: [
-    require.resolve("prettier-plugin-astro"),
-    require("prettier-plugin-tailwindcss"), // MUST come last
+    "prettier-plugin-astro",
+    "prettier-plugin-tailwindcss", // MUST come last
   ],
-  pluginSearchDirs: false,
   overrides: [
     {
       files: "*.astro",
