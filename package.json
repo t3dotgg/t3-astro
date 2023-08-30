@@ -6,17 +6,13 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "format": "prettier --write --plugin-search-dir=. **/*.{cjs,mjs,ts,md,json,astro,css} --ignore-path .gitignore"
+    "preview": "astro preview"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.2",
     "astro": "3.0.2",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.20",
-    "prettier": "^2.8.1",
-    "prettier-plugin-astro": "0.12.0",
-    "prettier-plugin-tailwindcss": "0.5.3",
     "tailwindcss": "^3.3.3"
   },
   "dependencies": {
