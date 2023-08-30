@@ -9,10 +9,13 @@ import Youtubesvg from "../assets/platforms/youtube.svg.astro";
 import Twittersvg from "../assets/platforms/twitter.svg.astro";
 import Twitchsvg from "../assets/platforms/twitch.svg.astro";
 import Discordsvg from "../assets/platforms/discord.svg.astro";
+
+import {ViewTransitions} from 'astro:transitions';
 ---
 
 <html lang="en">
   <head>
+    <ViewTransitions />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.svg" />
@@ -48,7 +51,7 @@ import Discordsvg from "../assets/platforms/discord.svg.astro";
             <a href="https://t3.gg/faq">
               <h3 class="text-xl">FAQ</h3>
             </a>
-            <a href="https://t3.gg/blog">
+            <a href="/blog">
               <h3 class="text-xl">Blog</h3>
             </a>
 
