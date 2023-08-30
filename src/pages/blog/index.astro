@@ -2,6 +2,7 @@
 import "../../style/global.css";
 import BlogPostPreview from "../../components/BlogPostPreview.astro";
 import TheoHeaderImage from "../../components/theo-header-image.astro";
+import {ViewTransitions} from 'astro:transitions';
 
 const siteTitle = "Theo's Blog";
 const description = "Thought dumps and nerdy stuff";
@@ -20,6 +21,7 @@ const sortedPosts = allPosts
 
 <html lang="en">
   <head>
+    <ViewTransitions />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.svg" />
