@@ -7,7 +7,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "format": "prettier --write --plugin-search-dir=. **/*.{cjs,mjs,ts,md,json,astro,css} --ignore-path .gitignore"
+    "format": "prettier --write **/*.{cjs,mjs,ts,md,json,astro,css} --ignore-path .gitignore"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.2",
