@@ -2,7 +2,7 @@
 import "../../../style/global.css";
 import BlogPostHeader from "../../../components/BlogPostHeader.astro";
 import { getSlugFromPath } from "../../../utils/get-slug-from-path";
-import {ViewTransitions} from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 
 export async function getStaticPaths({ paginate, rss }) {
   const allPosts = await Astro.glob("../../../content/posts/*.md");
@@ -57,15 +57,13 @@ const { post } = Astro.props;
         </div>
       </div>
     </div>
-  </body>
+  </body><style>
+    .page {
+      background-image: url("/images/bg-texture.png");
+    }
+
+    a :global(a) {
+      @apply my-1 appearance-none rounded-md py-2 text-blue-200 outline-none ring-theo-blue hover:underline focus:ring;
+    }
+  </style>
 </html>
-
-<style>
-  .page {
-    background-image: url("/images/bg-texture.png");
-  }
-
-  a :global(a) {
-    @apply my-1 appearance-none rounded-md py-2 text-blue-200 outline-none ring-theo-blue hover:underline focus:ring;
-  }
-</style>
