@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "question": "Do you recommend Flutter?",
+    "answer": "No."
+  },
+  {
+    "id": 2,
+    "question": "Why are you deleting my Youtube comments??",
+    "answer": "I have never deleted a non-spam comment. Youtube does a lot though. 🤷‍♂️"
+  },
+  {
+    "id": 3,
+    "question": "What editor do you use?",
+    "answer": "VS Code."
+  },
+  {
+    "id": 4,
+    "question": "What theme do you use in VS Code?",
+    "answer": "Poimandres theme."
+  },
+  {
+    "id": 5,
+    "question": "What program do you use for your diagrams?",
+    "answer": "Excalidraw."
+  },
+  {
+    "id": 6,
+    "question": "What plugins do you use in your editor?",
+    "answer": "Nothing special."
+  },
+  {
+    "id": 7,
+    "question": "How do I get better at programming?",
+    "answer": "Build shit."
+  },
+  {
+    "id": 8,
+    "question": "What are your thoughts on Solid?",
+    "answer": "Pretty cool."
+  },
+  {
+    "id": 9,
+    "question": "What are your thoughts on Angular?",
+    "answer": "Pretty bad."
+  },
+  {
+    "id": 10,
+    "question": "What are your thoughts on Vue/Svelte/Marko/Quik?",
+    "answer": "I don't think about them too much."
+  },
+  {
+    "id": 11,
+    "question": "What languages do you code in?",
+    "answer": "Typescript."
+  },
+  {
+    "id": 12,
+    "question": "What OTHER languages do you code in?",
+    "answer": "Typescript."
+  },
+  {
+    "id": 13,
+    "question": "...seriously?",
+    "answer": "I wrote some Elixir back in the day."
+  },
+  {
+    "id": 14,
+    "question": "Why do you like Typescript?",
+    "answer": "It's like JS but easier."
+  },
+  {
+    "id": 15,
+    "question": "Why don't you like Javascript?",
+    "answer": "It's like TS but harder."
+  },
+  {
+    "id": 16,
+    "question": "What is the !g thing Theo keeps typing in searches?",
+    "answer": "Duckduckgo Bangs."
+  },
+  {
+    "id": 17,
+    "question": "Why use DDG if you're just gonna use the !g bang anyways?",
+    "answer": "...because I use the other ones too? Lmao"
+  },
+  {
+    "id": 18,
+    "question": "What should I use to start a new project?",
+    "answer": "init.tips."
+  },
+  {
+    "id": 19,
+    "question": "What stack does Ping.gg use?",
+    "answer": "init.tips."
+  },
+  {
+    "id": 20,
+    "question": "Are you sure you don't like Flutter?",
+    "answer": "Yes."
+  },
+  {
+    "id": 21,
+    "question": "Are you REALLY sure? I heard Flutter is faster than React Native.",
+    "answer": "Yes. I am quite certain."
+  }
+]
