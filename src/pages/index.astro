@@ -4,14 +4,14 @@ const siteTitle = "Theo Browne - T3 Stack, Ping.gg, YouTuber";
 const description =
   "Theo is known for a few things. Creator of the T3 Stack. CEO of Ping.gg. Alum of Twitch, Y Combinator and RPI. Your Favorite Dev's Favorite Youtuber.";
 
-import T3SVG from "../components/t3.astro";
-import Youtubesvg from "../assets/platforms/youtube.svg.astro";
-import Twittersvg from "../assets/platforms/twitter.svg.astro";
-import Twitchsvg from "../assets/platforms/twitch.svg.astro";
-import Discordsvg from "../assets/platforms/discord.svg.astro";
-import Githubsvg from "../assets/platforms/github.svg.astro"
-
 import {ViewTransitions} from 'astro:transitions';
+
+// Components Import
+import CardLinks from "../components/CardLinks.astro";
+import AccordionUi from '../components/RadixUi/Accordion'
+
+import FqData from '../utils/FqData.json'
+const socialLinksStyle = 'p-2 hover:bg-[#614C7E] rounded-lg'
 ---
 
 <html lang="en">
@@ -30,118 +30,101 @@ import {ViewTransitions} from 'astro:transitions';
     <title>{siteTitle}</title>
     <meta name="theme-color" content="#000000" />
 
+    <!-- RemixIcon CDN -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+
     <script defer data-domain="astro.t3.gg" src="https://t3.gg/js/script.js"
     ></script>
   </head>
   <body class="h-screen bg-gradient-to-b from-[#300171] to-gray-900">
     <main>
-      <div
-        class="flex h-screen w-full items-center justify-center p-4 align-middle text-slate-200"
-      >
-        <div
-          class="grid grid-cols-1 md:grid-cols-[1fr_auto] grid-rows-2 md:grid-rows-[1fr]"
-        >
-          <T3SVG />
-          <div class="px-4 py-4 text-center md:py-0 md:text-left">
-            <h1 class="text-2xl font-bold leading-none">T3 Stuff</h1>
-            <a href="https://create.t3.gg">
-              <h3 class="text-xl">Create T3 App</h3>
-            </a>
-
-            <h1 class="text-2xl font-bold">Theo's Stuff</h1>
-            <a href="https://t3.gg/faq">
-              <h3 class="text-xl">FAQ</h3>
-            </a>
-            <a href="/blog">
-              <h3 class="text-xl">Blog</h3>
-            </a>
-
-            <h1 class="text-2xl font-bold">Support Theo</h1>
-            <a href="https://patreon.com/t3dotgg">
-              <h3 class="text-xl">Patreon</h3>
-            </a>
-            <a href="https://shop.t3.gg/">
-              <h3 class="text-xl">Shop</h3>
-            </a>
-          </div>
-        </div>
-
-        <div class="absolute bottom-0 flex h-16 gap-6 p-4 text-slate-200">
-          <a
-            href="https://youtube.com/@t3dotgg"
-            class="flex gap-2 align-baseline"
-          >
-            <Youtubesvg />
-            <span class="hidden md:block">YouTube</span>
-          </a>
-
-          <a
-            href="https://twitter.com/t3dotgg"
-            class="flex gap-2 align-baseline"
-          >
-            <Twittersvg />
-            <span class="hidden md:block">Twitter</span>
-          </a>
-
-          <a href="https://twitch.tv/theo" class="flex gap-2 align-baseline">
-            <Twitchsvg />
-            <span class="hidden md:block">Twitch</span>
-          </a>
-
-          <a href="https://discord.com/invite/xHdCpcPHRE" class="flex gap-2 align-baseline">
-            <Discordsvg />
-            <span class="hidden md:block">Discord</span>
-          </a>
-
-          <a href="https://github.com/t3dotgg" class="flex gap-2 align-baseline">
-            <Githubsvg />
-            <span class="hidden md:block">Github</span>
-          </a>
-        </div>
+     <section id="Hero" class="w-full pb-32">
+          <div class="max-w-5xl mx-auto pb-8">
+            <div class="flex py-12 px-6 flex-col text-white justify-center items-center text-center">
+              <span class="flex items-center gap-3 font-medium text-[#9F99A6] bg-[#180A2A] select-none px-6 py-1 my-12 border-[#45335d] border rounded-xl hover:text-white cursor-pointer transition-all duration-200">Create T3 App Now <i class=" text-xl ri-arrow-drop-right-line"></i></span>
+              <div>
+                <img src="/images/t3/t3-logo.png" alt="T3 Logo">
+              </div>
+            <div class="flex flex-col gap-4">
+              <h1 class="text-3xl sm:text-4xl text-[#9F99A6]">Im <span class="text-white font-extrabold">Theo</span> and this is my <span class="text-white font-extrabold">stack</span></h1>
+              <h4 class="text-[#9F99A6] font-medium text-md sm:text-lg max-w-xl">I'm a software dev nerd mostly known for full stack TypeScript stuff. Check out me and my stack at <span class="font-extrabold">t3.gg</span> </h4>
+            </div>
+            </div>
+            <div class="grid grid-cols-1 items-center justify-center sm:grid-cols-3 gap-4 py-24">
+                <CardLinks title="T3 Stuff" subtitle="Create T3 App" description="Visit the favorite stack of theo" link="https://create.t3.gg/" />
+                <CardLinks title="Theo's Stuff" subtitle="Blog" description="Visit the blog of theo and check his interesting posts" link="https://create.t3.gg/" />
+                <!-- <CardLinks title="Support Theo" subtitle="Create T3 App" description="Visit the favorite stack of theo" link="https://create.t3.gg/" /> -->
+                <div id="cardLinks"  class="flex sm:w-full mx-auto sm:m-0 pt-5 px-5 pb-2 text-white flex-col w-[80%]  sm:max-w-[300px] max-h-[400px] border border-[#2A2136] hover:scale-[1.02] transition-all rounded-2xl bg-[#090119]">
+                  <div class="flex flex-col gap-3 justify-start pb-9">
+                      <h4 class="font-extrabold text-2xl sm:text-3xl">Support Theo</h4>
+                      <div class=" flex gap-3 text-xl sm:text-2xl"> <a class="hover:underline decoration-[#322a3d] decoration-4" href="https://www.patreon.com/t3dotgg" target="_blank">Patreon</a> <a class="hover:underline decoration-[#322a3d] decoration-4" href="https://shop.t3.gg/" target="_blank">Shop</a> </div>
+                      <p class="text-lg sm:text-lg opacity-60 max-w-[90%] group-hover:opacity-100  group-hover:underline decoration-[#322a3d] decoration-4">Support Theo</p>
+                  </div>
+              </div>
+              </div>
+            </div>
+            <div class=" border border-[#614C7E] px-4 font-normal text-lg mx-auto py-2 w-fit rounded-xl ">
+              <ul class="text-white grid grid-cols-2 sm:flex gap-4">
+                <li>
+                  <a class={socialLinksStyle}  href="https://youtube.com/@t3dotgg"><i class="ri-youtube-fill"></i> Youtube</a>
+                </li>
+                <li>
+                  <a class={socialLinksStyle} href="https://twitter.com/t3dotgg"><i class="ri-twitter-fill"></i> Twitter</a>
+                </li>
+                <li>
+                  <a class={socialLinksStyle} href="https://twitch.tv/theo"><i class="ri-twitch-fill"></i> Twitch</a>
+                </li>
+                <li>
+                  <a class={socialLinksStyle}href="https://discord.com/invite/xHdCpcPHRE"><i class="ri-discord-fill"></i> Discord</a>
+                </li>
+                <li>
+                  <a class={socialLinksStyle} href="https://github.com/t3dotgg"><i class="ri-github-fill"></i> Github</a>
+                </li>
+              </ul>
+            </div>
+          </div> 
+     </section>
+     <hr class="opacity-20 rounded-full w-full">
+     <section class="text-white max-w-2xl mx-auto py-24 px-6">
+      <h2 class="text-4xl  font-extrabold">FA <span class="font-normal"> Questions </span></h2>
+      <h3 class="text-[#9F99A6] font-medium text-xl ml-2">Stop asking me dumb shit</h3>
+      <div class="my-32 flex flex-col items-start gap-8 min-[410px]:items-center">
+        {FqData.map( (item) => (
+          <AccordionUi question={item.question} answer={item.answer} value={item.id} client:load />
+        ) )}
       </div>
+    </section>
     </main>
   </body>
 </html>
-
 <style>
-  .title {
+
+  body{
     font-family: "Inter", sans-serif;
-  }
-  a {
-    @apply text-slate-200 hover:text-slate-100 hover:underline;
+    
   }
 
-  /* background */
+  #Hero{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-image: url("/images/components/main-bg-gradient.png");
+    background-color: #0b001c;
+  }
+
   main {
-    position: relative;
-    overflow: hidden;
-  }
-  /* Create the animation */
-  @keyframes breathing {
-    0% {
-      opacity: 0.3;
-    }
-    50% {
-      opacity: 0.03;
-    }
-    100% {
-      opacity: 0.3;
-    }
+    min-height: 100vh;
+    background-color: #0b001c;
   }
 
-  main::before {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    z-index: -1;
-    background-image: url("data:image/svg+xml,%3Csvg width='100%' height='100%' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23300171' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
-
-    transform: rotate(180deg);
-
-    /* animate opacity */
-    animation: breathing 15s ease-in-out infinite;
-  }
+  #cardLinks {
+        background-position: center;
+        background-repeat: none;
+        background-size: cover;
+        background-image: url('/images/components/card-background.png');
+    }
+  
 </style>

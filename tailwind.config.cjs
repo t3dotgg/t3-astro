@@ -11,6 +11,14 @@ module.exports = {
         "theo-blue": "#1F11E4",
         black: "#27272a",
         white: "#F4F4F5",
+        // New Variables
+        primary: '#300171',
+        secondary: '#9F99A6',
+        accent: '#180A2A',
+        border: '#2A2136',
+        card: '#090119',
+        decoration: '#322a3d',
+        darkGray: '#614C7E',
       },
       typography: (theme) => ({
         DEFAULT: {

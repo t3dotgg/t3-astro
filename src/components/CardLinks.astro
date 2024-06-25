@@ -1,0 +1,31 @@
+---
+export interface Props {
+  link: string;
+  title: string;
+  subtitle: string;
+  description: string;
+}
+
+const { title, subtitle, description ,link } = Astro.props;
+
+---
+<a id="cardLinks"  class="flex group pt-5 px-5 pb-2 text-white flex-col w-[80%] mx-auto sm:m-0 sm:w-full max-h-[400px] border border-[#2A2136] hover:scale-[1.02] transition-all rounded-2xl bg-[#090119]" href={link} target="_blank">
+    <div class="flex flex-col gap-3 justify-start">
+        <h4 class="font-extrabold text-2xl sm:text-3xl">{title}</h4>
+        <h5 class="text-xl sm:text-2xl group-hover:underline decoration-[#322a3d] decoration-4">{subtitle}</h5>
+        <p class="text-lg sm:text-lg opacity-60 max-w-[90%] group-hover:opacity-100  group-hover:underline decoration-[#322a3d] decoration-4">{description}</p>
+    </div>
+    <div class="flex justify-end h-fit pb-0">
+        <i class="text-4xl font-normal opacity-60 group-hover:opacity-100 hover:opacity-100 ri-arrow-drop-right-line"></i>
+    </div>
+</a>
+<style>
+    
+    #cardLinks {
+        background-position: center;
+        background-repeat: none;
+        background-size: cover;
+        background-image: url('/images/components/card-background.png');
+    }
+
+</style>
