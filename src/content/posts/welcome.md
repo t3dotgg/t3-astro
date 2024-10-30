@@ -15,7 +15,7 @@ It's nothing too fancy. Still pumped about the [lighthouse score tho](/images/li
 
 I'll likely write more on the tech itself in the future - but for now, know I'm loving this stack and highly recommend it.
 
-Next post will be the AirPods Max review, [follow me on Twitter to see when that's out](https://twitter.com/t3dotgg)
+Next post will be the AirPods Max review, [follow me on Twitter to see when that's out](https://x.com/theo)
 
 Thanks for stopping by 🙂
 

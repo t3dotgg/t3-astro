@@ -75,4 +75,4 @@ We have a lot to build. [Round](https://round.t3.gg/) is just the start. If all 
 
 I'm so hyped. I can't wait to share more about T3 soon.
 
-If you're also excited about live creator tools, modern dev practices and patterns, or building in general - [hit me up](https://twitter.com/t3dotgg). _We'll be hiring soon :)_
+If you're also excited about live creator tools, modern dev practices and patterns, or building in general - [hit me up](https://x.com/theo). _We'll be hiring soon :)_

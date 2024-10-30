@@ -292,7 +292,7 @@ _All that said_, I think we can work around these problems :)
 
 ### Typesafe APIs
 
-Before I go too deep here, I should make my bias clear. I'm a [tRPC fanboy](https://twitter.com/t3dotgg/status/1438434802839945220).
+Before I go too deep here, I should make my bias clear. I'm a [tRPC fanboy](https://x.com/theo/status/1438434802839945220).
 
 [tRPC](https://trpc.io/) takes full stack type inference to the next level by relying on the types defined in your router as a "schema" on your client. [Blitz.js](https://blitzjs.com/) does [something similar with queries](https://blitzjs.com/docs/query-resolvers). Both wrap React Query with typesafe definitions at the API level, which enables some "magic" with type consistency.
 
@@ -413,6 +413,6 @@ Shoutout to [Alex (tRPC)](https://twitter.com/alexdotjs), [Balázs (NextAuth.js)
 
 ### Extra stuff
 
-If you got this far, you **[might like my rants on Twitter as well](https://twitter.com/t3dotgg).**
+If you got this far, you **[might like my rants on Twitter as well](https://x.com/theo).**
 
 If you want to see this tech in action, check out this 2+ hour deep dive [building a full stack app with Prisma, PlanetScale, Next.js, TypeScript, Vercel, tRPC, and Tailwind](https://www.youtube.com/watch?v=PKy2lYEnhgs).

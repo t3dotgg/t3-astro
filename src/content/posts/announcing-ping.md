@@ -58,4 +58,4 @@ We have lots of fun things in our future. Hang tight.
 
 If you’d like access to Ping early, be sure to [request a demo on the homepage](https://ping.t3.gg)!
 
-If you want to stay up to date on what we’re building, [join the Discord server](https://discord.gg/geqK8VEdSb) and [follow Theo on Twitter](https://twitter.com/t3dotgg).
+If you want to stay up to date on what we’re building, [join the Discord server](https://discord.gg/geqK8VEdSb) and [follow Theo on Twitter](https://x.com/theo).

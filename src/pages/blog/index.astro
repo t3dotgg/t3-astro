@@ -2,7 +2,7 @@
 import "../../style/global.css";
 import BlogPostPreview from "../../components/BlogPostPreview.astro";
 import TheoHeaderImage from "../../components/theo-header-image.astro";
-import {ViewTransitions} from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 
 const siteTitle = "Theo's Blog";
 const description = "Thought dumps and nerdy stuff";
@@ -14,7 +14,7 @@ const sortedPosts = allPosts
   .sort(
     (a, b) =>
       new Date(b.frontmatter.date).valueOf() -
-      new Date(a.frontmatter.date).valueOf(),
+      new Date(a.frontmatter.date).valueOf()
   )
   .filter((p) => p.frontmatter.hidden !== true);
 ---
@@ -43,7 +43,7 @@ const sortedPosts = allPosts
       <div class="absolute right-0 z-10 p-4 text-right text-xl font-bold">
         <a href="https://www.youtube.com/@t3dotgg">Youtube</a>
         <br />
-        <a href="https://twitter.com/t3dotgg">Twitter</a>
+        <a href="https://x.com/theo">Twitter</a>
         <br />
         <a href="/links">More</a>
       </div>
@@ -61,15 +61,13 @@ const sortedPosts = allPosts
         </div>
       </div>
     </main>
-  </body>
+  </body><style>
+    .page {
+      background-color: rgba(247, 242, 254, 1);
+      background-image: url("/images/bg-texture.png");
+    }
+    a {
+      @apply text-black;
+    }
+  </style>
 </html>
-
-<style>
-  .page {
-    background-color: rgba(247, 242, 254, 1);
-    background-image: url("/images/bg-texture.png");
-  }
-  a {
-    @apply text-black;
-  }
-</style>

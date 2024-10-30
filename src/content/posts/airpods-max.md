@@ -44,7 +44,7 @@ Firstly is how it looks. The thing is a crap magnet. It hasn't left my desk and 
 
 Using the case is, at best, unpleasant and inconvenient. At worst it's truly aggravating. I've yet to find a motion to elegantly remove the Max from the case without both cups violently slamming each other. The top magnet flap thing is hilariously flimsy.
 
-The charge port cut-out is so bad it's memeworthy. The alignment [shifts based on band size](https://twitter.com/t3dotgg/status/1341567760405413889). I honestly don't know how this passed Apple QA.
+The charge port cut-out is so bad it's memeworthy. The alignment [shifts based on band size](https://x.com/theo/status/1341567760405413889). I honestly don't know how this passed Apple QA.
 
 Seriously, this case is a joke, and Apple should apologize and ship all early adopters a better case. If these headphones were good, I would struggle to notice because of how much this awful case colored my impressions. Do better, Apple.
 
