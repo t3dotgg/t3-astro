@@ -1,17 +1,45 @@
 ---
 import "../style/global.css";
-const siteTitle = "Theo Browne - T3 Stack, Ping.gg, YouTuber";
+const siteTitle = "theo - builder who's also on youtube";
 const description =
-  "Theo is known for a few things. Creator of the T3 Stack. CEO of Ping.gg. Alum of Twitch, Y Combinator and RPI. Your Favorite Dev's Favorite Youtuber.";
-
-import T3SVG from "../components/t3.astro";
-import Youtubesvg from "../assets/platforms/youtube.svg.astro";
-import Twittersvg from "../assets/platforms/twitter.svg.astro";
-import Twitchsvg from "../assets/platforms/twitch.svg.astro";
-import Discordsvg from "../assets/platforms/discord.svg.astro";
-import Githubsvg from "../assets/platforms/github.svg.astro"
+  "theo (aka t3, t3dotgg) is a youtuber/ceo/dev. built t3 chat, ping.gg, t3 stack and more.";
 
 import { ViewTransitions } from "astro:transitions";
+
+const links = [
+  {
+    href: "https://t3.chat",
+    label: "t3 chat",
+    description: "the best ai chat app ever made",
+    target: "_blank",
+  },
+  {
+    href: "https://youtube.com/@t3dotgg",
+    label: "youtube",
+    description: "nerdy videos about software dev stuff",
+    target: "_blank",
+  },
+  {
+    href: "https://youtube.com/@theorants",
+    label: "other youtube",
+    description: "nerdy videos about audio/video, apple and other stuff",
+    target: "_blank",
+  },
+  {
+    href: "https://create.t3.gg",
+    label: "create t3 app",
+    description: "the best way to use the t3 stack",
+    target: "_blank",
+  },
+  { href: "/blog", description: "random thoughts about things", label: "blog" },
+];
+
+const socialLinks = [
+  { href: "https://github.com/t3dotgg", label: "GitHub" },
+  { href: "https://twitter.com/theo", label: "Twitter" },
+  { href: "https://twitch.tv/theo", label: "Twitch" },
+  { href: "https://discord.gg/xHdCpcPHRE", label: "Discord" },
+];
 ---
 
 <html lang="en">
@@ -34,108 +62,54 @@ import { ViewTransitions } from "astro:transitions";
   </head>
   <body class="h-screen bg-gradient-to-b from-[#300171] to-gray-900">
     <main>
-      <div
-        class="flex h-screen w-full items-center justify-center p-4 align-middle text-slate-200"
-      >
-        <div
-          class="grid grid-cols-1 md:grid-cols-[1fr_auto] grid-rows-2 md:grid-rows-[1fr]"
+      <div class="flex min-h-screen flex-col bg-white text-black">
+        <main
+          class="container mx-auto flex flex-grow flex-col items-center px-4 py-12"
         >
-          <T3SVG />
-          <div class="px-4 py-4 text-center md:py-0 md:text-left">
-            <h1 class="text-2xl font-bold leading-none">T3 Stuff</h1>
-            <a href="https://create.t3.gg">
-              <h3 class="text-xl">Create T3 App</h3>
-            </a>
-
-            <h1 class="text-2xl font-bold">Theo's Stuff</h1>
-            <a href="https://t3.gg/faq">
-              <h3 class="text-xl">FAQ</h3>
-            </a>
-            <a href="/blog">
-              <h3 class="text-xl">Blog</h3>
-            </a>
-
-            <h1 class="text-2xl font-bold">Support Theo</h1>
-            <a href="https://patreon.com/t3dotgg">
-              <h3 class="text-xl">Patreon</h3>
-            </a>
-            <a href="https://shop.t3.gg/">
-              <h3 class="text-xl">Shop</h3>
-            </a>
+          <div>
+            <p class="mb-12 max-w-xl text-center text-2xl">
+              hi, i'm theo. i make things. mostly code and videos. you're
+              probably here for one of these things...
+            </p>
           </div>
-        </div>
-
-        <div class="absolute bottom-0 flex h-16 gap-6 p-4 text-slate-200">
-          <a
-            href="https://youtube.com/@t3dotgg"
-            class="flex gap-2 align-baseline"
+          <div
+            class="mx-auto flex w-full max-w-md flex-grow flex-col items-center space-y-6"
           >
-            <Youtubesvg />
-            <span class="hidden md:block">YouTube</span>
-          </a>
-
-          <a href="https://x.com/theo" class="flex gap-2 align-baseline">
-            <Twittersvg />
-            <span class="hidden md:block">Twitter</span>
-          </a>
-
-          <a href="https://twitch.tv/theo" class="flex gap-2 align-baseline">
-            <Twitchsvg />
-            <span class="hidden md:block">Twitch</span>
-          </a>
-
-          <a href="https://discord.com/invite/xHdCpcPHRE" class="flex gap-2 align-baseline">
-            <Discordsvg />
-            <span class="hidden md:block">Discord</span>
-          </a>
-
-          <a href="https://github.com/t3dotgg" class="flex gap-2 align-baseline">
-            <Githubsvg />
-            <span class="hidden md:block">Github</span>
-          </a>
-        </div>
+            {
+              links.map((link) => (
+                <a
+                  href={link.href}
+                  target={link.target}
+                  class="group relative w-full border border-black/60 py-3 text-center transition-all duration-300 hover:bg-black/60 hover:text-white"
+                >
+                  <span class="text-lg">{link.label}</span>
+                  <span class="block text-sm text-gray-500 transition-all group-hover:text-gray-200">
+                    {link.description}
+                  </span>
+                </a>
+              ))
+            }
+          </div>
+        </main>
+        <footer class="border-t border-gray-200 py-8">
+          <div class="container mx-auto px-4">
+            <div class="flex justify-center space-x-6">
+              {
+                socialLinks.map((link) => (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-600 transition-colors hover:text-black"
+                  >
+                    {link.label}
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+        </footer>
       </div>
     </main>
-  </body><style>
-    .title {
-      font-family: "Inter", sans-serif;
-    }
-    a {
-      @apply text-slate-200 hover:text-slate-100 hover:underline;
-    }
-
-    /* background */
-    main {
-      position: relative;
-      overflow: hidden;
-    }
-    /* Create the animation */
-    @keyframes breathing {
-      0% {
-        opacity: 0.3;
-      }
-      50% {
-        opacity: 0.03;
-      }
-      100% {
-        opacity: 0.3;
-      }
-    }
-
-    main::before {
-      content: "";
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      top: -50%;
-      left: -50%;
-      z-index: -1;
-      background-image: url("data:image/svg+xml,%3Csvg width='100%' height='100%' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23300171' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
-
-      transform: rotate(180deg);
-
-      /* animate opacity */
-      animation: breathing 15s ease-in-out infinite;
-    }
-  </style>
+  </body>
 </html>
