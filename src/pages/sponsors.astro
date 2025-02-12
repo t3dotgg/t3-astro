@@ -5,32 +5,197 @@ const description = "all of the brands running ads on my youtube channel";
 
 const sponsors = [
   {
+    name: "infinite red",
+    image: "/assets/sponsors/infinite-red.svg",
+    description:
+      "My favorite consulting company. A group of US based React Native experts.",
+    link: "https://infinite.red/",
+  },
+  {
+    name: "sevalla",
+    image: "/assets/sponsors/sevalla.svg",
+    description: "Vercel for everyone else.",
+    link: "https://sevalla.com/",
+  },
+  {
+    name: "posthog",
+    image: "/assets/sponsors/posthog.svg",
+    description:
+      "The single platform to analyze, test, observe, and deploy new features",
+    link: "https://posthog.com/",
+  },
+  {
+    name: "coderabbit",
+    image: "/assets/sponsors/code-rabbit.svg",
+    description: "The AI code reviewer that's actually good.",
+    link: "https://www.coderabbit.ai/",
+  },
+  {
+    name: "blacksmith",
+    image: "/assets/sponsors/blacksmith.svg",
+    description: "GitHub Actions. Twice as fast. Half the cost.",
+    link: "https://www.blacksmith.sh/",
+  },
+  {
+    name: "vapi",
+    image: "/assets/sponsors/vapi.png",
+    description:
+      "Voice AI for developers. Vapi lets developers build, test and deploy voice agents in minutes rather than months.",
+    link: "https://www.vapi.ai/",
+  },
+  {
+    name: "notion",
+    image: "/assets/sponsors/notion.svg",
+    description: "The best productivity tool on the market.",
+    link: "https://www.notion.so/",
+  },
+  {
+    name: "graphite",
+    image: "/assets/sponsors/graphite.svg",
+    description:
+      "The AI-powered pull request toolchain. Graphite helps teams on GitHub ship higher quality software, faster",
+    link: "https://www.graphite.dev/",
+  },
+  {
+    name: "g2i",
+    image: "/assets/sponsors/g2i.svg",
+    description:
+      "G2i is the video based platform for hiring contract or full time engineers.",
+    link: "https://www.g2i.co/",
+  },
+  {
+    name: "ag grid",
+    image: "/assets/sponsors/ag-grid.svg",
+    description: "The best data grid for React.",
+    link: "https://www.ag-grid.com/",
+  },
+  {
+    name: "convex",
+    image: "/assets/sponsors/convex.svg",
+    description:
+      "Open source reactive database for web developers. It's what firebase should have been.",
+    link: "https://www.convex.dev/",
+  },
+  {
+    name: "ahrefs",
+    image: "/assets/sponsors/ahrefs.svg",
+    description: "The best SEO tool on the market.",
+    link: "https://ahrefs.com/",
+  },
+  {
+    name: "zephyr cloud",
+    image: "/assets/sponsors/zephyr.svg",
+    description:
+      "The only sane way to do micro-frontends. Zephyr is a cloud-agnostic, framework-agnostic platform for lightning fast deployment with best-in-class support for micro-frontends and module federation.",
+    link: "https://zephyr-cloud.io/",
+  },
+  {
+    name: "bolt.new",
+    image: "/assets/sponsors/bolt-new.svg",
+    description: "The easiest way to build your next big idea.",
+    link: "https://bolt.new/",
+  },
+  {
+    name: "clerk",
+    image: "/assets/sponsors/clerk.svg",
+    description: "The easiest way to add authentication to your react app.",
+    link: "https://clerk.com/",
+  },
+  {
+    name: "browserbase",
+    image: "/assets/sponsors/browserbase.svg",
+    description: "Web browser for your ai. Like puppeteer, but better.",
+    link: "https://www.browserbase.com/",
+  },
+  {
+    name: "unkey",
+    image: "/assets/sponsors/unkey.svg",
+    description:
+      "Unkey is an open-source API key management platform that allows you to create, manage, and monitor API keys for your applications.",
+    link: "https://unkey.dev/",
+  },
+
+  {
+    name: "frontend masters",
+    image: "/assets/sponsors/frontend-masters.svg",
+    description:
+      "The best place to learn modern frontend development. Frontend Masters is a platform for learning modern frontend development with React, Vue, and Svelte.",
+    link: "https://www.frontendmasters.com/",
+  },
+  {
+    name: "payload",
+    image: "/assets/sponsors/payload.svg",
+    description:
+      "The best headless CMS for React, especially if you're using Next.js.",
+    link: "https://www.payloadcms.com/",
+  },
+  {
+    name: "singlestore",
+    image: "/assets/sponsors/singlestore.svg",
+    description:
+      "The only database you'll ever need. Scale from one to one million customers, handling SQL, JSON, full text and vector workloads — all in one unified platform.",
+    link: "https://www.singlestore.com/",
+  },
+  {
+    name: "fal",
+    image: "/assets/sponsors/fal.svg",
+    description: "Generative media platform for developers.",
+    link: "https://www.fal.ai/",
+  },
+  {
+    name: "ragie ai",
+    image: "/assets/sponsors/ragie.svg",
+    description:
+      "RAG-as-a-Service for developers. Fully managed, fully connected.",
+    link: "https://www.ragie.ai/",
+  },
+  {
+    name: "agora",
+    image: "/assets/sponsors/agora.png",
+    description:
+      "Conversational AI · Video · Voice · Chat: Flexible APIs supported by the only global network engineered for live interaction.",
+    link: "https://www.agora.io/",
+  },
+  {
+    name: "code crafters",
+    image: "/assets/sponsors/code-crafters.svg",
+    description:
+      "The best place to learn modern frontend development. Frontend Masters is a platform for learning modern frontend development with React, Vue, and Svelte.",
+    link: "https://codecrafters.io/",
+  },
+  {
+    name: "bright data",
+    image: "/assets/sponsors/bright-data.svg",
+    description:
+      "The best proxy network for developers. Bright Data is a proxy network that allows you to scrape the web, crawl the web, and access the web.",
+    link: "https://www.brightdata.com/",
+  },
+  {
+    name: "eight sleep",
+    image: "/assets/sponsors/eight-sleep.svg",
+    description: "Turn any bed into the ultimate sleeping experience",
+    link: "https://www.eightsleep.com/",
+  },
+  {
     name: "appwrite",
-    image: "https://svgl.app/library/appwrite.svg",
+    image: "/assets/sponsors/appwrite.svg",
     description:
       "Build your entire backend within minutes and scale effortlessly. Add Authentication, Databases, Functions, Storage, and Messaging to your projects using the frameworks and languages of your choice",
     link: "https://appwrite.io/",
   },
   {
     name: "netlify",
-    image: "https://svgl.app/library/netlify.svg",
+    image: "/assets/sponsors/netlify.svg",
     description:
       "Deploy any modern frontend stack, from marketing sites to AI apps. Join millions of developers and teams shipping faster on Netlify.",
     link: "https://www.netlify.com/",
   },
   {
     name: "prisma postgres",
-    image: "https://svgl.app/library/prisma.svg",
+    image: "/assets/sponsors/prisma.svg",
     description:
       "Deploy a Postgres database in 3 clicks — free to start, no setup, no commitments. Easily grow your database as your app scales and only pay when you grow out of our generous free tier.",
     link: "https://www.prisma.io/postgres",
-  },
-  {
-    name: "posthog",
-    image: "https://svgl.app/library/posthog.svg",
-    description:
-      "The single platform to analyze, test, observe, and deploy new features",
-    link: "https://posthog.com/",
   },
 ];
 ---
