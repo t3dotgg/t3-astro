@@ -3,6 +3,21 @@ import "../style/global.css";
 const siteTitle = "theo's sponsors";
 const description = "all of the brands running ads on my youtube channel";
 
+const affiliates = [
+  {
+    name: "eight sleep",
+    image: "/assets/sponsors/eight-sleep.svg",
+    description: "Turn any bed into the ultimate sleeping experience",
+    link: "https://soydev.link/eightsleep",
+  },
+  {
+    name: "superhuman",
+    image: "/assets/sponsors/superhuman.png",
+    description: "The best email client on the market.",
+    link: "https://soydev.link/superhuman",
+  },
+];
+
 const sponsors = [
   {
     name: "infinite red",
@@ -171,12 +186,6 @@ const sponsors = [
     link: "https://soydev.link/brightdata",
   },
   {
-    name: "eight sleep",
-    image: "/assets/sponsors/eight-sleep.svg",
-    description: "Turn any bed into the ultimate sleeping experience",
-    link: "https://soydev.link/eightsleep",
-  },
-  {
     name: "appwrite",
     image: "/assets/sponsors/appwrite.svg",
     description:
@@ -221,76 +230,133 @@ const sponsors = [
         <h1 class="text-4xl font-semibold">my sponsors</h1>
         <p>here's all the brands that have run ads on my content</p>
       </header>
-      <ul class="divide-y divide-gray-200">
-        {
-          sponsors.map((brand) => (
-            <li class="px-4 py-8 transition duration-300 ease-in-out first:pt-4 last:pb-4 hover:bg-gray-50 md:px-12">
-              <div class="flex flex-col items-center gap-4 md:flex-row md:space-x-6">
-                <div class="h-24 w-24 flex-shrink-0">
-                  <img
-                    src={brand.image || "/placeholder.svg"}
-                    alt={brand.name}
-                    width={96}
-                    height={96}
-                    class="h-full w-full object-contain"
-                  />
-                </div>
-                <div class="m-0 flex-grow">
-                  <h2 class="pb-2 text-2xl font-semibold text-gray-800">
-                    {brand.name}
-                  </h2>
-                  <p class="pb-3 leading-relaxed text-gray-600">
-                    {brand.description}
-                  </p>
-                  <a
-                    href={brand.link}
-                    class="inline-flex items-center text-sm text-purple-400 transition duration-300 ease-in-out hover:text-purple-600"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span class="pr-2">learn more</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
+      <section class="pb-16">
+        <h2 class="px-8 pb-4 text-2xl font-semibold">affiliates</h2>
+        <ul class="divide-y divide-gray-200">
+          {
+            affiliates.map((brand) => (
+              <li class="px-4 py-8 transition duration-300 ease-in-out first:pt-4 last:pb-4 hover:bg-gray-50 md:px-12">
+                <div class="flex flex-col items-center gap-4 md:flex-row md:space-x-6">
+                  <div class="h-24 w-24 flex-shrink-0">
+                    <img
+                      src={brand.image || "/placeholder.svg"}
+                      alt={brand.name}
+                      width={96}
+                      height={96}
+                      class="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div class="m-0 flex-grow">
+                    <h2 class="pb-2 text-2xl font-semibold text-gray-800">
+                      {brand.name}
+                    </h2>
+                    <p class="pb-3 leading-relaxed text-gray-600">
+                      {brand.description}
+                    </p>
+                    <a
+                      href={brand.link}
+                      class="inline-flex items-center text-sm text-purple-400 transition duration-300 ease-in-out hover:text-purple-600"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width={2}
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      />
-                    </svg>
-                  </a>
+                      <span class="pr-2">learn more</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width={2}
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </li>
-          ))
-        }
-      </ul>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
 
-      <div class="border-t border-gray-200 pb-24 pt-20 text-center">
-        <h2 class="mb-6 text-2xl font-semibold text-gray-800">
-          want to see the actual ads?
-        </h2>
-        <a
-          href="https://www.youtube.com/@t3dotgg"
-          class="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-700 transition duration-300 ease-in-out hover:bg-gray-50"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://svgl.app/library/youtube.svg"
-            alt="YouTube"
-            width={20}
-            height={20}
-            class="h-5 w-5"
-          />
-          <span class="pl-2">my channel</span>
-        </a>
-      </div>
+      <section>
+        <h2 class="px-8 pb-4 text-2xl font-semibold">video sponsors</h2>
+
+        <ul class="divide-y divide-gray-200">
+          {
+            sponsors.map((brand) => (
+              <li class="px-4 py-8 transition duration-300 ease-in-out first:pt-4 last:pb-4 hover:bg-gray-50 md:px-12">
+                <div class="flex flex-col items-center gap-4 md:flex-row md:space-x-6">
+                  <div class="h-24 w-24 flex-shrink-0">
+                    <img
+                      src={brand.image || "/placeholder.svg"}
+                      alt={brand.name}
+                      width={96}
+                      height={96}
+                      class="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div class="m-0 flex-grow">
+                    <h2 class="pb-2 text-2xl font-semibold text-gray-800">
+                      {brand.name}
+                    </h2>
+                    <p class="pb-3 leading-relaxed text-gray-600">
+                      {brand.description}
+                    </p>
+                    <a
+                      href={brand.link}
+                      class="inline-flex items-center text-sm text-purple-400 transition duration-300 ease-in-out hover:text-purple-600"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span class="pr-2">learn more</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width={2}
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+
+        <div class="border-t border-gray-200 pb-24 pt-20 text-center">
+          <h2 class="mb-6 text-2xl font-semibold text-gray-800">
+            want to see the actual ads?
+          </h2>
+          <a
+            href="https://www.youtube.com/@t3dotgg"
+            class="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-700 transition duration-300 ease-in-out hover:bg-gray-50"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://svgl.app/library/youtube.svg"
+              alt="YouTube"
+              width={20}
+              height={20}
+              class="h-5 w-5"
+            />
+            <span class="pl-2">my channel</span>
+          </a>
+        </div>
+      </section>
     </main>
   </body>
 </html>
