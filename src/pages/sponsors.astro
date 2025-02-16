@@ -1,0 +1,358 @@
+---
+import "../style/global.css";
+const siteTitle = "theo's sponsors";
+const description = "all of the brands running ads on my youtube channel";
+
+const affiliates = [
+  {
+    name: "eight sleep",
+    image: "/assets/sponsors/eight-sleep.svg",
+    description:
+      "a watercooler for your bed. sounds stupid but i literally can't sleep without it.",
+    link: "https://soydev.link/eightsleep",
+  },
+  {
+    name: "superhuman",
+    image: "/assets/sponsors/superhuman.png",
+    description:
+      "if you do more than an hour of email a day, you should be on superhuman. works with gmail and outlook.",
+    link: "https://soydev.link/superhuman",
+  },
+  {
+    name: "boot.dev",
+    image: "/assets/sponsors/bootdev.png",
+    description:
+      "free courses for learning backend, from people like primeagen.",
+    link: "https://soydev.link/bootdev",
+  },
+  {
+    name: "code crafters",
+    image: "/assets/sponsors/code-crafters.svg",
+    description:
+      "learn by rebuilding, literally - one of their courses is recreating redis lol.",
+    link: "https://soydev.link/codecrafters",
+  },
+];
+
+const sponsors = [
+  {
+    name: "infinite red",
+    image: "/assets/sponsors/infinite-red.svg",
+    description: "the first people i call for react native help.",
+    link: "https://soydev.link/infinitered",
+  },
+  {
+    name: "sevalla",
+    image: "/assets/sponsors/sevalla.svg",
+    description:
+      "deploy anything (like vercel but for php, rails, go, whatever else).",
+    link: "https://soydev.link/sevalla",
+  },
+  {
+    name: "posthog",
+    image: "/assets/sponsors/posthog.svg",
+    description:
+      '"All in one suite of product tools" - also the only analytics provider i don\'t hate. open source too!',
+    link: "https://soydev.link/posthog",
+  },
+  {
+    name: "coderabbit",
+    image: "/assets/sponsors/code-rabbit.svg",
+    description: "ai code review that doesn't suck.",
+    link: "https://soydev.link/coderabbit",
+  },
+  {
+    name: "blacksmith",
+    image: "/assets/sponsors/blacksmith.svg",
+    description: "github actions but they're 2x faster and way cheaper.",
+    link: "https://soydev.link/blacksmith",
+  },
+  {
+    name: "vapi",
+    image: "/assets/sponsors/vapi.png",
+    description: "add ai voice to your ai apps in minutes.",
+    link: "https://soydev.link/vapi",
+  },
+  {
+    name: "notion",
+    image: "/assets/sponsors/notion.svg",
+    description: "i literally couldn't run my channel without notion.",
+    link: "https://soydev.link/notion",
+  },
+  {
+    name: "graphite",
+    image: "/assets/sponsors/graphite.svg",
+    description:
+      "if github is slowing you down, graphite will speed you back up. better pr flows for fast moving teams (used by vercel, ramp, snowflake, brex and more)",
+    link: "https://soydev.link/graphite",
+  },
+  {
+    name: "g2i",
+    image: "/assets/sponsors/g2i.svg",
+    description:
+      "stop hiring bad engineers. g2i will do real video interviews with hundreds of candidates to get you the best possible engineer in weeks.",
+    link: "https://soydev.link/g2i",
+  },
+  {
+    name: "ag grid",
+    image: "/assets/sponsors/ag-grid.svg",
+    description:
+      "if you've ever liked a grid on the internet, 90%+ chance it was ag grid.",
+    link: "https://soydev.link/ag-grid",
+  },
+  {
+    name: "convex",
+    image: "/assets/sponsors/convex.svg",
+    description:
+      "the missing half of your react app. full stack reactivity from db to component. open source and typesafe too!",
+    link: "https://soydev.link/convex",
+  },
+  {
+    name: "ahrefs",
+    image: "/assets/sponsors/ahrefs.svg",
+    description: "makes me feel like i don't suck at SEO.",
+    link: "https://soydev.link/ahrefs",
+  },
+  {
+    name: "zephyr cloud",
+    image: "/assets/sponsors/zephyr.svg",
+    description:
+      "micro-frontends suck to build. zephyr makes them suck much less. if you have more than 50 people working on your frontend, talk to them.",
+    link: "https://soydev.link/zephyr",
+  },
+  {
+    name: "bolt.new",
+    image: "/assets/sponsors/bolt-new.svg",
+    description:
+      "best way to start your next project. promt away, pick whatever framework you like, edit right in the browser.",
+    link: "https://soydev.link/bolt",
+  },
+  {
+    name: "clerk",
+    image: "/assets/sponsors/clerk.svg",
+    description: "the only auth solution i don't hate using.",
+    link: "https://soydev.link/clerk",
+  },
+  {
+    name: "browserbase",
+    image: "/assets/sponsors/browserbase.svg",
+    description:
+      "web browser for your ai. prompt for parsing, dodge captchas, get data out of anything.",
+    link: "https://soydev.link/browserbase",
+  },
+  {
+    name: "unkey",
+    image: "/assets/sponsors/unkey.svg",
+    description: "add api keys to your service without going insane.",
+    link: "https://soydev.link/unkey",
+  },
+
+  {
+    name: "frontend masters",
+    image: "/assets/sponsors/frontend-masters.svg",
+    description:
+      "name's quite literal - learn frontend from the masters. courses from ryan carniato, primeagen, and many more.",
+    link: "https://soydev.link/masters",
+  },
+  {
+    name: "payload",
+    image: "/assets/sponsors/payload.svg",
+    description:
+      "headless cms for next.js. like an admin panel for anything. open source too!",
+    link: "https://soydev.link/payload",
+  },
+  {
+    name: "singlestore",
+    image: "/assets/sponsors/singlestore.svg",
+    description: "the only db you'll ever need.",
+    link: "https://soydev.link/singlestore",
+  },
+  {
+    name: "fal",
+    image: "/assets/sponsors/fal.svg",
+    description:
+      "ai apis for generating anything. if you want to add image/video/audio gen to your app, start here.",
+    link: "https://soydev.link/fal",
+  },
+  {
+    name: "ragie ai",
+    image: "/assets/sponsors/ragie.svg",
+    description: "build apps using anything as a data source. i mean anything.",
+    link: "https://soydev.link/ragie",
+  },
+  {
+    name: "agora",
+    image: "/assets/sponsors/agora.png",
+    description:
+      "the only way i build webrtc into my apps. they have crazy voice ai stuff now too.",
+    link: "https://soydev.link/agora",
+  },
+  {
+    name: "bright data",
+    image: "/assets/sponsors/bright-data.svg",
+    description: "data proxy network for scraping the web.",
+    link: "https://soydev.link/brightdata",
+  },
+  {
+    name: "appwrite",
+    image: "/assets/sponsors/appwrite.svg",
+    description: "build your backend in hours, not months.",
+    link: "https://soydev.link/appwrite",
+  },
+  {
+    name: "netlify",
+    image: "/assets/sponsors/netlify.svg",
+    description:
+      "deploy your frontend without compromise. scales forever. super fast. ai ready too :)",
+    link: "https://soydev.link/netlify",
+  },
+  {
+    name: "prisma postgres",
+    image: "/assets/sponsors/prisma.svg",
+    description:
+      "probably the best way to deploy postgres rn, especially if you're building serverless.",
+    link: "https://soydev.link/prismadb",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@t3dotgg" />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://t3.gg/images/twitter.png" />
+    <title>{siteTitle}</title>
+    <meta name="theme-color" content="#000000" />
+  </head>
+  <body class="h-screen bg-white text-black">
+    <main>
+      <header class="flex flex-col gap-2 px-8 pb-8 pt-8">
+        <h1 class="text-4xl font-semibold">my sponsors</h1>
+        <p>here's all the brands that have run ads on my content</p>
+      </header>
+      <section class="pb-16">
+        <h2 class="px-8 pb-4 text-2xl font-semibold">affiliates</h2>
+        <ul class="divide-y divide-gray-200">
+          {
+            affiliates.map((brand) => (
+              <li class="px-4 py-8 transition duration-300 ease-in-out first:pt-4 last:pb-4 hover:bg-gray-50 md:px-12">
+                <div class="flex flex-col items-center gap-4 md:flex-row md:space-x-6">
+                  <div class="h-24 w-24 flex-shrink-0">
+                    <img
+                      src={brand.image || "/placeholder.svg"}
+                      alt={brand.name}
+                      width={96}
+                      height={96}
+                      class="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div class="m-0 flex-grow">
+                    <h2 class="pb-2 text-2xl font-semibold text-gray-800">
+                      {brand.name}
+                    </h2>
+                    <p class="pb-3 leading-relaxed text-gray-600">
+                      {brand.description}
+                    </p>
+                    <a
+                      href={brand.link}
+                      class="inline-flex items-center text-sm text-purple-400 transition duration-300 ease-in-out hover:text-purple-600"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span class="pr-2">learn more</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width={2}
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="px-8 pb-4 text-2xl font-semibold">video sponsors</h2>
+
+        <ul class="divide-y divide-gray-200">
+          {
+            sponsors.map((brand) => (
+              <li class="px-4 py-8 transition duration-300 ease-in-out first:pt-4 last:pb-4 hover:bg-gray-50 md:px-12">
+                <div class="flex flex-col items-center gap-4 md:flex-row md:space-x-6">
+                  <div class="h-24 w-24 flex-shrink-0">
+                    <img
+                      src={brand.image || "/placeholder.svg"}
+                      alt={brand.name}
+                      width={96}
+                      height={96}
+                      class="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div class="m-0 flex-grow">
+                    <h2 class="pb-2 text-2xl font-semibold text-gray-800">
+                      {brand.name}
+                    </h2>
+                    <p class="pb-3 leading-relaxed text-gray-600">
+                      {brand.description}
+                    </p>
+                    <a
+                      href={brand.link}
+                      class="inline-flex items-center text-sm text-purple-400 transition duration-300 ease-in-out hover:text-purple-600"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span class="pr-2">
+                        {brand.link.replace("https://", "")}
+                      </span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width={2}
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+
+        <div class="border-t border-gray-200 pb-24 pt-20 text-center">
+          <p>
+            interested in sponsoring theo? email us: <code
+              >youtube@thisdomain</code
+            >
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
