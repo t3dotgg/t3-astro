@@ -73,20 +73,6 @@ const sponsors = [
     link: "https://soydev.link/notion",
   },
   {
-    name: "graphite",
-    image: "/assets/sponsors/graphite.svg",
-    description:
-      "if github is slowing you down, graphite will speed you back up. better pr flows for fast moving teams (used by vercel, ramp, snowflake, brex and more)",
-    link: "https://soydev.link/graphite",
-  },
-  {
-    name: "g2i",
-    image: "/assets/sponsors/g2i.svg",
-    description:
-      "stop hiring bad engineers. g2i will do real video interviews with hundreds of candidates to get you the best possible engineer in weeks.",
-    link: "https://soydev.link/g2i",
-  },
-  {
     name: "ag grid",
     image: "/assets/sponsors/ag-grid.svg",
     description:
@@ -112,6 +98,20 @@ const sponsors = [
     description:
       "micro-frontends suck to build. zephyr makes them suck much less. if you have more than 50 people working on your frontend, talk to them.",
     link: "https://soydev.link/zephyr",
+  },
+  {
+    name: "graphite",
+    image: "/assets/sponsors/graphite.svg",
+    description:
+      "if github is slowing you down, graphite will speed you back up. better pr flows for fast moving teams (used by vercel, ramp, snowflake, brex and more)",
+    link: "https://soydev.link/graphite",
+  },
+  {
+    name: "g2i",
+    image: "/assets/sponsors/g2i.svg",
+    description:
+      "stop hiring bad engineers. g2i will do real video interviews with hundreds of candidates to get you the best possible engineer in weeks.",
+    link: "https://soydev.link/g2i",
   },
   {
     name: "bolt.new",
@@ -299,8 +299,13 @@ const sponsors = [
         <div class="grid grid-cols-1 gap-8 px-4 md:grid-cols-3 md:px-8">
           {
             affiliates.map((brand) => (
-              <div class="flex flex-col rounded-lg border border-gray-200 p-6 transition duration-300 ease-in-out hover:bg-gray-50">
-                <div class="mb-4 flex h-24 w-full justify-center">
+              <a
+                href={brand.link}
+                class="group flex flex-col rounded-lg border border-gray-200 p-6 transition duration-300 ease-in-out hover:bg-gray-50 sm:flex-row"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="mb-4 flex h-24 shrink-0 items-center justify-center sm:mb-0 sm:w-24">
                   <img
                     src={brand.image || "/placeholder.svg"}
                     alt={brand.name}
@@ -309,33 +314,18 @@ const sponsors = [
                     class="h-24 w-24 object-contain"
                   />
                 </div>
-                <h2 class="mb-2 text-xl font-semibold text-gray-800">
-                  {brand.name}
-                </h2>
-                <p class="mb-4 flex-grow text-gray-600">{brand.description}</p>
-                <a
-                  href={brand.link}
-                  class="inline-flex items-center text-sm text-purple-400 transition duration-300 ease-in-out hover:text-purple-600"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span class="pr-2">learn more</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-4 w-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                <div class="flex flex-grow flex-col sm:pl-6">
+                  <h2 class="mb-2 text-xl font-semibold text-gray-800">
+                    {brand.name}
+                  </h2>
+                  <p
+                    class="flex-grow text-gray-600"
+                    style="text-wrap: balance;"
                   >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width={2}
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </a>
-              </div>
+                    {brand.description}
+                  </p>
+                </div>
+              </a>
             ))
           }
         </div>
@@ -346,8 +336,13 @@ const sponsors = [
         <div class="grid grid-cols-1 gap-8 px-4 md:grid-cols-3 md:px-8">
           {
             sponsors.map((brand) => (
-              <div class="flex flex-col rounded-lg border border-gray-200 p-6 transition duration-300 ease-in-out hover:bg-gray-50">
-                <div class="mb-4 flex h-24 w-full justify-center">
+              <a
+                href={brand.link}
+                class="group flex flex-col rounded-lg border border-gray-200 p-6 transition duration-300 ease-in-out hover:bg-gray-50 sm:flex-row"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="mb-4 flex shrink-0 items-center justify-center sm:mb-0 sm:w-24">
                   <img
                     src={brand.image || "/placeholder.svg"}
                     alt={brand.name}
@@ -356,33 +351,18 @@ const sponsors = [
                     class="h-24 w-24 object-contain"
                   />
                 </div>
-                <h2 class="mb-2 text-xl font-semibold text-gray-800">
-                  {brand.name}
-                </h2>
-                <p class="mb-4 flex-grow text-gray-600">{brand.description}</p>
-                <a
-                  href={brand.link}
-                  class="inline-flex items-center text-sm text-purple-400 transition duration-300 ease-in-out hover:text-purple-600"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span class="pr-2">{brand.link.replace("https://", "")}</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-4 w-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                <div class="flex flex-grow flex-col sm:pl-6">
+                  <h2 class="mb-2 text-xl font-semibold text-gray-800">
+                    {brand.name}
+                  </h2>
+                  <p
+                    class="flex-grow text-gray-600"
+                    style="text-wrap: balance;"
                   >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width={2}
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </a>
-              </div>
+                    {brand.description}
+                  </p>
+                </div>
+              </a>
             ))
           }
         </div>
