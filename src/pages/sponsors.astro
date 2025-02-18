@@ -290,7 +290,26 @@ const sponsors = [
   </head>
   <body class="h-screen bg-white text-black">
     <main>
-      <header class="flex flex-col gap-2 px-8 pb-8 pt-8">
+      <header class="flex flex-col gap-2 px-8 pb-8 pt-4">
+        <a
+          href="/"
+          class="flex items-center gap-1 text-sm text-gray-500 hover:underline"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width={2}
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          back
+        </a>
         <h1 class="text-4xl font-semibold">my sponsors</h1>
         <p>here's all the brands that have run ads on my content</p>
       </header>
@@ -387,7 +406,7 @@ const sponsors = [
           }
         </div>
 
-        <div class="border-t border-gray-200 pb-24 pt-20 text-center">
+        <div class="pb-24 pt-20 text-center">
           <p>
             interested in sponsoring theo? email us: <code
               >youtube@thisdomain</code
