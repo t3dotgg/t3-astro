@@ -23,40 +23,8 @@ const description = "want to sponsor theo? here's everything you need to know";
     <script defer data-domain="astro.t3.gg" src="/js/script.js"></script>
   </head>
   <body class="h-screen bg-white text-black">
-    <main>
-      <header class="flex flex-col gap-2 px-2 pt-4 md:px-8">
-        <a
-          href="/"
-          class="flex items-center gap-1 text-sm text-gray-500 hover:underline"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width={2}
-              d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-          </svg>
-          back
-        </a>
-      </header>
+    <main class="pb-2 md:py-2">
       <article class="prose prose-lg mx-auto max-w-[800px] px-2 lg:prose-xl">
-        <section>
-          <h2 class="text-3xl font-semibold">Sponsoring Theo</h2>
-          <p>
-            hi! i'm theo. you probably know me from <a
-              href="https://youtube.com/@t3dotgg">youtube</a
-            >. if you want experienced devs to know something, i'm the most
-            effective way to make it happen.
-          </p>
-          <p><em>don't take my word for it though</em></p>
-        </section>
-
         <section>
           <blockquote>
             <p>
@@ -81,10 +49,23 @@ const description = "want to sponsor theo? here's everything you need to know";
               </p>
             </div>
           </blockquote>
-
+        </section>
+        <section>
+          <h2 class="text-3xl font-semibold">Sponsoring Theo</h2>
           <p>
-            Fair to say our sponsors love us - <span class="font-semibold"
-              >what about developers though?</span
+            hi! i'm theo. you probably know me from <a
+              href="https://youtube.com/@t3dotgg">youtube</a
+            >. if you want experienced devs to know something, i'm the most
+            effective way to make it happen.
+          </p>
+        </section>
+
+        <section>
+          <h3>why sponsor theo?</h3>
+          <p>
+            good developers watch my videos to learn about new technologies. my
+            audience is so excited to learn about new tech that they <em
+              >often like the ads more than the videos themselves</em
             >
           </p>
         </section>
@@ -99,65 +80,100 @@ const description = "want to sponsor theo? here's everything you need to know";
             loading="lazy"
           />
         </section>
-        <section>
-          <h2 class="pb-4 text-3xl font-semibold">demographics</h2>
 
+        <section>
+          <h3>the numbers</h3>
           <p>
-            75% of our audience is over 25. here&apos;s a quick dump of our
-            demographics for reference:
+            i'm in the <a
+              href="https://socialblade.com/youtube/c/theobrowne1017"
+              target="_blank">top 2000 youtubers in the US</a
+            >. we get <strong>over 3 million views per month</strong>, often
+            breaking <strong>400,000 watch hours</strong> (~2 super bowl commercials).
           </p>
-
-          <Image
-            alt="demographics"
-            src={"/assets/sponsors/demographics.png"}
-            width={800}
-            height={700}
-            loading="lazy"
-          />
+          <p>
+            the average video gets <strong>60,000 views</strong>, with many
+            going <strong>well over 500,000</strong>. this puts us at roughly
+            25x the viewership of <a
+              href="https://socialblade.com/youtube/c/vercelhq"
+              target="_blank">vercel's channel</a
+            > (and they're one of the biggest in tech).
+          </p>
         </section>
+
         <section>
-          <h2 class="pb-4 text-3xl font-semibold">the theo guarantees</h2>
-
-          <p class="pb-4 md:text-lg">
-            We want to make sure that you get your money's worth from every ad:
+          <h3>demographics</h3>
+          <p>
+            this isn't a bunch of beginners learning to code - my audience
+            actually ships. <strong>76% of them are over 25</strong>. the most
+            recent state of react survey showed that <em
+              >over half of react devs watch my videos.</em
+            >
           </p>
+        </section>
 
-          <ol class="list-decimal space-y-2 pl-6 text-neutral-900 md:text-lg">
-            <li>
-              The ad will be at least <span class="font-semibold"
-                >45 seconds long</span
-              >
-            </li>
-            <li>
-              The ad will be included in the first <span class="font-semibold"
-                >2 minutes</span
-              > of the video
-            </li>
-            <li>
-              The ad will be placed in a video <span class="font-semibold"
-                >relevant to your intended audience</span
-              >
-            </li>
-            <li>
-              The ad will be seen at least <span class="font-semibold"
-                >35,000 times</span
-              > within 30 days of publication
-            </li>
-          </ol>
-
-          <p class="pt-4 md:text-lg">
-            If any of these guarantees aren't met, we'll give you a free ad spot
-            to make up for it
+        <section>
+          <p>
+            i've helped <a href="/sponsors"
+              >over 40 brands grow their businesses</a
+            > - will yours be next?
           </p>
+          <h3></h3>
+        </section>
+
+        <section>
+          <p>
+            email us at
+            <span class="font-semibold">youtube @ (this domain)</span> for more info
+            on pricing and availability
+          </p>
+        </section>
+
+        <section>
+          <blockquote>
+            <p>
+              I always know when you guys publish something because we have a
+              slack channel with new signups and <span class="font-semibold"
+                >it&apos;s getting flooded.</span
+              >
+            </p>
+
+            <div class="not-prose flex items-center gap-3">
+              <img
+                src={"/assets/sponsors/sevalla.svg"}
+                alt={"Sevalla"}
+                width={96}
+                height={96}
+                class="h-12 w-12 object-contain"
+              />
+              <p class="text-lg font-semibold text-slate-900">
+                Paul<span class="text-slate-600">, Sevalla</span>
+              </p>
+            </div>
+          </blockquote>
+        </section>
+
+        <section>
+          <a
+            href="/"
+            class="flex items-center gap-1 text-gray-500 hover:underline"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width={2}
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+            back to theo's site
+          </a>
         </section>
       </article>
-
-      <section class="flex items-center justify-center py-16">
-        <p class="text-2xl">
-          want to learn more? email us at:
-          <span class="font-semibold">youtube@thisdomain</span>
-        </p>
-      </section>
     </main>
   </body>
 </html>
