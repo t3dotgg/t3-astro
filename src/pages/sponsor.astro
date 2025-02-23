@@ -1,0 +1,49 @@
+---
+import "../style/global.css";
+const siteTitle = "sponsor theo";
+const description = "all of the brands running ads on my youtube channel";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@t3dotgg" />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://t3.gg/images/twitter.png" />
+    <title>{siteTitle}</title>
+    <meta name="theme-color" content="#000000" />
+  </head>
+  <body class="h-screen bg-white text-black">
+    <main>
+      <header class="flex flex-col gap-2 px-8 pb-8 pt-4">
+        <a
+          href="/"
+          class="flex items-center gap-1 text-sm text-gray-500 hover:underline"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width={2}
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          back
+        </a>
+        <h1 class="text-4xl font-semibold">want to sponsor theo?</h1>
+        <p>here's all the brands that have run ads on my content</p>
+      </header>
+    </main>
+  </body>
+</html>
