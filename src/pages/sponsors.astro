@@ -287,6 +287,8 @@ const sponsors = [
     <meta property="og:image" content="https://t3.gg/images/twitter.png" />
     <title>{siteTitle}</title>
     <meta name="theme-color" content="#000000" />
+
+    <script defer data-domain="astro.t3.gg" src="/js/script.js"></script>
   </head>
   <body class="h-screen bg-white text-black">
     <main>
@@ -315,16 +317,18 @@ const sponsors = [
       </header>
       <section class="pb-16">
         <h2 class="px-8 pb-4 text-2xl font-semibold">affiliates</h2>
-        <div class="grid grid-cols-1 gap-8 px-4 md:grid-cols-3 md:px-8">
+        <div
+          class="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:px-8 lg:grid-cols-3"
+        >
           {
             affiliates.map((brand) => (
               <a
                 href={brand.link}
-                class="group flex flex-col rounded-lg border border-gray-200 p-6 transition duration-300 ease-in-out hover:bg-gray-50 sm:flex-row"
+                class="group flex flex-row rounded-lg border border-gray-200 p-6 transition duration-300 ease-in-out hover:bg-gray-50"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div class="mb-4 flex h-24 shrink-0 items-center justify-center sm:mb-0 sm:w-24">
+                <div class="flex h-24 w-24 shrink-0 items-center justify-center">
                   <img
                     src={brand.image || "/placeholder.svg"}
                     alt={brand.name}
@@ -333,7 +337,7 @@ const sponsors = [
                     class="h-24 w-24 object-contain"
                   />
                 </div>
-                <div class="flex flex-grow flex-col sm:pl-6">
+                <div class="flex flex-grow flex-col pl-6">
                   <h2 class="mb-2 text-xl font-semibold text-gray-800">
                     {brand.name}
                   </h2>
@@ -352,16 +356,18 @@ const sponsors = [
 
       <section>
         <h2 class="px-8 pb-4 text-2xl font-semibold">video sponsors</h2>
-        <div class="grid grid-cols-1 gap-8 px-4 md:grid-cols-3 md:px-8">
+        <div
+          class="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:px-8 lg:grid-cols-3"
+        >
           {
             sponsors.map((brand) => (
               <a
                 href={brand.link}
-                class="group flex flex-col rounded-lg border border-gray-200 p-6 transition duration-300 ease-in-out hover:bg-gray-50 sm:flex-row"
+                class="group flex flex-row rounded-lg border border-gray-200 p-6 transition duration-300 ease-in-out hover:bg-gray-50"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div class="mb-4 flex shrink-0 items-center justify-center sm:mb-0 sm:w-24">
+                <div class="flex w-24 shrink-0 items-center justify-center">
                   <img
                     src={brand.image || "/placeholder.svg"}
                     alt={brand.name}
@@ -370,7 +376,7 @@ const sponsors = [
                     class="h-24 w-24 object-contain"
                   />
                 </div>
-                <div class="flex flex-grow flex-col sm:pl-6">
+                <div class="flex flex-grow flex-col pl-6">
                   <h2 class="mb-2 text-xl font-semibold text-gray-800">
                     {brand.name}
                   </h2>
