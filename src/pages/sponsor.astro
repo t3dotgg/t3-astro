@@ -1,7 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import "../style/global.css";
 const siteTitle = "sponsor theo";
-const description = "all of the brands running ads on my youtube channel";
+const description = "want to sponsor theo? here's everything you need to know";
 ---
 
 <html lang="en">
@@ -18,10 +19,12 @@ const description = "all of the brands running ads on my youtube channel";
     <meta property="og:image" content="https://t3.gg/images/twitter.png" />
     <title>{siteTitle}</title>
     <meta name="theme-color" content="#000000" />
+
+    <script defer data-domain="astro.t3.gg" src="/js/script.js"></script>
   </head>
   <body class="h-screen bg-white text-black">
-    <main>
-      <header class="flex flex-col gap-2 px-8 pb-8 pt-4">
+    <main class="">
+      <header class="flex flex-col gap-2 px-2 pt-4 md:px-8">
         <a
           href="/"
           class="flex items-center gap-1 text-sm text-gray-500 hover:underline"
@@ -41,9 +44,182 @@ const description = "all of the brands running ads on my youtube channel";
           </svg>
           back
         </a>
-        <h1 class="text-4xl font-semibold">want to sponsor theo?</h1>
-        <p>here's all the brands that have run ads on my content</p>
+        <h1 class="text-3xl font-semibold md:text-4xl">
+          want to sponsor theo?
+        </h1>
+        <p>here's everything you need to know</p>
       </header>
+
+      <div class="mx-auto flex max-w-[800px] flex-col gap-12 px-2">
+        <section class="flex flex-col gap-4 pt-12">
+          <h2 class="text-3xl font-semibold">tldr</h2>
+          <ul class="list-disc space-y-2 pl-4 text-lg text-neutral-800">
+            <li>
+              <span class="font-semibold">3 million viers per month</span> and
+              <span class="font-semibold">300k+ watch hours/month</span> (~2 super
+              bowl commercials of viewership)
+            </li>
+            <li>
+              the majority of our audience are <span class="font-semibold"
+                >employed software engineers</span
+              > with <span class="font-semibold">large incomes</span> and
+              <span class="font-semibold">real buying power</span> in their workplace
+              > in their workplace
+            </li>
+            <li>
+              average <span class="font-semibold">68,000 views per video</span>
+              (for our last 8 vids)
+            </li>
+            <li>
+              the <span class="font-semibold">theo guarantees</span> make sure you're
+              getting your money's worth
+            </li>
+          </ul>
+        </section>
+
+        <section class="pt-8">
+          <h2 class="text-3xl font-semibold">real impact</h2>
+          <div class="mx-auto max-w-[90rem] px-4 py-8 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-3xl">
+              <div class="flex flex-col gap-4 text-lg text-neutral-700">
+                <p>
+                  Someday I&apos;ll have to tell you how transformational these
+                  ads have been for us. Suffice it to say that, last year I had
+                  worries about our Q1 schedule going into the holiday season.
+                  But this year the biggest worry is how we will service all the
+                  new clients going into 2025. I&apos;d rather have this
+                  problem!
+                </p>
+                <p>
+                  We did other ads too in 2024, but the Theo ads by far were the
+                  most effective for us. When Justin and I talked about the
+                  folks we worked with, it&apos;s clear to both of us that you
+                  in particular get it, exactly what we need and are adept at
+                  delivering it.
+                </p>
+              </div>
+              <div class="mt-8 flex items-center justify-end gap-3">
+                <p class="text-sm font-semibold text-slate-900 sm:text-base">
+                  Infinite Red
+                </p>
+                <img
+                  src={"/assets/sponsors/infinite-red.svg"}
+                  alt={"IR"}
+                  width={96}
+                  height={96}
+                  class="h-24 w-24 object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="mx-auto max-w-[90rem] px-4 py-8 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-3xl">
+              <div class="flex flex-col gap-4 text-lg text-neutral-700">
+                <p>
+                  I always know when you guys publish something because we have
+                  a slack channel with new signups and it&apos;s getting
+                  flooded. 😃
+                </p>
+              </div>
+              <div class="mt-8 flex items-center justify-end gap-3">
+                <p class="text-sm font-semibold text-slate-900 sm:text-base">
+                  Sevalla
+                </p>
+                <img
+                  src={"/assets/sponsors/sevalla.svg"}
+                  alt={"IR"}
+                  width={96}
+                  height={96}
+                  class="h-24 w-24 object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="class pt-8">
+          <h2 class="pb-4 text-3xl font-semibold">developer sentiment</h2>
+          <p class="pb-2">
+            developers are <span class="font-semibold"
+              >VERY sensitive to being marketed to</span
+            >. we spent the last 2 years refining our advertising process to get
+            the best possible sentiment from my audience. proud to say we've
+            succeeded.
+          </p>
+
+          <p>
+            you can take our word for it, or just hear it from the audience
+            directly:
+          </p>
+
+          <Image
+            alt="sponsor comments"
+            src={"/assets/sponsors/sponsor-comments.png"}
+            width={800}
+            height={400}
+            loading="lazy"
+          />
+        </section>
+        <section>
+          <h2 class="pb-4 text-3xl font-semibold">demographics</h2>
+
+          <p>
+            75% of our audience is over 25. here&apos;s a quick dump of our
+            demographics for reference:
+          </p>
+
+          <Image
+            alt="demographics"
+            src={"/assets/sponsors/demographics.png"}
+            width={800}
+            height={700}
+            loading="lazy"
+          />
+        </section>
+        <section>
+          <h2 class="pb-4 text-3xl font-semibold">the theo guarantees</h2>
+
+          <p class="pb-4 md:text-lg">
+            We want to make sure that you get your money's worth from every ad:
+          </p>
+
+          <ol class="list-decimal space-y-2 pl-6 text-neutral-900 md:text-lg">
+            <li>
+              The ad will be at least <span class="font-semibold"
+                >45 seconds long</span
+              >
+            </li>
+            <li>
+              The ad will be included in the first <span class="font-semibold"
+                >2 minutes</span
+              > of the video
+            </li>
+            <li>
+              The ad will be placed in a video <span class="font-semibold"
+                >relevant to your intended audience</span
+              >
+            </li>
+            <li>
+              The ad will be seen at least <span class="font-semibold"
+                >35,000 times</span
+              > within 30 days of publication
+            </li>
+          </ol>
+
+          <p class="pt-4 md:text-lg">
+            If any of these guarantees aren't met, we'll give you a free ad spot
+            to make up for it
+          </p>
+        </section>
+      </div>
+
+      <section class="flex items-center justify-center py-16">
+        <p class="text-2xl">
+          want to learn more? email us at:
+          <span class="font-semibold">youtube@thisdomain</span>
+        </p>
+      </section>
     </main>
   </body>
 </html>
