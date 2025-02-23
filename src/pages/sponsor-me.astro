@@ -23,7 +23,7 @@ const description = "want to sponsor theo? here's everything you need to know";
     <script defer data-domain="astro.t3.gg" src="/js/script.js"></script>
   </head>
   <body class="h-screen bg-white text-black">
-    <main class="">
+    <main>
       <header class="flex flex-col gap-2 px-2 pt-4 md:px-8">
         <a
           href="/"
@@ -44,99 +44,65 @@ const description = "want to sponsor theo? here's everything you need to know";
           </svg>
           back
         </a>
-        <h1 class="text-3xl font-semibold md:text-4xl">
-          want to sponsor theo?
-        </h1>
-        <p>here's everything you need to know</p>
       </header>
-
-      <div class="mx-auto flex max-w-[800px] flex-col gap-12 px-2">
-        <section class="flex flex-col gap-4 pt-12">
-          <h2 class="text-3xl font-semibold">tldr</h2>
-          <ul class="list-disc space-y-2 pl-4 text-lg text-neutral-800">
-            <li>
-              <span class="font-semibold">3 million viers per month</span> and
-              <span class="font-semibold">300k+ watch hours/month</span> (~2 super
-              bowl commercials of viewership)
-            </li>
-            <li>
-              the majority of our audience are <span class="font-semibold"
-                >employed software engineers</span
-              > with <span class="font-semibold">large incomes</span> and
-              <span class="font-semibold">real buying power</span> in their workplace
-              > in their workplace
-            </li>
-            <li>
-              average <span class="font-semibold">68,000 views per video</span>
-              (for our last 8 vids)
-            </li>
-            <li>
-              the <span class="font-semibold">theo guarantees</span> make sure you're
-              getting your money's worth
-            </li>
-          </ul>
+      <article class="prose prose-lg mx-auto max-w-[800px] px-2 lg:prose-xl">
+        <section>
+          <h2 class="text-3xl font-semibold">Sponsoring Theo</h2>
+          <p>
+            hi! i'm theo. you probably know me from <a
+              href="https://youtube.com/@t3dotgg">youtube</a
+            >. if you want experienced devs to know something, i'm the most
+            effective way to make it happen.
+          </p>
+          <p><em>don't take my word for it though</em></p>
         </section>
 
-        <section class="pt-8">
-          <h2 class="text-3xl font-semibold">real impact</h2>
-          <div class="mx-auto max-w-[90rem] px-4 py-8 sm:px-6 lg:px-8">
-            <div class="mx-auto max-w-3xl">
-              <div class="flex flex-col gap-4 text-lg text-neutral-700">
-                <p>
-                  Someday I&apos;ll have to tell you how transformational these
-                  ads have been for us. Suffice it to say that, last year I had
-                  worries about our Q1 schedule going into the holiday season.
-                  But this year the biggest worry is how we will service all the
-                  new clients going into 2025. I&apos;d rather have this
-                  problem!
-                </p>
-                <p>
-                  We did other ads too in 2024, but the Theo ads by far were the
-                  most effective for us. When Justin and I talked about the
-                  folks we worked with, it&apos;s clear to both of us that you
-                  in particular get it, exactly what we need and are adept at
-                  delivering it.
-                </p>
-              </div>
-              <div class="mt-8 flex items-center justify-end gap-3">
-                <p class="text-sm font-semibold text-slate-900 sm:text-base">
-                  Infinite Red
-                </p>
-                <img
-                  src={"/assets/sponsors/infinite-red.svg"}
-                  alt={"IR"}
-                  width={96}
-                  height={96}
-                  class="h-24 w-24 object-contain"
-                />
-              </div>
-            </div>
+        <section>
+          <blockquote>
+            <p>
+              Someday I&apos;ll have to tell you how transformational these ads
+              have been for us. Our biggest worry is how we will service all the
+              new clients going into 2025.
+            </p>
+            <p>
+              We did other ads in 2024, but <span class="font-bold"
+                >the Theo ads were by far the most effective for us</span
+              >. It&apos;s clear to us that you in particular get it - exactly
+              what we need.
+            </p>
+          </blockquote>
+          <div class="not-prose flex items-center justify-end gap-3">
+            <p class="text-sm font-semibold text-slate-900 sm:text-base">
+              Jamon, Infinite Red
+            </p>
+            <img
+              src={"/assets/sponsors/infinite-red.svg"}
+              alt={"Infinite Red"}
+              class="h-12 w-12 object-contain"
+            />
           </div>
-
-          <div class="mx-auto max-w-[90rem] px-4 py-8 sm:px-6 lg:px-8">
-            <div class="mx-auto max-w-3xl">
-              <div class="flex flex-col gap-4 text-lg text-neutral-700">
-                <p>
-                  I always know when you guys publish something because we have
-                  a slack channel with new signups and it&apos;s getting
-                  flooded. 😃
-                </p>
-              </div>
-              <div class="mt-8 flex items-center justify-end gap-3">
-                <p class="text-sm font-semibold text-slate-900 sm:text-base">
-                  Sevalla
-                </p>
-                <img
-                  src={"/assets/sponsors/sevalla.svg"}
-                  alt={"IR"}
-                  width={96}
-                  height={96}
-                  class="h-24 w-24 object-contain"
-                />
-              </div>
-            </div>
-          </div>
+          <div class="p-4"></div>
+          <blockquote>
+            <p>
+              I always know when you guys publish something because we have a
+              slack channel with new signups and <span class="font-semibold"
+                >it&apos;s getting flooded.</span
+              >
+            </p>
+          </blockquote>
         </section>
+        <div class="not-prose mt-8 flex items-center justify-end gap-3">
+          <p class="text-sm font-semibold text-slate-900 sm:text-base">
+            Paul, Sevalla
+          </p>
+          <img
+            src={"/assets/sponsors/sevalla.svg"}
+            alt={"Sevalla"}
+            width={96}
+            height={96}
+            class="h-12 w-12 object-contain"
+          />
+        </div>
 
         <section class="class pt-8">
           <h2 class="pb-4 text-3xl font-semibold">developer sentiment</h2>
@@ -212,7 +178,7 @@ const description = "want to sponsor theo? here's everything you need to know";
             to make up for it
           </p>
         </section>
-      </div>
+      </article>
 
       <section class="flex items-center justify-center py-16">
         <p class="text-2xl">
