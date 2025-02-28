@@ -6,7 +6,7 @@ imageURL: "https://t3.gg/images/equinusocio-danger.jpg"
 readMore: true
 ---
 
-Remember the Material Theme for VS Code? It likely just shipped malware, and Mattia Astorino (aka equinusocio) is to blame.
+Remember the Material Theme for VS Code? It is being managed so poorly that the result is indistinguishable from malware, and Mattia Astorino (aka equinusocio) is to blame.
 
 If you're out of the loop, here's a quick summary: Mattia was a contributor to Material Theme. He kind of went insane. He started begging for money, and [closed sourced Material Theme in order to start selling a premium version](https://www.youtube.com/watch?v=3wz7YF2as-c). Oh - he also started threatening to sue anyone who re-used the colors or name "Material Theme".
 
