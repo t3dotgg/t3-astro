@@ -2,7 +2,7 @@
 import "../../style/global.css";
 import BlogPostPreview from "../../components/BlogPostPreview.astro";
 import TheoHeaderImage from "../../components/theo-header-image.astro";
-import { ClientRouter } from "astro:transitions";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const siteTitle = "Theo's Blog";
 const description = "Thought dumps and nerdy stuff";
@@ -17,58 +17,41 @@ const sortedPosts = allPosts
       new Date(a.frontmatter.date).valueOf(),
   )
   .filter((p) => p.frontmatter.hidden !== true);
+
+const BaseLayoutClassNames = {
+  html: 'bg-theo-purple/40',
+};
 ---
 
-<html lang="en">
-  <head>
-    <ClientRouter />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.svg" />
-    <meta name="description" content={description} />
-    <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="@t3dotgg" />
-    <meta property="og:title" content={siteTitle} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://t3.gg/images/twitter.png" />
-    <title>{siteTitle}</title>
-    <meta name="theme-color" content="#000000" />
+<BaseLayout title={siteTitle} description={description} classNames={BaseLayoutClassNames}>
+  <div class="absolute right-0 z-10 p-4 text-right text-xl font-bold">
+    <a href="https://www.youtube.com/@t3dotgg">Youtube</a>
+    <br />
+    <a href="https://x.com/theo">Twitter</a>
+    <br />
+    <a href="/links">More</a>
+  </div>
+  <div class="page flex h-full w-full flex-col items-center">
+    <div class="mt-8 w-48"><TheoHeaderImage /></div>
+    <h1 class="pt-2 text-4xl font-bold">Theo's Blog</h1>
+    <h2 class="px-8 text-center text-xl xl:px-0">
+      I write about tech and content creation. It usually goes to Twitter.
+      Sometimes it goes here instead :)
+    </h2>
+    <div
+      class="grid w-full grid-cols-1 gap-4 p-4 lg:grid-cols-2 lg:p-8 xl:gap-8"
+    >
+      {sortedPosts.map((p) => <BlogPostPreview post={p} />)}
+    </div>
+  </div>
+</BaseLayout>
 
-    <script defer data-domain="astro.t3.gg" src="https://t3.gg/js/script.js"
-    ></script>
-  </head>
-  <body style="background-color: rgba(247, 242, 254, 1)">
-    <main>
-      <div class="absolute right-0 z-10 p-4 text-right text-xl font-bold">
-        <a href="https://www.youtube.com/@t3dotgg">Youtube</a>
-        <br />
-        <a href="https://x.com/theo">Twitter</a>
-        <br />
-        <a href="/links">More</a>
-      </div>
-      <div class="page flex h-full w-full flex-col items-center">
-        <div class="mt-8 w-48"><TheoHeaderImage /></div>
-        <h1 class="pt-2 text-4xl font-bold">Theo's Blog</h1>
-        <h2 class="px-8 text-center text-xl xl:px-0">
-          I write about tech and content creation. It usually goes to Twitter.
-          Sometimes it goes here instead :)
-        </h2>
-        <div
-          class="grid w-full grid-cols-1 gap-4 p-4 lg:grid-cols-2 lg:p-8 xl:gap-8"
-        >
-          {sortedPosts.map((p) => <BlogPostPreview post={p} />)}
-        </div>
-      </div>
-    </main>
-    <style>
-      .page {
-        background-color: rgba(247, 242, 254, 1);
-        background-image: url("/images/bg-texture.png");
-      }
-      a {
-        color: var(--color-black);
-      }
-    </style>
-  </body>
-</html>
+<style>
+  .page {
+    background-color: #f7f2fe;
+    background-image: url("/images/bg-texture.png");
+  }
+  a {
+    color: var(--color-black);
+  }
+</style>

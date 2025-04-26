@@ -1,8 +1,7 @@
 ---
-import "../../../style/global.css";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
 import BlogPostHeader from "../../../components/BlogPostHeader.astro";
 import { getSlugFromPath } from "../../../utils/get-slug-from-path";
-import { ClientRouter } from "astro:transitions";
 
 export async function getStaticPaths({ paginate, rss }) {
   const allPosts = await Astro.glob("../../../content/posts/*.md");
@@ -21,51 +20,36 @@ export async function getStaticPaths({ paginate, rss }) {
 }
 
 const { post } = Astro.props;
+const title = post.frontmatter.title;
+const description = post.frontmatter.description;
+
+const BaseLayoutClassNames = {
+  html: 'bg-theo-purple/40',
+};
 ---
 
-<html lang="en">
-  <head>
-    <ClientRouter />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.svg" />
-    <meta name="description" content={post.frontmatter.description} />
-    <meta name="twitter:image" content={post.frontmatter.imageURL} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="@t3dotgg" />
-    <meta property="og:title" content={post.frontmatter.title} />
-    <meta property="og:description" content={post.frontmatter.description} />
-    <meta property="og:image" content={post.frontmatter.imageURL} />
-    <meta name="theme-color" content="#000000" />
-    <title>{post.frontmatter.title}</title>
-
-    <script defer data-domain="astro.t3.gg" src="https://t3.gg/js/script.js"
-    ></script>
-  </head>
-  <body class="bg-theo-purple/40">
-    <div class="page flex h-full w-full justify-center">
-      <div class="max-w-full px-4 pt-8 lg:w-[42rem] lg:px-0 xl:w-[64rem]">
-        <a class="pt-8 text-xl" href="/blog">Theo's Blog</a>
-        <article class="prose prose-lg lg:prose-xl max-w-none pb-10">
-          <main>
-            <BlogPostHeader post={post.frontmatter} />
-            <post.Content />
-          </main>
-        </article>
-        <div class="pb-8">
-          <a href="/blog">{"<- Back to Theo's blog"}</a>
-        </div>
+<BaseLayout {title} {description} classNames={BaseLayoutClassNames}>
+  <div class="page flex h-full w-full justify-center">
+    <div class="max-w-full px-4 pt-8 lg:w-[42rem] lg:px-0 xl:w-[64rem]">
+      <a class="pt-8 text-xl" href="/blog">Theo's Blog</a>
+      <article class="prose prose-lg lg:prose-xl max-w-none pb-10">
+        <main>
+          <BlogPostHeader post={post.frontmatter} />
+          <post.Content />
+        </main>
+      </article>
+      <div class="pb-8">
+        <a href="/blog">{"<- Back to Theo's blog"}</a>
       </div>
     </div>
-  </body>
-</html>
-
-<style>
-  @reference "../../../style/global.css";
-  .page {
-    background-image: url("/images/bg-texture.png");
-  }
-  a :global(a) {
-    @apply ring-theo-blue my-1 appearance-none rounded-md py-2 text-blue-200 outline-hidden hover:underline focus:ring;
-  }
-</style>
+  </div>
+  <style>
+    @reference "../../../style/global.css";
+    .page {
+      background-image: url("/images/bg-texture.png");
+    }
+    a :global(a) {
+      @apply text-fuchsia-500 text-4xl;
+    }
+  </style>
+</BaseLayout>

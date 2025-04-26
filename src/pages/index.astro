@@ -1,10 +1,9 @@
 ---
 import "../style/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 const siteTitle = "theo - builder who's also on youtube";
 const description =
   "theo (aka t3, t3dotgg) is a youtuber/ceo/dev. built t3 chat, ping.gg, t3 stack and more.";
-
-import { ClientRouter } from "astro:transitions";
 
 const links = [
   {
@@ -38,83 +37,33 @@ const links = [
     label: "sponsors",
   },
 ];
-
-const socialLinks = [
-  { href: "https://github.com/t3dotgg", label: "GitHub" },
-  { href: "https://twitter.com/theo", label: "Twitter" },
-  { href: "https://twitch.tv/theo", label: "Twitch" },
-  { href: "https://discord.gg/xHdCpcPHRE", label: "Discord" },
-];
 ---
 
-<html lang="en">
-  <head>
-    <ClientRouter />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.svg" />
-    <meta name="description" content={description} />
-    <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="@t3dotgg" />
-    <meta property="og:title" content={siteTitle} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://t3.gg/images/twitter.png" />
-    <title>{siteTitle}</title>
-    <meta name="theme-color" content="#000000" />
-
-    <script defer data-domain="astro.t3.gg" src="/js/script.js"></script>
-  </head>
-  <body class="h-screen bg-linear-to-b from-[#300171] to-gray-900">
-    <main>
-      <div class="flex min-h-screen flex-col bg-white text-black">
-        <main
-          class="container mx-auto flex grow flex-col items-center px-4 py-12"
-        >
-          <div>
-            <p class="mb-12 max-w-xl text-center text-2xl">
-              hi, i'm theo. i make things. mostly code and videos. you're
-              probably here for one of these things...
-            </p>
-          </div>
-          <div
-            class="mx-auto flex w-full max-w-md grow flex-col items-center space-y-6"
+<BaseLayout title={siteTitle} description={description}>
+  <main class="container mx-auto flex grow flex-col items-center px-4 py-12">
+    <div>
+      <p class="mb-12 max-w-xl text-center text-2xl">
+        hi, i'm theo. i make things. mostly code and videos. you're probably
+        here for one of these things...
+      </p>
+    </div>
+    <div
+      class="mx-auto flex w-full max-w-md grow flex-col items-center space-y-6"
+    >
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            target={link.target}
+            class="group relative w-full border border-black/60 py-3 text-center transition-colors duration-300 ease-out hover:bg-black/60 hover:text-white"
           >
-            {
-              links.map((link) => (
-                <a
-                  href={link.href}
-                  target={link.target}
-                  class="group relative w-full border border-black/60 py-3 text-center transition-colors duration-300 ease-out hover:bg-black/60 hover:text-white"
-                >
-                  <span class="text-lg">{link.label}</span>
-                  <span class="block text-sm text-gray-500 transition-colors group-hover:text-gray-200">
-                    {link.description}
-                  </span>
-                </a>
-              ))
-            }
-          </div>
-        </main>
-        <footer class="border-t border-gray-200 py-8">
-          <div class="container mx-auto px-4">
-            <div class="flex justify-center space-x-6">
-              {
-                socialLinks.map((link) => (
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-gray-600 transition-colors hover:text-black"
-                  >
-                    {link.label}
-                  </a>
-                ))
-              }
-            </div>
-          </div>
-        </footer>
-      </div>
-    </main>
-  </body>
-</html>
+            <span class="text-lg">{link.label}</span>
+            <span class="block text-sm text-gray-500 transition-colors group-hover:text-gray-200">
+              {link.description}
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </main>
+</BaseLayout>

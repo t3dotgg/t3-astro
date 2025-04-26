@@ -1,0 +1,88 @@
+---
+import { cn } from "../utils/cn";
+import "../style/global.css";
+import { ClientRouter } from "astro:transitions";
+
+const socialLinks = [
+  { href: "https://github.com/t3dotgg", label: "GitHub" },
+  { href: "https://twitter.com/theo", label: "Twitter" },
+  { href: "https://twitch.tv/theo", label: "Twitch" },
+  { href: "https://discord.gg/xHdCpcPHRE", label: "Discord" },
+];
+
+interface Props {
+  title: string;
+  description: string;
+  classNames?: {
+    html?: string;
+    body?: string;
+    main?: string;
+    footer?: string;
+  };
+}
+
+const { title, description, classNames } = Astro.props;
+---
+
+<html lang="en" class={cn("bg-white", classNames?.html)}>
+  <head>
+    <ClientRouter />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@t3dotgg" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://t3.gg/images/twitter.png" />
+    <title>{title}</title>
+    <meta name="theme-color" content="#000000" />
+
+    <script defer data-domain="astro.t3.gg" src="/js/script.js"></script>
+  </head>
+  <body class={cn("min-h-full", classNames?.body)}>
+    <main class={cn("flex min-h-screen flex-col text-black", classNames?.main)}>
+      <slot />
+      <aside>
+        <a href="/" class="flex items-center gap-1 text-gray-500 hover:underline">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width={2}
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          back to theo's site
+        </a>
+      </aside>
+      <footer
+        class={cn("border-t border-gray-200 py-8 mt-8", classNames?.footer)}
+      >
+        <div class="container mx-auto px-4">
+          <div class="flex justify-center space-x-6">
+            {
+              socialLinks.map((link) => (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-600 transition-colors hover:text-black"
+                >
+                  {link.label}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,185 +1,142 @@
 ---
 import { Image } from "astro:assets";
-import "../style/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
 const siteTitle = "sponsor theo";
 const description = "want to sponsor theo? here's everything you need to know";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.svg" />
-    <meta name="description" content={description} />
-    <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="@t3dotgg" />
-    <meta property="og:title" content={siteTitle} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://t3.gg/images/twitter.png" />
-    <title>{siteTitle}</title>
-    <meta name="theme-color" content="#000000" />
-
-    <script defer data-domain="astro.t3.gg" src="/js/script.js"></script>
-  </head>
-  <body class="h-screen bg-white text-black">
-    <main class="pb-2 md:py-2">
-      <article class="prose prose-lg lg:prose-xl mx-auto max-w-[800px] px-2">
-        <section>
-          <blockquote>
-            <p>
-              Someday I&apos;ll have to tell you how transformational these ads
-              have been for us. Our biggest worry is how we will service all the
-              new clients going into 2025.
-            </p>
-            <p>
-              We did other ads in 2024, but <span class="font-bold"
-                >the Theo ads were by far the most effective for us</span
-              >. It&apos;s clear to us that you in particular get it - exactly
-              what we need.
-            </p>
-            <div class="not-prose flex items-center gap-3">
-              <img
-                src={"/assets/sponsors/infinite-red.svg"}
-                alt={"Infinite Red"}
-                class="h-12 w-12 object-contain"
-              />
-              <p class="text-lg font-semibold text-slate-900">
-                Jamon<span class="text-slate-600"
-                  >, <a href="https://infinitered.com" target="_blank"
-                    >Infinite Red</a
-                  ></span
-                >
-              </p>
-            </div>
-          </blockquote>
-        </section>
-        <section>
-          <h2 class="text-3xl font-semibold">sponsoring theo</h2>
-          <p>
-            hi! i'm theo. you probably know me from <a
-              href="https://youtube.com/@t3dotgg">youtube</a
-            >. if you want experienced devs to know something, i'm a pretty good
-            way to make that happen.
-          </p>
-        </section>
-
-        <section>
-          <h3>why sponsor theo?</h3>
-          <p>
-            good developers watch my videos to learn about new technologies. my
-            audience is so excited to learn about new tech that they <em
-              >often like the ads more than the videos themselves</em
-            >
-          </p>
-        </section>
-
-        <section>
-          <Image
-            alt="sponsor comments"
-            src={"https://ezkf3xv6eh.ufs.sh/f/3odeDX4eRzTNQlTj6vGY8AzxSWdivlGJ0fNusyEU7bKQDZBH"}
-            onclick={`window.open('https://ezkf3xv6eh.ufs.sh/f/3odeDX4eRzTNQlTj6vGY8AzxSWdivlGJ0fNusyEU7bKQDZBH', '_blank')`}
-            width={800}
-            height={400}
-            loading="lazy"
+<BaseLayout title={siteTitle} description={description}>
+  <article class="prose prose-lg lg:prose-xl mx-auto max-w-[800px] px-2">
+    <section>
+      <blockquote>
+        <p>
+          Someday I&apos;ll have to tell you how transformational these ads have
+          been for us. Our biggest worry is how we will service all the new
+          clients going into 2025.
+        </p>
+        <p>
+          We did other ads in 2024, but <span class="font-bold"
+            >the Theo ads were by far the most effective for us</span
+          >. It&apos;s clear to us that you in particular get it - exactly what
+          we need.
+        </p>
+        <div class="not-prose flex items-center gap-3">
+          <img
+            src={"/assets/sponsors/infinite-red.svg"}
+            alt={"Infinite Red"}
+            class="h-12 w-12 object-contain"
           />
-        </section>
-
-        <section>
-          <h3>the numbers</h3>
-          <p>
-            i'm in the <a
-              href="https://socialblade.com/youtube/c/theobrowne1017"
-              target="_blank">top 2000 youtubers in the US</a
-            >. we get <strong>over 3 million views per month</strong>, often
-            breaking <strong>400,000 watch hours</strong> (~2 super bowl commercials).
-          </p>
-          <p>
-            my channel has significantly more reach than branded content
-            reasonably should. big brands on youtube (like <a
-              href="https://socialblade.com/youtube/c/vercelhq"
-              target="_blank">vercel</a
-            >) have <strong>less than 5% of my reach</strong>.
-          </p>
-        </section>
-
-        <section>
-          <h3>demographics</h3>
-          <p>
-            this isn't a bunch of beginners learning to code - my audience
-            actually ships. <strong>76% of them are over 25</strong>. the most
-            recent state of react survey showed that <em
-              >over half of react devs watch my videos.</em
+          <p class="text-lg font-semibold text-slate-900">
+            Jamon<span class="text-slate-600"
+              >, <a href="https://infinitered.com" target="_blank"
+                >Infinite Red</a
+              ></span
             >
           </p>
-        </section>
+        </div>
+      </blockquote>
+    </section>
+    <section>
+      <h2 class="text-3xl font-semibold">sponsoring theo</h2>
+      <p>
+        hi! i'm theo. you probably know me from <a
+          href="https://youtube.com/@t3dotgg">youtube</a
+        >. if you want experienced devs to know something, i'm a pretty good way
+        to make that happen.
+      </p>
+    </section>
 
-        <section>
-          <p>
-            i've helped <a href="/sponsors"
-              >over 40 brands grow their businesses</a
-            > - will yours be next?
-          </p>
-          <h3></h3>
-        </section>
+    <section>
+      <h3>why sponsor theo?</h3>
+      <p>
+        good developers watch my videos to learn about new technologies. my
+        audience is so excited to learn about new tech that they <em
+          >often like the ads more than the videos themselves</em
+        >
+      </p>
+    </section>
 
-        <section>
-          <p>
-            email us at
-            <span class="font-semibold">youtube @ (this domain)</span> for more info
-            on pricing and availability
-          </p>
-        </section>
+    <section>
+      <Image
+        alt="sponsor comments"
+        src={"https://ezkf3xv6eh.ufs.sh/f/3odeDX4eRzTNQlTj6vGY8AzxSWdivlGJ0fNusyEU7bKQDZBH"}
+        onclick={`window.open('https://ezkf3xv6eh.ufs.sh/f/3odeDX4eRzTNQlTj6vGY8AzxSWdivlGJ0fNusyEU7bKQDZBH', '_blank')`}
+        width={800}
+        height={400}
+        loading="lazy"
+      />
+    </section>
 
-        <section>
-          <blockquote>
-            <p>
-              I always know when you guys publish something because we have a
-              slack channel with new signups and <span class="font-semibold"
-                >it&apos;s getting flooded.</span
-              >
-            </p>
+    <section>
+      <h3>the numbers</h3>
+      <p>
+        i'm in the <a
+          href="https://socialblade.com/youtube/c/theobrowne1017"
+          target="_blank">top 2000 youtubers in the US</a
+        >. we get <strong>over 3 million views per month</strong>, often
+        breaking <strong>400,000 watch hours</strong> (~2 super bowl commercials).
+      </p>
+      <p>
+        my channel has significantly more reach than branded content reasonably
+        should. big brands on youtube (like <a
+          href="https://socialblade.com/youtube/c/vercelhq"
+          target="_blank">vercel</a
+        >) have <strong>less than 5% of my reach</strong>.
+      </p>
+    </section>
 
-            <div class="not-prose flex items-center gap-3">
-              <img
-                src={"/assets/sponsors/sevalla.svg"}
-                alt={"Sevalla"}
-                width={96}
-                height={96}
-                class="h-12 w-12 object-contain"
-              />
-              <p class="text-lg font-semibold text-slate-900">
-                Paul<span class="text-slate-600"
-                  >, <a href="https://sevalla.com" target="_blank">Sevalla</a
-                  ></span
-                >
-              </p>
-            </div>
-          </blockquote>
-        </section>
+    <section>
+      <h3>demographics</h3>
+      <p>
+        this isn't a bunch of beginners learning to code - my audience actually
+        ships. <strong>76% of them are over 25</strong>. the most recent state
+        of react survey showed that <em
+          >over half of react devs watch my videos.</em
+        >
+      </p>
+    </section>
 
-        <section>
-          <a
-            href="/"
-            class="flex items-center gap-1 text-gray-500 hover:underline"
+    <section>
+      <p>
+        i've helped <a href="/sponsors">over 40 brands grow their businesses</a>
+        - will yours be next?
+      </p>
+      <h3></h3>
+    </section>
+
+    <section>
+      <p>
+        email us at
+        <span class="font-semibold">youtube @ (this domain)</span> for more info
+        on pricing and availability
+      </p>
+    </section>
+
+    <section>
+      <blockquote>
+        <p>
+          I always know when you guys publish something because we have a slack
+          channel with new signups and <span class="font-semibold"
+            >it&apos;s getting flooded.</span
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+        </p>
+
+        <div class="not-prose flex items-center gap-3">
+          <img
+            src={"/assets/sponsors/sevalla.svg"}
+            alt={"Sevalla"}
+            width={96}
+            height={96}
+            class="h-12 w-12 object-contain"
+          />
+          <p class="text-lg font-semibold text-slate-900">
+            Paul<span class="text-slate-600"
+              >, <a href="https://sevalla.com" target="_blank">Sevalla</a></span
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width={2}
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-            </svg>
-            back to theo's site
-          </a>
-        </section>
-      </article>
-    </main>
-  </body>
-</html>
+          </p>
+        </div>
+      </blockquote>
+    </section>
+  </article>
+</BaseLayout>

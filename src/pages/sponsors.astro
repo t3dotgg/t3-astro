@@ -1,5 +1,7 @@
 ---
 import "../style/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
 const siteTitle = "theo's sponsors";
 const description = "all of the brands running ads on my youtube channel";
 
@@ -248,7 +250,7 @@ const sponsors = [
   {
     name: "vercel",
     image: "/assets/sponsors/vercel.svg",
-    description: "you already know who they are.",
+    description: "the first place i deploy things.",
     link: "https://soydev.link/vercel",
   },
   {
@@ -277,136 +279,78 @@ const sponsors = [
     link: "https://soydev.link/axiom",
   },
 ];
+
+const shuffledSponsors = sponsors.sort(() => Math.random() - 0.5);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.svg" />
-    <meta name="description" content={description} />
-    <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="@t3dotgg" />
-    <meta property="og:title" content={siteTitle} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://t3.gg/images/twitter.png" />
-    <title>{siteTitle}</title>
-    <meta name="theme-color" content="#000000" />
-
-    <script defer data-domain="astro.t3.gg" src="/js/script.js"></script>
-  </head>
-  <body class="h-screen bg-white text-black">
-    <main>
-      <header class="flex flex-col gap-2 px-8 pt-4 pb-8">
-        <a
-          href="/"
-          class="flex items-center gap-1 text-sm text-gray-500 hover:underline"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+<BaseLayout title={siteTitle} description={description}>
+  <div class="flex w-full flex-col items-center p-4">
+    <h1 class="py-4 text-4xl font-bold">Theo's Sponsors</h1>
+    <p class="max-w-2xl text-center text-xl font-bold text-black">
+      these are the brands i work with. they help me make videos and run my
+      business. please check them out!
+    </p>
+    <p class="max-w-xl pt-2 text-center text-lg font-semibold text-black">
+      want to be a sponsor?
+      <a class="text-blue-500 hover:underline" href="/sponsor-me">click here</a>
+    </p>
+    <h2 class="pt-8 text-3xl font-bold">Active Sponsors</h2>
+    <div
+      class="grid w-full max-w-[1200px] grid-cols-1 gap-4 py-4 md:grid-cols-2 lg:grid-cols-3"
+    >
+      {
+        shuffledSponsors.map((sponsor) => (
+          <a
+            href={sponsor.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-md transition-shadow hover:shadow-lg"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width={2}
-              d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-          </svg>
-          back
-        </a>
-        <h1 class="text-4xl font-semibold">my sponsors</h1>
-        <p>here's all the brands that have run ads on my content</p>
-        <p class="text-sm font-light text-gray-500">
-          psssst... if you're a brand and want to run an ad on my channel,
-          <a href="/sponsor-me" class="text-blue-500 hover:underline"
-            >click here</a
+            <img
+              src={sponsor.image}
+              alt={sponsor.name}
+              class="h-16 w-16 flex-shrink-0 object-contain"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">
+                {sponsor.name}
+              </h3>
+              <p class="text-sm text-gray-600">{sponsor.description}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <h2 class="pt-8 text-3xl font-bold">Affiliates</h2>
+    <p class="text-lg font-semibold text-black">
+      these aren't direct sponsors, but i use them and recommend them.
+    </p>
+    <div
+      class="grid w-full max-w-[1200px] grid-cols-1 gap-4 py-4 md:grid-cols-2 lg:grid-cols-3"
+    >
+      {
+        affiliates.map((sponsor) => (
+          <a
+            href={sponsor.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-md transition-shadow hover:shadow-lg"
           >
-        </p>
-      </header>
-      <section class="pb-16">
-        <h2 class="px-8 pb-4 text-2xl font-semibold">affiliates</h2>
-        <div
-          class="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:px-8 lg:grid-cols-3"
-        >
-          {
-            affiliates.map((brand) => (
-              <a
-                href={brand.link}
-                class="group flex flex-row rounded-lg border border-gray-200 p-6 transition duration-300 ease-in-out hover:bg-gray-50"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div class="flex h-24 w-24 shrink-0 items-center justify-center">
-                  <img
-                    src={brand.image || "/placeholder.svg"}
-                    alt={brand.name}
-                    width={96}
-                    height={96}
-                    class="h-24 w-24 object-contain"
-                  />
-                </div>
-                <div class="flex grow flex-col pl-6">
-                  <h2 class="mb-2 text-xl font-semibold text-gray-800">
-                    {brand.name}
-                  </h2>
-                  <p class="grow text-gray-600" style="text-wrap: balance;">
-                    {brand.description}
-                  </p>
-                </div>
-              </a>
-            ))
-          }
-        </div>
-      </section>
-
-      <section>
-        <h2 class="px-8 pb-4 text-2xl font-semibold">video sponsors</h2>
-        <div
-          class="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:px-8 lg:grid-cols-3"
-        >
-          {
-            sponsors.map((brand) => (
-              <a
-                href={brand.link}
-                class="group flex flex-row rounded-lg border border-gray-200 p-6 transition duration-300 ease-in-out hover:bg-gray-50"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div class="flex w-24 shrink-0 items-center justify-center">
-                  <img
-                    src={brand.image || "/placeholder.svg"}
-                    alt={brand.name}
-                    width={96}
-                    height={96}
-                    class="h-24 w-24 object-contain"
-                  />
-                </div>
-                <div class="flex grow flex-col pl-6">
-                  <h2 class="mb-2 text-xl font-semibold text-gray-800">
-                    {brand.name}
-                  </h2>
-                  <p class="grow text-gray-600" style="text-wrap: balance;">
-                    {brand.description}
-                  </p>
-                </div>
-              </a>
-            ))
-          }
-        </div>
-
-        <div class="pt-20 pb-24 text-center">
-          <p>
-            interested in sponsoring theo? learn more <a
-              href="/sponsor-me"
-              class="text-blue-500 hover:underline">here</a
-            >
-          </p>
-        </div>
-      </section>
-    </main>
-  </body>
-</html>
+            <img
+              src={sponsor.image}
+              alt={sponsor.name}
+              class="h-16 w-16 flex-shrink-0 object-contain"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">
+                {sponsor.name}
+              </h3>
+              <p class="text-sm text-gray-600">{sponsor.description}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>
