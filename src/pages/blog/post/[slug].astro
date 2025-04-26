@@ -61,11 +61,11 @@ const { post } = Astro.props;
 </html>
 
 <style>
+  @reference "/../../../style/global.css";
   .page {
     background-image: url("/images/bg-texture.png");
   }
-
   a :global(a) {
-    @apply my-1 appearance-none rounded-md py-2 text-blue-200 outline-none ring-theo-blue hover:underline focus:ring;
+    @apply my-1 appearance-none rounded-md py-2 text-blue-200 outline-hidden ring-theo-blue hover:underline focus:ring;
   }
 </style>

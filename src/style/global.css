@@ -1,7 +1,44 @@
-/* src/styles/global.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* source('..') sets base path, so Tailwind CSS scans from `src` instead of `src/style`
+   https://tailwindcss.com/docs/detecting-classes-in-source-files#setting-your-base-path */
+@import 'tailwindcss' source('..');
+
+/* Tailwind CSS Typography plugin + custom CSS overrides */
+@plugin "@tailwindcss/typography";
+@config './plugin-configs/tailwindcss-typography.js';
+
+@theme {
+  /* custom colors */
+  --color-theo-purple: #E8DCFF;
+  --color-theo-blue: #1F11E4;
+  /* override default black and white colors */
+  --color-black: #27272A;
+  --color-white: #F4F4F5;
+
+  /* custom animations */
+  /* https://tailwindcss.com/docs/theme#defining-animation-keyframes */
+  --animate-fade-in-down: fade-in-down 0.5s ease-out;
+  --animate-fade-in: fade-in 0.2s ease-out;
+
+  @keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
 
 @layer base {
   body {

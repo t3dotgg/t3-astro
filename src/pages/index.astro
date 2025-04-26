@@ -65,11 +65,11 @@ const socialLinks = [
 
     <script defer data-domain="astro.t3.gg" src="/js/script.js"></script>
   </head>
-  <body class="h-screen bg-gradient-to-b from-[#300171] to-gray-900">
+  <body class="h-screen bg-linear-to-b from-[#300171] to-gray-900">
     <main>
       <div class="flex min-h-screen flex-col bg-white text-black">
         <main
-          class="container mx-auto flex flex-grow flex-col items-center px-4 py-12"
+          class="container mx-auto flex grow flex-col items-center px-4 py-12"
         >
           <div>
             <p class="mb-12 max-w-xl text-center text-2xl">
@@ -78,17 +78,17 @@ const socialLinks = [
             </p>
           </div>
           <div
-            class="mx-auto flex w-full max-w-md flex-grow flex-col items-center space-y-6"
+            class="mx-auto flex w-full max-w-md grow flex-col items-center space-y-6"
           >
             {
               links.map((link) => (
                 <a
                   href={link.href}
                   target={link.target}
-                  class="group relative w-full border border-black/60 py-3 text-center transition-all duration-300 hover:bg-black/60 hover:text-white"
+                  class="group relative w-full border border-black/60 py-3 text-center transition-colors duration-300 ease-out hover:bg-black/60 hover:text-white"
                 >
                   <span class="text-lg">{link.label}</span>
-                  <span class="block text-sm text-gray-500 transition-all group-hover:text-gray-200">
+                  <span class="block text-sm text-gray-500 transition-colors group-hover:text-gray-200">
                     {link.description}
                   </span>
                 </a>

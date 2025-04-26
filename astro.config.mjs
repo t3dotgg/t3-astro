@@ -1,11 +1,14 @@
 import { defineConfig } from "astro/config";
 import prefetch from "@astrojs/prefetch";
-
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [prefetch(), tailwind()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  plugins: [],
+  integrations: [prefetch()],
   redirects: {
     "/links": "/",
     "/faq": "/",
