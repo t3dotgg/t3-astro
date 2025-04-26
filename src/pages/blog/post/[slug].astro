@@ -2,7 +2,7 @@
 import "../../../style/global.css";
 import BlogPostHeader from "../../../components/BlogPostHeader.astro";
 import { getSlugFromPath } from "../../../utils/get-slug-from-path";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 export async function getStaticPaths({ paginate, rss }) {
   const allPosts = await Astro.glob("../../../content/posts/*.md");
@@ -25,7 +25,7 @@ const { post } = Astro.props;
 
 <html lang="en">
   <head>
-    <ViewTransitions />
+    <ClientRouter />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.svg" />

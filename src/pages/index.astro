@@ -4,7 +4,7 @@ const siteTitle = "theo - builder who's also on youtube";
 const description =
   "theo (aka t3, t3dotgg) is a youtuber/ceo/dev. built t3 chat, ping.gg, t3 stack and more.";
 
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 const links = [
   {
@@ -49,7 +49,7 @@ const socialLinks = [
 
 <html lang="en">
   <head>
-    <ViewTransitions />
+    <ClientRouter />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.svg" />
