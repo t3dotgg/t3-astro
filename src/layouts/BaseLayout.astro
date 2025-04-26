@@ -19,12 +19,22 @@ interface Props {
     main?: string;
     footer?: string;
   };
+  backToLink?: false | {
+    text: string;
+    href: string;
+  };
 }
 
-const { title, description, classNames } = Astro.props;
+const defaultBackToLink: Props["backToLink"] = {
+  text: "back to theo's site",
+  href: "/",
+};
+
+const { title, description, classNames, backToLink = defaultBackToLink } = Astro.props;
+const isHomepage = Astro.url.pathname === "/";
 ---
 
-<html lang="en" class={cn("bg-white", classNames?.html)}>
+<html lang="en" class={cn("bg-white h-full", classNames?.html)}>
   <head>
     <ClientRouter />
     <meta charset="UTF-8" />
@@ -45,24 +55,30 @@ const { title, description, classNames } = Astro.props;
   <body class={cn("min-h-full", classNames?.body)}>
     <main class={cn("flex min-h-screen flex-col text-black", classNames?.main)}>
       <slot />
-      <aside>
-        <a href="/" class="flex items-center gap-1 text-gray-500 hover:underline">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+      {!isHomepage && backToLink && (
+        <aside class="text-center">
+          <a
+            href={backToLink.href}
+            class="inline-flex items-center justify-center gap-1 p-2 mt-8 -mb-4 text-gray-500 hover:underline"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width={2}
-              d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-          </svg>
-          back to theo's site
-        </a>
-      </aside>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width={2}
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              ></path>
+            </svg>
+            {backToLink.text}
+          </a>
+        </aside>
+      )}
       <footer
         class={cn("border-t border-gray-200 py-8 mt-8", classNames?.footer)}
       >

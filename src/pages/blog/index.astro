@@ -24,14 +24,14 @@ const BaseLayoutClassNames = {
 ---
 
 <BaseLayout title={siteTitle} description={description} classNames={BaseLayoutClassNames}>
-  <div class="absolute right-0 z-10 p-4 text-right text-xl font-bold">
+  <div class="absolute right-0 z-10 p-4 text-right text-xl font-bold *:text-black">
     <a href="https://www.youtube.com/@t3dotgg">Youtube</a>
     <br />
     <a href="https://x.com/theo">Twitter</a>
     <br />
     <a href="/links">More</a>
   </div>
-  <div class="page flex h-full w-full flex-col items-center">
+  <div class="bg-[url(/images/bg-texture.png)] flex h-full w-full flex-col items-center">
     <div class="mt-8 w-48"><TheoHeaderImage /></div>
     <h1 class="pt-2 text-4xl font-bold">Theo's Blog</h1>
     <h2 class="px-8 text-center text-xl xl:px-0">
@@ -45,13 +45,3 @@ const BaseLayoutClassNames = {
     </div>
   </div>
 </BaseLayout>
-
-<style>
-  .page {
-    background-color: #f7f2fe;
-    background-image: url("/images/bg-texture.png");
-  }
-  a {
-    color: var(--color-black);
-  }
-</style>
