@@ -14,7 +14,7 @@ const sortedPosts = allPosts
   .sort(
     (a, b) =>
       new Date(b.frontmatter.date).valueOf() -
-      new Date(a.frontmatter.date).valueOf()
+      new Date(a.frontmatter.date).valueOf(),
   )
   .filter((p) => p.frontmatter.hidden !== true);
 ---
