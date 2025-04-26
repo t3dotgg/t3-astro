@@ -19,19 +19,27 @@ const sortedPosts = allPosts
   .filter((p) => p.frontmatter.hidden !== true);
 
 const BaseLayoutClassNames = {
-  html: 'bg-theo-purple/40',
+  html: "bg-theo-purple/40",
 };
 ---
 
-<BaseLayout title={siteTitle} description={description} classNames={BaseLayoutClassNames}>
-  <div class="absolute right-0 z-10 p-4 text-right text-xl font-bold *:text-black">
+<BaseLayout
+  title={siteTitle}
+  description={description}
+  classNames={BaseLayoutClassNames}
+>
+  <div
+    class="absolute right-0 z-10 p-4 text-right text-xl font-bold *:text-black"
+  >
     <a href="https://www.youtube.com/@t3dotgg">Youtube</a>
     <br />
     <a href="https://x.com/theo">Twitter</a>
     <br />
     <a href="/links">More</a>
   </div>
-  <div class="bg-[url(/images/bg-texture.png)] flex h-full w-full flex-col items-center">
+  <div
+    class="flex h-full w-full flex-col items-center bg-[url(/images/bg-texture.png)]"
+  >
     <div class="mt-8 w-48"><TheoHeaderImage /></div>
     <h1 class="pt-2 text-4xl font-bold">Theo's Blog</h1>
     <h2 class="px-8 text-center text-xl xl:px-0">

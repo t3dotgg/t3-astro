@@ -11,7 +11,9 @@ interface Props {
 const { sponsors } = Astro.props;
 ---
 
-<div class="grid w-full max-w-[1200px] grid-cols-1 gap-4 py-4 md:grid-cols-2 lg:grid-cols-3">
+<div
+  class="grid w-full max-w-[1200px] grid-cols-1 gap-4 py-4 md:grid-cols-2 lg:grid-cols-3"
+>
   {
     sponsors.map((sponsor) => (
       <a
@@ -26,9 +28,7 @@ const { sponsors } = Astro.props;
           class="h-16 w-16 flex-shrink-0 object-contain"
         />
         <div>
-          <h3 class="text-lg font-semibold text-gray-800">
-            {sponsor.name}
-          </h3>
+          <h3 class="text-lg font-semibold text-gray-800">{sponsor.name}</h3>
           <p class="text-sm text-gray-600">{sponsor.description}</p>
         </div>
       </a>

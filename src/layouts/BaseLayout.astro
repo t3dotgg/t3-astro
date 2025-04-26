@@ -19,10 +19,12 @@ interface Props {
     main?: string;
     footer?: string;
   };
-  backToLink?: false | {
-    text: string;
-    href: string;
-  };
+  backToLink?:
+    | false
+    | {
+        text: string;
+        href: string;
+      };
 }
 
 const defaultBackToLink: Props["backToLink"] = {
@@ -30,7 +32,12 @@ const defaultBackToLink: Props["backToLink"] = {
   href: "/",
 };
 
-const { title, description, classNames, backToLink = defaultBackToLink } = Astro.props;
+const {
+  title,
+  description,
+  classNames,
+  backToLink = defaultBackToLink,
+} = Astro.props;
 const isHomepage = Astro.url.pathname === "/";
 ---
 
@@ -55,35 +62,37 @@ const isHomepage = Astro.url.pathname === "/";
   <body class={cn("min-h-full", classNames?.body)}>
     <main class={cn("flex min-h-screen flex-col text-black", classNames?.main)}>
       <slot />
-      {!isHomepage && backToLink && (
-        <aside class="text-center">
-          <a
-            href={backToLink.href}
-            class="inline-flex items-center justify-center gap-1 p-2 mt-8 -mb-4 text-gray-500 hover:underline"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+      {
+        !isHomepage && backToLink && (
+          <aside class="text-center">
+            <a
+              href={backToLink.href}
+              class="mt-8 -mb-4 inline-flex items-center justify-center gap-1 p-2 text-gray-500 hover:underline"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width={2}
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
-              ></path>
-            </svg>
-            {backToLink.text}
-          </a>
-        </aside>
-      )}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width={2}
+                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                />
+              </svg>
+              {backToLink.text}
+            </a>
+          </aside>
+        )
+      }
       <footer
         class={cn("border-t border-gray-200 py-8 mt-8", classNames?.footer)}
       >
         <div class="container mx-auto px-4">
-          <div class="flex justify-center space-x-6">
+          <div class="mb-4 flex justify-center space-x-6">
             {
               socialLinks.map((link) => (
                 <a
@@ -96,6 +105,15 @@ const isHomepage = Astro.url.pathname === "/";
                 </a>
               ))
             }
+          </div>
+          <div class="text-center">
+            <button
+              id="theme-toggle"
+              type="button"
+              class="rounded border border-gray-400 px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-800"
+            >
+              Toggle Theme
+            </button>
           </div>
         </div>
       </footer>

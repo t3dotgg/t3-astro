@@ -24,7 +24,7 @@ const title = post.frontmatter.title;
 const description = post.frontmatter.description;
 
 const BaseLayoutClassNames = {
-  html: 'bg-theo-purple/40',
+  html: "bg-theo-purple/40",
 };
 
 const backToLink = {
@@ -33,8 +33,15 @@ const backToLink = {
 };
 ---
 
-<BaseLayout {title} {description} {backToLink} classNames={BaseLayoutClassNames}>
-  <div class="bg-[url(/images/bg-texture.png)] flex h-full w-full justify-center">
+<BaseLayout
+  {title}
+  {description}
+  {backToLink}
+  classNames={BaseLayoutClassNames}
+>
+  <div
+    class="flex h-full w-full justify-center bg-[url(/images/bg-texture.png)]"
+  >
     <div class="max-w-full px-4 pt-8 lg:w-[42rem] lg:px-0 xl:w-[64rem]">
       <a class="pt-8 text-xl" href="/blog">Theo's Blog</a>
       <article class="prose prose-lg lg:prose-xl max-w-none">
