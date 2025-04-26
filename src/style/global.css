@@ -1,10 +1,10 @@
-/* source('..') sets base path, so Tailwind CSS scans from `src` instead of `src/style`
+/* source("..") sets base path, so Tailwind CSS scans from `src` instead of `src/style`
    https://tailwindcss.com/docs/detecting-classes-in-source-files#setting-your-base-path */
 @import "tailwindcss" source("..");
 
 /* Tailwind CSS Typography plugin + custom CSS overrides */
 @plugin "@tailwindcss/typography";
-@config './plugin-configs/tailwindcss-typography.js';
+@config "./plugin-configs/tailwindcss-typography.cjs";
 
 @theme {
   /* custom colors */
