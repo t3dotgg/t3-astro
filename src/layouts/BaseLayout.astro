@@ -2,9 +2,10 @@
 import { cn } from "../utils/cn";
 import "../style/global.css";
 import { ClientRouter } from "astro:transitions";
+import LeftArrow from "../assets/icons/left-arrow.svg.astro";
 
+// theme icons
 import { LightModeIcon, DarkModeIcon, SystemModeIcon } from "../assets/themes";
-import { getTheme } from "../utils/theme";
 
 const socialLinks = [
   { href: "https://github.com/t3dotgg", label: "GitHub" },
@@ -68,42 +69,42 @@ const isHomepage = Astro.url.pathname === "/";
     <meta property="og:description" content={description} />
     <meta property="og:image" content="https://t3.gg/images/twitter.png" />
     <title>{title}</title>
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="black" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="white" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="black"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="white"
+    />
 
     <script defer data-domain="astro.t3.gg" src="/js/script.js"></script>
   </head>
   <body class={cn("min-h-full", classNames?.body)}>
-    <main class={cn("flex min-h-screen flex-col text-foreground", classNames?.main)}>
+    <main
+      class={cn("flex min-h-screen flex-col text-foreground", classNames?.main)}
+    >
       <slot />
       {
         !isHomepage && backToLink && (
           <aside class="text-center">
             <a
               href={backToLink.href}
-              class="mt-8 -mb-4 inline-flex items-center justify-center gap-1 p-2 text-gray-600 dark:text-gray-400 hover:text-foreground hover:underline"
+              class="text-foreground/60 hover:text-foreground mt-8 -mb-4 inline-flex items-center justify-center gap-1 p-2 hover:underline"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width={2}
-                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                />
-              </svg>
+              <LeftArrow />
               {backToLink.text}
             </a>
           </aside>
         )
       }
       <footer
-        class={cn("border-t border-foreground/10 py-8 mt-8", classNames?.footer)}
+        class={cn(
+          "border-t border-foreground/10 py-8 mt-8",
+          classNames?.footer,
+        )}
       >
         <div class="container mx-auto px-4">
           <div class="mb-4 flex justify-center space-x-6">
@@ -113,7 +114,7 @@ const isHomepage = Astro.url.pathname === "/";
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="transition-colors ease-out text-gray-600 dark:text-gray-400 hover:text-foreground"
+                  class="hover:text-foreground transition-colors ease-out text-foreground/75"
                 >
                   {link.label}
                 </a>
@@ -122,7 +123,7 @@ const isHomepage = Astro.url.pathname === "/";
           </div>
           <div class="text-center">
             <div
-              class="theme-toggle-group inline-flex items-center gap-2 rounded-full border border-foreground/10 p-1"
+              class="theme-toggle-group border-foreground/10 inline-flex items-center gap-2 rounded-full border p-1"
             >
               {
                 themeToggles.map((toggle) => {
@@ -130,7 +131,7 @@ const isHomepage = Astro.url.pathname === "/";
                     <div class={cn("theme-icon", `theme-icon-${toggle.id}`)}>
                       <button
                         type="button"
-                        class="grid place-items-center size-8 rounded-full p-1.75"
+                        class="grid size-8 place-items-center rounded-full p-1.75"
                         aria-label={`Set theme to ${toggle.id}`}
                         data-theme-toggle={toggle.id}
                       >
@@ -154,18 +155,17 @@ const isHomepage = Astro.url.pathname === "/";
   @reference "../style/global.css";
   @variant system {
     button[data-theme-toggle="system"] {
-      @apply bg-foreground/10 ;
+      @apply bg-foreground/10 inset-ring-foreground/10 inset-ring;
     }
   }
   @variant explicit-light {
     button[data-theme-toggle="light"] {
-      @apply bg-foreground/10 ;
+      @apply bg-foreground/10 inset-ring-foreground/10 inset-ring;
     }
   }
   @variant explicit-dark {
     button[data-theme-toggle="dark"] {
-      @apply bg-foreground/10 ;
+      @apply bg-foreground/10 inset-ring-foreground/10 inset-ring;
     }
   }
-</style>
 </style>

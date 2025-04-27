@@ -1,21 +1,60 @@
+import EightSleepLogo from "../assets/sponsors/eight-sleep.svg.astro";
+import CodeCraftersLogo from "../assets/sponsors/code-crafters.svg.astro";
+import InfiniteRedLogo from "../assets/sponsors/infinite-red.svg.astro";
+import SevallaLogo from "../assets/sponsors/sevalla.svg.astro";
+import PosthogLogo from "../assets/sponsors/posthog.svg.astro";
+import CodeRabbitLogo from "../assets/sponsors/code-rabbit.svg.astro";
+import BlacksmithLogo from "../assets/sponsors/blacksmith.svg.astro";
+import NotionLogo from "../assets/sponsors/notion.svg.astro";
+import AgGridLogo from "../assets/sponsors/ag-grid.svg.astro";
+import ConvexLogo from "../assets/sponsors/convex.svg.astro";
+import AhrefsLogo from "../assets/sponsors/ahrefs.svg.astro";
+import ZephyrLogo from "../assets/sponsors/zephyr.svg.astro";
+import GraphiteLogo from "../assets/sponsors/graphite.svg.astro";
+import G2iLogo from "../assets/sponsors/g2i.svg.astro";
+import BoltNewLogo from "../assets/sponsors/bolt-new.svg.astro";
+import ClerkLogo from "../assets/sponsors/clerk.svg.astro";
+import BrowserbaseLogo from "../assets/sponsors/browserbase.svg.astro";
+import UnkeyLogo from "../assets/sponsors/unkey.svg.astro";
+import FrontendMastersLogo from "../assets/sponsors/frontend-masters.svg.astro";
+import PayloadLogo from "../assets/sponsors/payload.svg.astro";
+import SinglestoreLogo from "../assets/sponsors/singlestore.svg.astro";
+import FalLogo from "../assets/sponsors/fal.svg.astro";
+import WorkosLogo from "../assets/sponsors/workos.svg.astro";
+import RagieLogo from "../assets/sponsors/ragie.svg.astro";
+import BrightDataLogo from "../assets/sponsors/bright-data.svg.astro";
+import AppwriteLogo from "../assets/sponsors/appwrite.svg.astro";
+import HighlightLogo from "../assets/sponsors/highlight.svg.astro";
+import NetlifyLogo from "../assets/sponsors/netlify.svg.astro";
+import PrismaLogo from "../assets/sponsors/prisma.svg.astro";
+import DockyardLogo from "../assets/sponsors/dockyard.svg.astro";
+import LovableLogo from "../assets/sponsors/lovable.svg.astro";
+import EpicWebLogo from "../assets/sponsors/epic-web.svg.astro";
+import AugmentCodeLogo from "../assets/sponsors/augment-code.svg.astro";
+import VercelLogo from "../assets/sponsors/vercel.svg.astro";
+import UpstashLogo from "../assets/sponsors/upstash.svg.astro";
+import PlanetscaleLogo from "../assets/sponsors/planetscale.svg.astro";
+import SentryLogo from "../assets/sponsors/sentry.svg.astro";
+import AxiomLogo from "../assets/sponsors/axiom.svg.astro";
+
 export const affiliates = [
   {
     name: "eight sleep",
-    image: "/assets/sponsors/eight-sleep.svg",
+    image: EightSleepLogo,
     description:
       "a watercooler for your bed. sounds stupid but i literally can't sleep without it.",
     link: "https://soydev.link/eightsleep",
   },
   {
     name: "superhuman",
-    image: "/assets/sponsors/superhuman.png",
+    image: "../assets/sponsors/superhuman.png",
     description:
       "if you do more than an hour of email a day, you should be on superhuman. works with gmail and outlook.",
     link: "https://soydev.link/superhuman",
   },
   {
     name: "code crafters",
-    image: "/assets/sponsors/code-crafters.svg",
+    image: CodeCraftersLogo,
     description:
       "learn by rebuilding, literally - one of their courses is recreating redis lol.",
     link: "https://soydev.link/codecrafters",
@@ -25,248 +64,248 @@ export const affiliates = [
 export const sponsors = [
   {
     name: "infinite red",
-    image: "/assets/sponsors/infinite-red.svg",
+    image: InfiniteRedLogo,
     description: "the first people i call for react native help.",
     link: "https://soydev.link/infinitered",
   },
   {
     name: "sevalla",
-    image: "/assets/sponsors/sevalla.svg",
+    image: SevallaLogo,
     description:
       "deploy anything (like vercel but for php, rails, go, whatever else).",
     link: "https://soydev.link/sevalla",
   },
   {
     name: "posthog",
-    image: "/assets/sponsors/posthog.svg",
+    image: PosthogLogo,
     description:
       '"All in one suite of product tools" - also the only analytics provider i don\'t hate. open source too!',
     link: "https://soydev.link/posthog",
   },
   {
     name: "coderabbit",
-    image: "/assets/sponsors/code-rabbit.svg",
+    image: CodeRabbitLogo,
     description: "ai code review that doesn't suck.",
     link: "https://soydev.link/coderabbit",
   },
   {
     name: "blacksmith",
-    image: "/assets/sponsors/blacksmith.svg",
+    image: BlacksmithLogo,
     description: "github actions but they're 2x faster and way cheaper.",
     link: "https://soydev.link/blacksmith",
   },
   {
     name: "vapi",
-    image: "/assets/sponsors/vapi.png",
+    image: "../assets/sponsors/vapi.png",
     description: "add ai voice to your ai apps in minutes.",
     link: "https://soydev.link/vapi",
   },
   {
     name: "notion",
-    image: "/assets/sponsors/notion.svg",
+    image: NotionLogo,
     description: "i literally couldn't run my channel without notion.",
     link: "https://soydev.link/notion",
   },
   {
     name: "ag grid",
-    image: "/assets/sponsors/ag-grid.svg",
+    image: AgGridLogo,
     description:
       "if you've ever liked a grid on the internet, 90%+ chance it was ag grid.",
     link: "https://soydev.link/ag-grid",
   },
   {
     name: "convex",
-    image: "/assets/sponsors/convex.svg",
+    image: ConvexLogo,
     description:
       "the missing half of your react app. full stack reactivity from db to component. open source and typesafe too!",
     link: "https://soydev.link/convex",
   },
   {
     name: "ahrefs",
-    image: "/assets/sponsors/ahrefs.svg",
+    image: AhrefsLogo,
     description: "makes me feel like i don't suck at SEO.",
     link: "https://soydev.link/ahrefs",
   },
   {
     name: "zephyr cloud",
-    image: "/assets/sponsors/zephyr.svg",
+    image: ZephyrLogo,
     description:
       "micro-frontends suck to build. zephyr makes them suck much less. if you have more than 50 people working on your frontend, talk to them.",
     link: "https://soydev.link/zephyr",
   },
   {
     name: "graphite",
-    image: "/assets/sponsors/graphite.svg",
+    image: GraphiteLogo,
     description:
       "if github is slowing you down, graphite will speed you back up. better pr flows for fast moving teams (used by vercel, ramp, snowflake, brex and more)",
     link: "https://soydev.link/graphite",
   },
   {
     name: "g2i",
-    image: "/assets/sponsors/g2i.svg",
+    image: G2iLogo,
     description:
       "stop hiring bad engineers. g2i will do real video interviews with hundreds of candidates to get you the best possible engineer in weeks.",
     link: "https://soydev.link/g2i",
   },
   {
     name: "bolt.new",
-    image: "/assets/sponsors/bolt-new.svg",
+    image: BoltNewLogo,
     description:
       "best way to start your next project. prompt away, pick whatever framework you like, edit right in the browser.",
     link: "https://soydev.link/bolt",
   },
   {
     name: "clerk",
-    image: "/assets/sponsors/clerk.svg",
+    image: ClerkLogo,
     description: "the only auth solution i don't hate using.",
     link: "https://soydev.link/clerk",
   },
   {
     name: "browserbase",
-    image: "/assets/sponsors/browserbase.svg",
+    image: BrowserbaseLogo,
     description:
       "web browser for your ai. prompt for parsing, dodge captchas, get data out of anything.",
     link: "https://soydev.link/browserbase",
   },
   {
     name: "unkey",
-    image: "/assets/sponsors/unkey.svg",
+    image: UnkeyLogo,
     description: "add api keys to your service without going insane.",
     link: "https://soydev.link/unkey",
   },
 
   {
     name: "frontend masters",
-    image: "/assets/sponsors/frontend-masters.svg",
+    image: FrontendMastersLogo,
     description:
       "name's quite literal - learn frontend from the masters. courses from ryan carniato, primeagen, and many more.",
     link: "https://soydev.link/masters",
   },
   {
     name: "payload",
-    image: "/assets/sponsors/payload.svg",
+    image: PayloadLogo,
     description:
       "headless cms for next.js. like an admin panel for anything. open source too!",
     link: "https://soydev.link/payload",
   },
   {
     name: "singlestore",
-    image: "/assets/sponsors/singlestore.svg",
+    image: SinglestoreLogo,
     description: "the only db you'll ever need.",
     link: "https://soydev.link/singlestore",
   },
   {
     name: "fal",
-    image: "/assets/sponsors/fal.svg",
+    image: FalLogo,
     description:
       "ai apis for generating anything. if you want to add image/video/audio gen to your app, start here.",
     link: "https://soydev.link/fal",
   },
   {
     name: "workos",
-    image: "/assets/sponsors/workos.svg",
+    image: WorkosLogo,
     description: "the best way to add enterprise auth to your app.",
     link: "https://soydev.link/workos",
   },
   {
     name: "ragie ai",
-    image: "/assets/sponsors/ragie.svg",
+    image: RagieLogo,
     description: "build apps using anything as a data source. i mean anything.",
     link: "https://soydev.link/ragie",
   },
   {
     name: "agora",
-    image: "/assets/sponsors/agora.png",
+    image: "../assets/sponsors/agora.png",
     description:
       "the only way i build webrtc into my apps. they have crazy voice ai stuff now too.",
     link: "https://soydev.link/agora",
   },
   {
     name: "bright data",
-    image: "/assets/sponsors/bright-data.svg",
+    image: BrightDataLogo,
     description: "data proxy network for scraping the web.",
     link: "https://soydev.link/brightdata",
   },
   {
     name: "appwrite",
-    image: "/assets/sponsors/appwrite.svg",
+    image: AppwriteLogo,
     description: "build your backend in hours, not months.",
     link: "https://soydev.link/appwrite",
   },
   {
     name: "highlight",
-    image: "/assets/sponsors/highlight.svg",
+    image: HighlightLogo,
     description:
       "telemetry and monitoring for your services - open source too.",
     link: "https://soydev.link/highlight",
   },
   {
     name: "netlify",
-    image: "/assets/sponsors/netlify.svg",
+    image: NetlifyLogo,
     description:
       "deploy your frontend without compromise. scales forever. super fast. ai ready too :)",
     link: "https://soydev.link/netlify",
   },
   {
     name: "prisma postgres",
-    image: "/assets/sponsors/prisma.svg",
+    image: PrismaLogo,
     description:
       "probably the best way to deploy postgres rn, especially if you're building serverless.",
     link: "https://soydev.link/prismadb",
   },
   {
     name: "dockyard",
-    image: "/assets/sponsors/dockyard.svg",
+    image: DockyardLogo,
     description:
       "industry experts in all things elixir, hit them up if you need to scale.",
     link: "https://soydev.link/dockyard",
   },
   {
     name: "lovable",
-    image: "/assets/sponsors/lovable.svg",
+    image: LovableLogo,
     description: "use ai to generate a lovable website.",
     link: "https://soydev.link/lovable",
   },
   {
     name: "epic web",
-    image: "/assets/sponsors/epic-web.svg",
+    image: EpicWebLogo,
     description: "the best react course ever made - by kent dodds.",
     link: "https://soydev.link/epicreact",
   },
   {
     name: "augment code",
-    image: "/assets/sponsors/augment-code.svg",
+    image: AugmentCodeLogo,
     description:
       "ai code assistant built for large codebases. works with vs code, jetbrains, and neovim.",
     link: "https://soydev.link/augmentcode",
   },
   {
     name: "vercel",
-    image: "/assets/sponsors/vercel.svg",
+    image: VercelLogo,
     description: "the first place i deploy things.",
     link: "https://soydev.link/vercel",
   },
   {
     name: "upstash",
-    image: "/assets/sponsors/upstash.svg",
+    image: UpstashLogo,
     description: "if i'm using redis, i'm probably using upstash for it.",
     link: "https://soydev.link/upstash",
   },
   {
     name: "planetscale",
-    image: "/assets/sponsors/planetscale.svg",
+    image: PlanetscaleLogo,
     description: "mysql with superpowers.",
     link: "https://soydev.link/planetscale",
   },
   {
     name: "sentry",
-    image: "/assets/sponsors/sentry.svg",
+    image: SentryLogo,
     description: "industry standard for error tracking.",
     link: "https://soydev.link/sentry",
   },
   {
     name: "axiom",
-    image: "/assets/sponsors/axiom.svg",
+    image: AxiomLogo,
     description:
       "the world's greatest log dump. they'll parse terabytes for you and give you a dashboard to see it all. wild.",
     link: "https://soydev.link/axiom",

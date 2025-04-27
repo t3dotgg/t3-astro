@@ -3,31 +3,40 @@ import "../style/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SponsorGridLayout from "../layouts/SponsorGridLayout.astro";
 import { affiliates, sponsors } from "./sponsors.js";
+import LeftArrow from "../assets/icons/left-arrow.svg.astro";
 
 const siteTitle = "theo's sponsors";
 const description = "all of the brands running ads on my youtube channel";
-
-const shuffledSponsors = sponsors.sort(() => Math.random() - 0.5);
 ---
 
 <BaseLayout title={siteTitle} description={description}>
-  <div class="flex w-full flex-col items-center p-4">
-    <h1 class="py-4 text-4xl font-bold">Theo's Sponsors</h1>
-    <p class="max-w-2xl text-center text-xl font-bold text-foreground">
-      these are the brands i work with. they help me make videos and run my
-      business. please check them out!
+  <header class="flex flex-col gap-2 px-8 pt-4 pb-8">
+    <a
+      href="/"
+      class="flex items-center gap-1 text-sm text-foreground/60 hover:text-foreground hover:underline"
+    >
+      <LeftArrow />
+      back
+    </a>
+    <h1 class="text-4xl font-semibold">my sponsors</h1>
+    <p>here's all the brands that have run ads on my content</p>
+    <p class="text-sm font-light text-foreground/60">
+      psssst... if you're a brand and want to run an ad on my channel,
+      <a href="/sponsor-me" class="text-theo-blue hover:underline">click here</a>
     </p>
-    <p class="max-w-xl pt-2 text-center text-lg font-semibold text-foreground">
-      want to be a sponsor?
-      <a class="text-blue-500 hover:underline" href="/sponsor-me">click here</a>
+  </header>
+  <SponsorGridLayout
+    heading="affiliates"
+    sponsors={affiliates}
+    className="pb-16"
+  />
+  <SponsorGridLayout heading="video sponsors" sponsors={sponsors} />
+  <div class="-mb-8 py-24 text-center">
+    <p>
+      interested in sponsoring theo? learn more <a
+        href="/sponsor-me"
+        class="text-theo-blue hover:underline">here</a
+      >
     </p>
-    <h2 class="pt-8 text-3xl font-bold">Active Sponsors</h2>
-    <SponsorGridLayout sponsors={shuffledSponsors} />
-
-    <h2 class="pt-8 text-3xl font-bold">Affiliates</h2>
-    <p class="text-lg font-semibold text-foreground">
-      these aren't direct sponsors, but i use them and recommend them.
-    </p>
-    <SponsorGridLayout sponsors={affiliates} />
   </div>
 </BaseLayout>

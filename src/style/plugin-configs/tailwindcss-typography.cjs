@@ -19,6 +19,7 @@ module.exports = {
           css: {
             '--tw-prose-headings': colorForeground,
             '--tw-prose-quotes': colorForeground,
+            '--tw-prose-bold': colorForeground,
             color: applyAlphaColor(colorForeground, .9),
             blockquote: { "border-color": colorForeground },
             "blockquote p:first-of-type::before": { content: "none" },

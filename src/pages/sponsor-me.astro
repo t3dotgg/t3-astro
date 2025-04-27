@@ -1,12 +1,19 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import InfiniteRedLogo from "../assets/sponsors/infinite-red.svg.astro";
+import SevallaLogo from "../assets/sponsors/sevalla.svg.astro";
 
 const siteTitle = "sponsor theo";
 const description = "want to sponsor theo? here's everything you need to know";
+
+const backToLink = {
+  text: "back to theo's sponsors",
+  href: "/sponsors",
+};
 ---
 
-<BaseLayout title={siteTitle} description={description}>
+<BaseLayout title={siteTitle} description={description} {backToLink}>
   <article class="prose prose-lg lg:prose-xl mx-auto max-w-[800px] px-2">
     <section>
       <blockquote>
@@ -22,13 +29,11 @@ const description = "want to sponsor theo? here's everything you need to know";
           we need.
         </p>
         <div class="not-prose flex items-center gap-3">
-          <img
-            src={"/assets/sponsors/infinite-red.svg"}
-            alt={"Infinite Red"}
-            class="h-12 w-12 object-contain"
-          />
-          <p class="text-lg font-semibold text-slate-900">
-            Jamon<span class="text-slate-600"
+          <div class="size-12 *:size-full">
+            <InfiniteRedLogo />
+          </div>
+          <p class="text-lg font-semibold text-foreground">
+            Jamon<span class="text-foreground/75"
               >, <a href="https://infinitered.com" target="_blank"
                 >Infinite Red</a
               ></span
@@ -123,15 +128,11 @@ const description = "want to sponsor theo? here's everything you need to know";
         </p>
 
         <div class="not-prose flex items-center gap-3">
-          <img
-            src={"/assets/sponsors/sevalla.svg"}
-            alt={"Sevalla"}
-            width={96}
-            height={96}
-            class="h-12 w-12 object-contain"
-          />
-          <p class="text-lg font-semibold text-slate-900">
-            Paul<span class="text-slate-600"
+          <div class="size-12 *:size-full">
+            <SevallaLogo />
+          </div>
+          <p class="text-lg font-semibold text-foreground">
+            Paul<span class="text-foreground/75"
               >, <a href="https://sevalla.com" target="_blank">Sevalla</a></span
             >
           </p>
