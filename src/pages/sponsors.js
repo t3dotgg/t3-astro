@@ -1,44 +1,45 @@
-import EightSleepLogo from "../assets/sponsors/eight-sleep.svg.astro";
-import CodeCraftersLogo from "../assets/sponsors/code-crafters.svg.astro";
-import InfiniteRedLogo from "../assets/sponsors/infinite-red.svg.astro";
-import SevallaLogo from "../assets/sponsors/sevalla.svg.astro";
-import PosthogLogo from "../assets/sponsors/posthog.svg.astro";
-import CodeRabbitLogo from "../assets/sponsors/code-rabbit.svg.astro";
-import BlacksmithLogo from "../assets/sponsors/blacksmith.svg.astro";
-import NotionLogo from "../assets/sponsors/notion.svg.astro";
-import AgGridLogo from "../assets/sponsors/ag-grid.svg.astro";
-import ConvexLogo from "../assets/sponsors/convex.svg.astro";
-import AhrefsLogo from "../assets/sponsors/ahrefs.svg.astro";
-import ZephyrLogo from "../assets/sponsors/zephyr.svg.astro";
-import GraphiteLogo from "../assets/sponsors/graphite.svg.astro";
-import G2iLogo from "../assets/sponsors/g2i.svg.astro";
-import BoltNewLogo from "../assets/sponsors/bolt-new.svg.astro";
-import ClerkLogo from "../assets/sponsors/clerk.svg.astro";
-import BrowserbaseLogo from "../assets/sponsors/browserbase.svg.astro";
-import UnkeyLogo from "../assets/sponsors/unkey.svg.astro";
-import FrontendMastersLogo from "../assets/sponsors/frontend-masters.svg.astro";
-import PayloadLogo from "../assets/sponsors/payload.svg.astro";
-import SinglestoreLogo from "../assets/sponsors/singlestore.svg.astro";
-import FalLogo from "../assets/sponsors/fal.svg.astro";
-import WorkosLogo from "../assets/sponsors/workos.svg.astro";
-import RagieLogo from "../assets/sponsors/ragie.svg.astro";
-import BrightDataLogo from "../assets/sponsors/bright-data.svg.astro";
-import AppwriteLogo from "../assets/sponsors/appwrite.svg.astro";
-import HighlightLogo from "../assets/sponsors/highlight.svg.astro";
-import NetlifyLogo from "../assets/sponsors/netlify.svg.astro";
-import PrismaLogo from "../assets/sponsors/prisma.svg.astro";
-import DockyardLogo from "../assets/sponsors/dockyard.svg.astro";
-import LovableLogo from "../assets/sponsors/lovable.svg.astro";
-import EpicWebLogo from "../assets/sponsors/epic-web.svg.astro";
-import AugmentCodeLogo from "../assets/sponsors/augment-code.svg.astro";
-import VercelLogo from "../assets/sponsors/vercel.svg.astro";
-import UpstashLogo from "../assets/sponsors/upstash.svg.astro";
-import PlanetscaleLogo from "../assets/sponsors/planetscale.svg.astro";
-import SentryLogo from "../assets/sponsors/sentry.svg.astro";
-import AxiomLogo from "../assets/sponsors/axiom.svg.astro";
 import AgentuityLogo from "../assets/sponsors/agentuity.svg.astro";
+import AgGridLogo from "../assets/sponsors/ag-grid.svg.astro";
+import AhrefsLogo from "../assets/sponsors/ahrefs.svg.astro";
+import AppwriteLogo from "../assets/sponsors/appwrite.svg.astro";
+import AugmentCodeLogo from "../assets/sponsors/augment-code.svg.astro";
+import AxiomLogo from "../assets/sponsors/axiom.svg.astro";
+import BlacksmithLogo from "../assets/sponsors/blacksmith.svg.astro";
+import BoltNewLogo from "../assets/sponsors/bolt-new.svg.astro";
+import BrightDataLogo from "../assets/sponsors/bright-data.svg.astro";
+import BrowserbaseLogo from "../assets/sponsors/browserbase.svg.astro";
 import ChefLogo from "../assets/sponsors/chef.svg.astro";
+import ClerkLogo from "../assets/sponsors/clerk.svg.astro";
+import CodeCraftersLogo from "../assets/sponsors/code-crafters.svg.astro";
+import CodeRabbitLogo from "../assets/sponsors/code-rabbit.svg.astro";
+import ConvexLogo from "../assets/sponsors/convex.svg.astro";
+import DockyardLogo from "../assets/sponsors/dockyard.svg.astro";
+import EightSleepLogo from "../assets/sponsors/eight-sleep.svg.astro";
+import EpicWebLogo from "../assets/sponsors/epic-web.svg.astro";
+import FalLogo from "../assets/sponsors/fal.svg.astro";
+import FondoLogo from "../assets/sponsors/fondo.svg.astro";
+import FrontendMastersLogo from "../assets/sponsors/frontend-masters.svg.astro";
+import G2iLogo from "../assets/sponsors/g2i.svg.astro";
+import GraphiteLogo from "../assets/sponsors/graphite.svg.astro";
+import HighlightLogo from "../assets/sponsors/highlight.svg.astro";
+import InfiniteRedLogo from "../assets/sponsors/infinite-red.svg.astro";
+import LovableLogo from "../assets/sponsors/lovable.svg.astro";
 import MobbinLogo from "../assets/sponsors/mobbin.svg.astro";
+import NetlifyLogo from "../assets/sponsors/netlify.svg.astro";
+import NotionLogo from "../assets/sponsors/notion.svg.astro";
+import PayloadLogo from "../assets/sponsors/payload.svg.astro";
+import PlanetscaleLogo from "../assets/sponsors/planetscale.svg.astro";
+import PosthogLogo from "../assets/sponsors/posthog.svg.astro";
+import PrismaLogo from "../assets/sponsors/prisma.svg.astro";
+import RagieLogo from "../assets/sponsors/ragie.svg.astro";
+import SentryLogo from "../assets/sponsors/sentry.svg.astro";
+import SevallaLogo from "../assets/sponsors/sevalla.svg.astro";
+import SinglestoreLogo from "../assets/sponsors/singlestore.svg.astro";
+import UnkeyLogo from "../assets/sponsors/unkey.svg.astro";
+import UpstashLogo from "../assets/sponsors/upstash.svg.astro";
+import VercelLogo from "../assets/sponsors/vercel.svg.astro";
+import WorkosLogo from "../assets/sponsors/workos.svg.astro";
+import ZephyrLogo from "../assets/sponsors/zephyr.svg.astro";
 
 export const affiliates = [
   {
@@ -167,6 +168,12 @@ export const sponsors = [
     image: ChefLogo,
     description: "the ai app builder that actually gets backend.",
     link: "https://soydev.link/chef",
+  },
+  {
+    name: "fondo",
+    image: FondoLogo,
+    description: "the best bookkeeping and tax filing for startups.",
+    link: "https://soydev.link/fondo",
   },
   {
     name: "bolt.new",
