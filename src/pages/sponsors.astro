@@ -1,7 +1,7 @@
 ---
 import "../style/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SponsorGridLayout from "../layouts/SponsorGridLayout.astro";
+import SponsorGridSection from "../components/SponsorGridSection.astro";
 import { affiliates, sponsors } from "./sponsors.js";
 import LeftArrow from "../assets/icons/left-arrow.svg.astro";
 
@@ -25,12 +25,12 @@ const description = "all of the brands running ads on my youtube channel";
       <a href="/sponsor-me" class="text-theo-blue hover:underline">click here</a>
     </p>
   </header>
-  <SponsorGridLayout
+  <SponsorGridSection
     heading="affiliates"
     sponsors={affiliates}
     className="pb-16"
   />
-  <SponsorGridLayout heading="video sponsors" sponsors={sponsors} />
+  <SponsorGridSection heading="video sponsors" sponsors={sponsors} />
   <div class="-mb-8 py-24 text-center">
     <p>
       interested in sponsoring theo? learn more <a
