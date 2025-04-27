@@ -13,11 +13,11 @@ const shuffledSponsors = sponsors.sort(() => Math.random() - 0.5);
 <BaseLayout title={siteTitle} description={description}>
   <div class="flex w-full flex-col items-center p-4">
     <h1 class="py-4 text-4xl font-bold">Theo's Sponsors</h1>
-    <p class="max-w-2xl text-center text-xl font-bold text-black">
+    <p class="max-w-2xl text-center text-xl font-bold text-foreground">
       these are the brands i work with. they help me make videos and run my
       business. please check them out!
     </p>
-    <p class="max-w-xl pt-2 text-center text-lg font-semibold text-black">
+    <p class="max-w-xl pt-2 text-center text-lg font-semibold text-foreground">
       want to be a sponsor?
       <a class="text-blue-500 hover:underline" href="/sponsor-me">click here</a>
     </p>
@@ -25,7 +25,7 @@ const shuffledSponsors = sponsors.sort(() => Math.random() - 0.5);
     <SponsorGridLayout sponsors={shuffledSponsors} />
 
     <h2 class="pt-8 text-3xl font-bold">Affiliates</h2>
-    <p class="text-lg font-semibold text-black">
+    <p class="text-lg font-semibold text-foreground">
       these aren't direct sponsors, but i use them and recommend them.
     </p>
     <SponsorGridLayout sponsors={affiliates} />

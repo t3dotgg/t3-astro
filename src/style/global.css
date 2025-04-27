@@ -6,13 +6,39 @@
 @plugin "@tailwindcss/typography";
 @config "./plugin-configs/tailwindcss-typography.cjs";
 
+@custom-variant system (&:where(:not(html.dark, html.dark *, html.light, html.light *)));
+@custom-variant explicit-light (&:where(html.light, html.light *));
+@custom-variant explicit-dark (&:where(html.dark, html.dark *));
+@custom-variant light {
+  &:where(html.light, html.light *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: light) {
+    &:where(html:not(.light):not(.dark), html:not(.light):not(.dark) *) {
+      @slot;
+    }
+  }
+}
+@custom-variant dark {
+  &:where(html.dark, html.dark *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where(html:not(.light):not(.dark), html:not(.light):not(.dark) *) {
+      @slot;
+    }
+  }
+}
+
 @theme {
   /* custom colors */
   --color-theo-purple: #e8dcff;
   --color-theo-blue: #1f11e4;
   /* override default black and white colors */
   --color-black: #27272a;
-  --color-white: #f4f4f5;
+  --color-white: #f7f2fe;
+  --color-foreground: var(--color-black);
+  --color-background: var(--color-white);
 
   /* custom animations */
   /* https://tailwindcss.com/docs/theme#defining-animation-keyframes */
@@ -37,6 +63,20 @@
     100% {
       opacity: 1;
     }
+  }
+}
+
+@utility bg-texture {
+  @apply bg-[url(/images/bg-texture.png)] dark:bg-[url(/images/bg-texture_dark.png)] bg-fixed bg-center bg-repeat;
+}
+
+:root {
+  @variant dark {
+    /* override theme-dynamic colors */
+    --color-theo-purple: #4e3471;
+    --color-theo-blue: #a19af8;
+    --color-foreground: var(--color-white);
+    --color-background: var(--color-black);
   }
 }
 

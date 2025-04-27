@@ -55,10 +55,10 @@ const links = [
           <a
             href={link.href}
             target={link.target}
-            class="group relative w-full border border-black/60 py-3 text-center transition-colors duration-300 ease-out hover:bg-black/60 hover:text-white"
+            class="group relative w-full border border-foreground/60 py-3 text-center transition-colors duration-300 ease-out hover:bg-foreground/60 hover:text-background"
           >
             <span class="text-lg">{link.label}</span>
-            <span class="block text-sm text-gray-500 transition-colors group-hover:text-gray-200">
+            <span class="block text-sm text-foreground/60 transition-colors group-hover:text-background/90">
               {link.description}
             </span>
           </a>

@@ -1,3 +1,15 @@
+const colorForeground = "var(--color-foreground)";
+const colorBackground = "var(--color-background)";
+
+/**
+ * Get a color with a given opacity
+ * @param {number} opacity - The opacity of the color (0-1)
+ * @returns {string} The color with the given opacity
+ */
+function applyAlphaColor(color, opacity) {
+  return `color-mix(in srgb, ${color} ${opacity * 100}%, transparent)`
+}
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
@@ -5,17 +17,19 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            blockquote: { "border-color": "rgb(39 39 42 / 5)" },
+            '--tw-prose-headings': colorForeground,
+            '--tw-prose-quotes': colorForeground,
+            color: applyAlphaColor(colorForeground, .9),
+            blockquote: { "border-color": colorForeground },
             "blockquote p:first-of-type::before": { content: "none" },
             "blockquote p:first-of-type::after": { content: "none" },
             "ul > li::marker": {
-              color: "#27272a",
+              color: colorForeground,
               fontWeight: "600",
             },
-            color: "#27272a",
             pre: {
-              color: "rgb(39 39 42 / 5)",
-              backgroundColor: "rgb(39 39 42 / 5)",
+              color: colorForeground,
+              backgroundColor: colorForeground,
             },
             "pre code::before": {
               "padding-left": "unset",
@@ -24,8 +38,8 @@ module.exports = {
               "padding-right": "unset",
             },
             code: {
-              backgroundColor: "rgb(39 39 42 / 0.1)",
-              color: "#DD1144",
+              backgroundColor: applyAlphaColor(colorForeground, .1),
+              color: "#DD1144", /* red */
               fontWeight: "400",
               "border-radius": "0.25rem",
             },
@@ -38,7 +52,7 @@ module.exports = {
               "padding-right": "0.25rem",
             },
             a: {
-              color: "#1F11E4",
+              color: "var(--color-theo-blue)",
               textDecoration: `none`,
               "&:hover": {
                 textDecoration: `underline`,
