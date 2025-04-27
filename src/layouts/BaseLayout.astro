@@ -49,7 +49,6 @@ const {
   backToLink = defaultBackToLink,
 } = Astro.props;
 const isHomepage = Astro.url.pathname === "/";
-const usingBackToLink = Boolean(!isHomepage && backToLink);
 ---
 
 <html lang="en" class={cn("bg-white dark:bg-black h-full", classNames?.html)}>
