@@ -36,7 +36,9 @@ const { heading, sponsors, className } = Astro.props;
                 class="size-24 object-contain"
               />
             ) : (
-              <brand.image />
+              <div role="img" aria-label={brand.name}>
+                <brand.image />
+              </div>
             )}
           </div>
           <div class="flex grow flex-col pl-6">
