@@ -19,6 +19,7 @@ export function setTheme(theme: 'light' | 'dark' | 'system') {
 }
 
 export function setUpClientThemeScripts() {
+  const startViewTransition = (fn: () => void) => document.startViewTransition?.(fn) ?? fn();
   const setUpThemeScripts = () => {
     // set the initial theme
     setTheme(getTheme() ?? 'system');
@@ -28,7 +29,7 @@ export function setUpClientThemeScripts() {
       if (target?.matches(`button[data-theme-toggle]`)) {
         const theme = target.dataset.themeToggle;
         if (theme === "light" || theme === "dark" || theme === "system") {
-          setTheme(theme);
+          startViewTransition(() => setTheme(theme));
         }
       }
     });
