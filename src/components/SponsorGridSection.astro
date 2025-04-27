@@ -24,7 +24,8 @@ const { heading, sponsors, className } = Astro.props;
     {
       // `Promise.all` not needed as Astro handles `await` in `map()` concurrently by default
       sponsors.map(async (brand) => {
-        const imageImporter = sponsorImages[`../assets/sponsors/${brand.image}`];
+        const imageImporter =
+          sponsorImages[`../assets/sponsors/${brand.image}`];
 
         try {
           // dynamically build the BrandImage component; catch if it doesn't exist
@@ -57,7 +58,10 @@ const { heading, sponsors, className } = Astro.props;
             </a>
           );
         } catch (error) {
-          console.error(`Failed to load image component for ${brand.image}:`, error);
+          console.error(
+            `Failed to load image component for ${brand.image}:`,
+            error,
+          );
           return null;
         }
       })
