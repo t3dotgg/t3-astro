@@ -1,5 +1,6 @@
 import AgentuityLogo from "../assets/sponsors/agentuity.svg.astro";
 import AgGridLogo from "../assets/sponsors/ag-grid.svg.astro";
+import AgoraLogo from "../assets/sponsors/agora.svg.astro";
 import AhrefsLogo from "../assets/sponsors/ahrefs.svg.astro";
 import AppwriteLogo from "../assets/sponsors/appwrite.svg.astro";
 import AugmentCodeLogo from "../assets/sponsors/augment-code.svg.astro";
@@ -35,8 +36,10 @@ import RagieLogo from "../assets/sponsors/ragie.svg.astro";
 import SentryLogo from "../assets/sponsors/sentry.svg.astro";
 import SevallaLogo from "../assets/sponsors/sevalla.svg.astro";
 import SinglestoreLogo from "../assets/sponsors/singlestore.svg.astro";
+import SuperhumanLogo from "../assets/sponsors/superhuman.svg.astro";
 import UnkeyLogo from "../assets/sponsors/unkey.svg.astro";
 import UpstashLogo from "../assets/sponsors/upstash.svg.astro";
+import VapiLogo from "../assets/sponsors/vapi.svg.astro";
 import VercelLogo from "../assets/sponsors/vercel.svg.astro";
 import WorkosLogo from "../assets/sponsors/workos.svg.astro";
 import ZephyrLogo from "../assets/sponsors/zephyr.svg.astro";
@@ -51,7 +54,7 @@ export const affiliates = [
   },
   {
     name: "superhuman",
-    image: "../assets/sponsors/superhuman.png",
+    image: SuperhumanLogo,
     description:
       "if you do more than an hour of email a day, you should be on superhuman. works with gmail and outlook.",
     link: "https://soydev.link/superhuman",
@@ -100,7 +103,7 @@ export const sponsors = [
   },
   {
     name: "vapi",
-    image: "../assets/sponsors/vapi.png",
+    image: VapiLogo,
     description: "add ai voice to your ai apps in minutes.",
     link: "https://soydev.link/vapi",
   },
@@ -243,7 +246,7 @@ export const sponsors = [
   },
   {
     name: "agora",
-    image: "../assets/sponsors/agora.png",
+    image: AgoraLogo,
     description:
       "the only way i build webrtc into my apps. they have crazy voice ai stuff now too.",
     link: "https://soydev.link/agora",

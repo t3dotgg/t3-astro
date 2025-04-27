@@ -26,20 +26,12 @@ const { heading, sponsors, className } = Astro.props;
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div class="flex size-24 shrink-0 items-center justify-center self-center [&_svg]:size-full">
-            {typeof brand.image === "string" ? (
-              <img
-                src={brand.image}
-                alt={brand.name}
-                width={96}
-                height={96}
-                class="size-24 object-contain"
-              />
-            ) : (
-              <div role="img" aria-label={brand.name} class="contents">
-                <brand.image />
-              </div>
-            )}
+          <div
+            role="img"
+            aria-label={brand.name}
+            class="flex size-24 shrink-0 items-center justify-center self-center [&_svg]:size-full"
+          >
+            <brand.image />
           </div>
           <div class="flex grow flex-col pl-6">
             <h2 class="text-foreground mb-2 text-xl font-semibold">
