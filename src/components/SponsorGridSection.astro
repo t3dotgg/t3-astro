@@ -4,7 +4,7 @@ interface Props {
   sponsors: {
     name: string;
     link: string;
-    image: string | (<P extends {}>(_props: P) => any);
+    image: () => Promise<any>;
     description: string;
   }[];
   className?: string;
@@ -19,30 +19,37 @@ const { heading, sponsors, className } = Astro.props;
     class="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:px-8 lg:grid-cols-3"
   >
     {
-      sponsors.map((brand) => (
-        <a
-          href={brand.link}
-          class="group border-foreground/10 flex flex-row rounded-lg border p-6 transition duration-300 ease-out hover:bg-[white]/50 dark:hover:bg-[white]/5"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div
-            role="img"
-            aria-label={brand.name}
-            class="flex size-24 shrink-0 items-center justify-center self-center [&_svg]:size-full"
-          >
-            <brand.image />
-          </div>
-          <div class="flex grow flex-col pl-6">
-            <h2 class="text-foreground mb-2 text-xl font-semibold">
-              {brand.name}
-            </h2>
-            <p class="text-foreground/65 grow" style="text-wrap: balance;">
-              {brand.description}
-            </p>
-          </div>
-        </a>
-      ))
+      await Promise.all(
+        sponsors.map(async (brand) => {
+          const BrandImage = await brand
+            .image()
+            .then((mod) => mod.default || mod);
+          return (
+            <a
+              href={brand.link}
+              class="group border-foreground/10 flex flex-row rounded-lg border p-6 transition duration-300 ease-out hover:bg-[white]/50 dark:hover:bg-[white]/5"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                role="img"
+                aria-label={brand.name}
+                class="flex size-24 shrink-0 items-center justify-center self-center [&_svg]:size-full"
+              >
+                <BrandImage />
+              </div>
+              <div class="flex grow flex-col pl-6">
+                <h2 class="text-foreground mb-2 text-xl font-semibold">
+                  {brand.name}
+                </h2>
+                <p class="text-foreground/65 grow" style="text-wrap: balance;">
+                  {brand.description}
+                </p>
+              </div>
+            </a>
+          );
+        }),
+      )
     }
   </div>
 </section>
