@@ -36,7 +36,7 @@ const { heading, sponsors, className } = Astro.props;
                 class="size-24 object-contain"
               />
             ) : (
-              <div role="img" aria-label={brand.name}>
+              <div role="img" aria-label={brand.name} class="contents">
                 <brand.image />
               </div>
             )}
