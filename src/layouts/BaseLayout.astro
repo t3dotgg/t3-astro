@@ -49,6 +49,7 @@ const {
   backToLink = defaultBackToLink,
 } = Astro.props;
 const isHomepage = Astro.url.pathname === "/";
+const usingBackToLink = Boolean(!isHomepage && backToLink);
 ---
 
 <html lang="en" class={cn("bg-white dark:bg-black h-full", classNames?.html)}>
@@ -89,7 +90,7 @@ const isHomepage = Astro.url.pathname === "/";
       <slot />
       {
         !isHomepage && backToLink && (
-          <aside class="text-center">
+          <aside class="text-center mb-8">
             <a
               href={backToLink.href}
               class="text-foreground/60 hover:text-foreground mt-8 -mb-4 inline-flex items-center justify-center gap-1 p-2 hover:underline"
@@ -102,7 +103,7 @@ const isHomepage = Astro.url.pathname === "/";
       }
       <footer
         class={cn(
-          "border-t border-foreground/10 pt-8 pb-safe-offset-8 mt-8",
+          "border-t border-foreground/10 pt-8 pb-safe-offset-8",
           classNames?.footer,
         )}
       >
