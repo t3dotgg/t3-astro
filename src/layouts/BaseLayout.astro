@@ -51,7 +51,7 @@ const {
 const isHomepage = Astro.url.pathname === "/";
 ---
 
-<html lang="en" class={cn("bg-white dark:bg-black h-full", classNames?.html)}>
+<html lang="en" class={cn("bg-white dark:bg-black h-full", classNames?.html)} style="view-transition-name:root">
   <head>
     <ClientRouter />
     <script>
