@@ -36,6 +36,9 @@ import UpstashLogo from "../assets/sponsors/upstash.svg.astro";
 import PlanetscaleLogo from "../assets/sponsors/planetscale.svg.astro";
 import SentryLogo from "../assets/sponsors/sentry.svg.astro";
 import AxiomLogo from "../assets/sponsors/axiom.svg.astro";
+import AgentuityLogo from "../assets/sponsors/agentuity.svg.astro";
+import ChefLogo from "../assets/sponsors/chef.svg.astro";
+import MobbinLogo from "../assets/sponsors/mobbin.svg.astro";
 
 export const affiliates = [
   {
@@ -146,6 +149,24 @@ export const sponsors = [
     description:
       "stop hiring bad engineers. g2i will do real video interviews with hundreds of candidates to get you the best possible engineer in weeks.",
     link: "https://soydev.link/g2i",
+  },
+  {
+    name: "mobbin",
+    image: MobbinLogo,
+    description: "the best place to get design inspiration, just 10$ a month.",
+    link: "https://soydev.link/mobbin",
+  },
+  {
+    name: "agentuity",
+    image: AgentuityLogo,
+    description: "the best way to setup, run, and scale your ai agents.",
+    link: "https://soydev.link/agentuity",
+  },
+  {
+    name: "chef by convex",
+    image: ChefLogo,
+    description: "the ai app builder that actually gets backend.",
+    link: "https://soydev.link/chef",
   },
   {
     name: "bolt.new",
