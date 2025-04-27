@@ -1,10 +1,13 @@
 ---
+// Resolve sponsor image file paths for dynamic imports
+const sponsorImages = import.meta.glob<any>("../assets/sponsors/*.svg.astro");
+
 interface Props {
   heading: string;
   sponsors: {
     name: string;
     link: string;
-    image: () => Promise<any>;
+    image: string;
     description: string;
   }[];
   className?: string;
@@ -19,11 +22,16 @@ const { heading, sponsors, className } = Astro.props;
     class="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:px-8 lg:grid-cols-3"
   >
     {
-      await Promise.all(
-        sponsors.map(async (brand) => {
-          const BrandImage = await brand
-            .image()
-            .then((mod) => mod.default || mod);
+      // `Promise.all` not needed as Astro handles `await` in `map()` concurrently by default
+      sponsors.map(async (brand) => {
+        const imageImporter = sponsorImages[`../assets/sponsors/${brand.image}`];
+
+        try {
+          // dynamically build the BrandImage component; catch if it doesn't exist
+          const BrandImage = await imageImporter().then(
+            (mod) => mod.default || mod,
+          );
+
           return (
             <a
               href={brand.link}
@@ -48,8 +56,11 @@ const { heading, sponsors, className } = Astro.props;
               </div>
             </a>
           );
-        }),
-      )
+        } catch (error) {
+          console.error(`Failed to load image component for ${brand.image}:`, error);
+          return null;
+        }
+      })
     }
   </div>
 </section>
