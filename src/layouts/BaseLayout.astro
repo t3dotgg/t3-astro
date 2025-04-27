@@ -102,7 +102,7 @@ const isHomepage = Astro.url.pathname === "/";
       }
       <footer
         class={cn(
-          "border-t border-foreground/10 py-8 mt-8",
+          "border-t border-foreground/10 pt-8 pb-safe-offset-8 mt-8",
           classNames?.footer,
         )}
       >
@@ -114,7 +114,7 @@ const isHomepage = Astro.url.pathname === "/";
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="hover:text-foreground transition-colors ease-out text-foreground/75"
+                  class="hover:text-foreground text-foreground/75 transition-colors ease-out"
                 >
                   {link.label}
                 </a>
@@ -155,17 +155,17 @@ const isHomepage = Astro.url.pathname === "/";
   @reference "../style/global.css";
   @variant system {
     button[data-theme-toggle="system"] {
-      @apply bg-foreground/10 inset-ring-foreground/10 inset-ring;
+      @apply bg-foreground/5 inset-ring-foreground/10 inset-ring;
     }
   }
   @variant explicit-light {
     button[data-theme-toggle="light"] {
-      @apply bg-foreground/10 inset-ring-foreground/10 inset-ring;
+      @apply bg-foreground/5 inset-ring-foreground/10 inset-ring;
     }
   }
   @variant explicit-dark {
     button[data-theme-toggle="dark"] {
-      @apply bg-foreground/10 inset-ring-foreground/10 inset-ring;
+      @apply bg-foreground/5 inset-ring-foreground/10 inset-ring;
     }
   }
 </style>

@@ -6,6 +6,9 @@
 @plugin "@tailwindcss/typography";
 @config "./plugin-configs/tailwindcss-typography.cjs";
 
+/* tailwindcss-safe-area plugin */
+@plugin "tailwindcss-safe-area";
+
 @custom-variant system (&:where(:not(html.dark, html.dark *, html.light, html.light *)));
 @custom-variant explicit-light (&:where(html.light, html.light *));
 @custom-variant explicit-dark (&:where(html.dark, html.dark *));
