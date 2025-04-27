@@ -13,21 +13,41 @@
 @custom-variant explicit-light (&:where(html.light, html.light *));
 @custom-variant explicit-dark (&:where(html.dark, html.dark *));
 @custom-variant light {
-  &:where(html.light, html.light *):not(.scheme-dark, .scheme-dark *, .scheme-only-dark, .scheme-only-dark *) {
+  &:where(html.light, html.light *):not(
+      .scheme-dark,
+      .scheme-dark *,
+      .scheme-only-dark,
+      .scheme-only-dark *
+    ) {
     @slot;
   }
   @media (prefers-color-scheme: light) {
-    &:where(html:not(.light):not(.dark), html:not(.light):not(.dark) *):not(.scheme-dark, .scheme-dark *, .scheme-only-dark, .scheme-only-dark *) {
+    &:where(html:not(.light):not(.dark), html:not(.light):not(.dark) *):not(
+        .scheme-dark,
+        .scheme-dark *,
+        .scheme-only-dark,
+        .scheme-only-dark *
+      ) {
       @slot;
     }
   }
 }
 @custom-variant dark {
-  &:where(html.dark, html.dark *):not(.scheme-light, .scheme-light *, .scheme-only-light, .scheme-only-light *) {
+  &:where(html.dark, html.dark *):not(
+      .scheme-light,
+      .scheme-light *,
+      .scheme-only-light,
+      .scheme-only-light *
+    ) {
     @slot;
   }
   @media (prefers-color-scheme: dark) {
-    &:where(html:not(.light):not(.dark), html:not(.light):not(.dark) *):not(.scheme-light, .scheme-light *, .scheme-only-light, .scheme-only-light *) {
+    &:where(html:not(.light):not(.dark), html:not(.light):not(.dark) *):not(
+        .scheme-light,
+        .scheme-light *,
+        .scheme-only-light,
+        .scheme-only-light *
+      ) {
       @slot;
     }
   }
