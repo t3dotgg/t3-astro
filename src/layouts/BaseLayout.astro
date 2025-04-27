@@ -51,7 +51,11 @@ const {
 const isHomepage = Astro.url.pathname === "/";
 ---
 
-<html lang="en" class={cn("bg-white dark:bg-black h-full", classNames?.html)} style="view-transition-name:root">
+<html
+  lang="en"
+  class={cn("bg-white dark:bg-black h-full", classNames?.html)}
+  style="view-transition-name:root"
+>
   <head>
     <ClientRouter />
     <script>
@@ -89,7 +93,7 @@ const isHomepage = Astro.url.pathname === "/";
       <slot />
       {
         !isHomepage && backToLink && (
-          <aside class="text-center mb-8">
+          <aside class="mb-8 text-center">
             <a
               href={backToLink.href}
               class="text-foreground/60 hover:text-foreground mt-8 -mb-4 inline-flex items-center justify-center gap-1 p-2 hover:underline"
