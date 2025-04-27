@@ -13,21 +13,21 @@
 @custom-variant explicit-light (&:where(html.light, html.light *));
 @custom-variant explicit-dark (&:where(html.dark, html.dark *));
 @custom-variant light {
-  &:where(html.light, html.light *) {
+  &:where(html.light, html.light *):not(.scheme-dark, .scheme-dark *, .scheme-only-dark, .scheme-only-dark *) {
     @slot;
   }
   @media (prefers-color-scheme: light) {
-    &:where(html:not(.light):not(.dark), html:not(.light):not(.dark) *) {
+    &:where(html:not(.light):not(.dark), html:not(.light):not(.dark) *):not(.scheme-dark, .scheme-dark *, .scheme-only-dark, .scheme-only-dark *) {
       @slot;
     }
   }
 }
 @custom-variant dark {
-  &:where(html.dark, html.dark *) {
+  &:where(html.dark, html.dark *):not(.scheme-light, .scheme-light *, .scheme-only-light, .scheme-only-light *) {
     @slot;
   }
   @media (prefers-color-scheme: dark) {
-    &:where(html:not(.light):not(.dark), html:not(.light):not(.dark) *) {
+    &:where(html:not(.light):not(.dark), html:not(.light):not(.dark) *):not(.scheme-light, .scheme-light *, .scheme-only-light, .scheme-only-light *) {
       @slot;
     }
   }
@@ -35,8 +35,12 @@
 
 @theme {
   /* custom colors */
-  --color-theo-purple: #e8dcff;
-  --color-theo-blue: #1f11e4;
+  --color-theo-purple-light: #e8dcff;
+  --color-theo-purple-dark: #4e3471;
+  --color-theo-purple: var(--color-theo-purple-light);
+  --color-theo-blue-light: #1f11e4;
+  --color-theo-blue-dark: #a19af8;
+  --color-theo-blue: var(--color-theo-blue-light);
   /* override default black and white colors */
   --color-black: #27272a;
   --color-white: #f4f4f5;
@@ -76,8 +80,8 @@
 :root {
   @variant dark {
     /* override theme-dynamic colors */
-    --color-theo-purple: #4e3471;
-    --color-theo-blue: #a19af8;
+    --color-theo-purple: var(--color-theo-purple-dark);
+    --color-theo-blue: var(--color-theo-blue-dark);
     --color-foreground: var(--color-white);
     --color-background: var(--color-black);
   }
