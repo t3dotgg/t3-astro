@@ -9,9 +9,47 @@
 /* tailwindcss-safe-area plugin */
 @plugin "tailwindcss-safe-area";
 
-@custom-variant system (&:where(:not(html.dark, html.dark *, html.light, html.light *)));
-@custom-variant explicit-light (&:where(html.light, html.light *));
-@custom-variant explicit-dark (&:where(html.dark, html.dark *));
+@theme {
+  /* custom colors */
+  --color-theo-purple-light: #e8dcff;
+  --color-theo-purple-dark: #4e3471;
+  --color-theo-purple: var(--color-theo-purple-light);
+  --color-theo-blue-light: #1f11e4;
+  --color-theo-blue-dark: #a19af8;
+  --color-theo-blue: var(--color-theo-blue-light);
+  /* override default black and white colors */
+  --color-black: #27272a;
+  --color-white: #f4f4f5;
+  --color-foreground: var(--color-black);
+  --color-background: var(--color-white);
+
+  /* custom animations */
+  /* https://tailwindcss.com/docs/theme#defining-animation-keyframes */
+  --animate-fade-in-down: fade-in-down 0.5s ease-out;
+  --animate-fade-in: fade-in 0.2s ease-out;
+
+  @keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+/* custom light/dark theme variants */
 @custom-variant light {
   &:where(html.light, html.light *):not(
       .scheme-dark,
@@ -53,50 +91,7 @@
   }
 }
 
-@theme {
-  /* custom colors */
-  --color-theo-purple-light: #e8dcff;
-  --color-theo-purple-dark: #4e3471;
-  --color-theo-purple: var(--color-theo-purple-light);
-  --color-theo-blue-light: #1f11e4;
-  --color-theo-blue-dark: #a19af8;
-  --color-theo-blue: var(--color-theo-blue-light);
-  /* override default black and white colors */
-  --color-black: #27272a;
-  --color-white: #f4f4f5;
-  --color-foreground: var(--color-black);
-  --color-background: var(--color-white);
-
-  /* custom animations */
-  /* https://tailwindcss.com/docs/theme#defining-animation-keyframes */
-  --animate-fade-in-down: fade-in-down 0.5s ease-out;
-  --animate-fade-in: fade-in 0.2s ease-out;
-
-  @keyframes fade-in-down {
-    0% {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-}
-
-@utility bg-texture {
-  @apply bg-[url(/images/bg-texture.png)] bg-fixed bg-center bg-repeat dark:bg-[url(/images/bg-texture_dark.png)];
-}
-
+/* custom color overrides for dark theme */
 :root {
   @variant dark {
     /* override theme-dynamic colors */
@@ -107,33 +102,16 @@
   }
 }
 
+/* custom `bg-texture` image utility */
+@utility bg-texture {
+  @apply bg-[url(/images/bg-texture.png)] bg-fixed bg-center bg-repeat dark:bg-[url(/images/bg-texture_dark.png)];
+}
+
+/* custom view transition */
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation-duration: 0.2s;
   animation-timing-function: ease-out;
-}
-
-@layer base {
-  body {
-    @apply antialiased;
-  }
-  .bg-blend {
-    background-image: linear-gradient(
-      to top,
-      rgba(232, 220, 255, 1) 0%,
-      rgba(232, 220, 255, 0.3) 50%,
-      rgba(232, 220, 255, 0.15) 65%,
-      rgba(232, 220, 255, 0.075) 75.5%,
-      rgba(232, 220, 255, 0.037) 82.85%,
-      rgba(232, 220, 255, 0.019) 88%,
-      rgba(232, 220, 255, 0) 100%
-    );
-  }
-
-  .animated-bg {
-    background-image: url(/assets/animated-bg.svg);
-    background-size: cover;
-  }
 }
 
 /**
@@ -141,7 +119,6 @@
  * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
  * @author ericwbailey
  */
-
 code[class*="language-"],
 pre[class*="language-"] {
   color: #f4f4f5;
@@ -253,6 +230,7 @@ pre[class*="language-"] {
   cursor: help;
 }
 
+/* High contrast mode code */
 @media screen and (-ms-high-contrast: active) {
   code[class*="language-"],
   pre[class*="language-"] {
@@ -297,8 +275,33 @@ pre[class*="language-"] {
   }
 }
 
+/* custom `h-screen` utility override for iOS */
 @supports (-webkit-touch-callout: none) {
   .h-screen {
     height: -webkit-fill-available;
+  }
+}
+
+/* ⚠️ custom styles to support old.astro legacy page */
+@layer base {
+  body {
+    @apply antialiased;
+  }
+  .bg-blend {
+    background-image: linear-gradient(
+      to top,
+      rgba(232, 220, 255, 1) 0%,
+      rgba(232, 220, 255, 0.3) 50%,
+      rgba(232, 220, 255, 0.15) 65%,
+      rgba(232, 220, 255, 0.075) 75.5%,
+      rgba(232, 220, 255, 0.037) 82.85%,
+      rgba(232, 220, 255, 0.019) 88%,
+      rgba(232, 220, 255, 0) 100%
+    );
+  }
+
+  .animated-bg {
+    background-image: url(/assets/animated-bg.svg);
+    background-size: cover;
   }
 }

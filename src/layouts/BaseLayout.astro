@@ -5,7 +5,7 @@ import { ClientRouter } from "astro:transitions";
 import LeftArrow from "../assets/icons/left-arrow.svg.astro";
 
 // theme icons
-import { LightModeIcon, DarkModeIcon, SystemModeIcon } from "../assets/themes";
+import { LightModeIcon, DarkModeIcon } from "../assets/themes";
 
 const socialLinks = [
   { href: "https://github.com/t3dotgg", label: "GitHub" },
@@ -15,7 +15,6 @@ const socialLinks = [
 ];
 
 const themeToggles = [
-  { id: "system", icon: SystemModeIcon },
   { id: "light", icon: LightModeIcon },
   { id: "dark", icon: DarkModeIcon },
 ];
@@ -111,7 +110,7 @@ const isHomepage = Astro.url.pathname === "/";
         )}
       >
         <div class="container mx-auto px-4">
-          <div class="mb-4 flex justify-center space-x-6">
+          <div class="mb-4 flex justify-center gap-x-6">
             {
               socialLinks.map((link) => (
                 <a
@@ -124,52 +123,30 @@ const isHomepage = Astro.url.pathname === "/";
                 </a>
               ))
             }
-          </div>
-          <div class="text-center">
-            <div
-              class="theme-toggle-group border-foreground/10 inline-flex items-center gap-2 rounded-full border p-1"
-            >
-              {
-                themeToggles.map((toggle) => {
-                  return (
-                    <div class={cn("theme-icon", `theme-icon-${toggle.id}`)}>
-                      <button
-                        type="button"
-                        class="grid size-8 place-items-center rounded-full p-1.75"
-                        aria-label={`Set theme to ${toggle.id}`}
-                        data-theme-toggle={toggle.id}
-                      >
-                        <div class="pointer-events-none contents">
-                          <toggle.icon class="size-1" />
-                        </div>
-                      </button>
+            {
+              themeToggles.map((toggle) => {
+                return (
+                  <button
+                    type="button"
+                    class={cn(
+                      "hover:text-foreground text-foreground/75 appearance-none transition-colors ease-out",
+                      "light:data-[theme-toggle='light']:hidden",
+                      "dark:data-[theme-toggle='dark']:hidden",
+                    )}
+                    aria-label={`Set theme to ${toggle.id}`}
+                    title={`Set theme to ${toggle.id}`}
+                    data-theme-toggle={toggle.id}
+                  >
+                    <div class="pointer-events-none contents">
+                      <toggle.icon class="size-[1em]" />
                     </div>
-                  );
-                })
-              }
-            </div>
+                  </button>
+                );
+              })
+            }
           </div>
         </div>
       </footer>
     </main>
   </body>
 </html>
-
-<style>
-  @reference "../style/global.css";
-  @variant system {
-    button[data-theme-toggle="system"] {
-      @apply bg-foreground/5 inset-ring-foreground/10 inset-ring;
-    }
-  }
-  @variant explicit-light {
-    button[data-theme-toggle="light"] {
-      @apply bg-foreground/5 inset-ring-foreground/10 inset-ring;
-    }
-  }
-  @variant explicit-dark {
-    button[data-theme-toggle="dark"] {
-      @apply bg-foreground/5 inset-ring-foreground/10 inset-ring;
-    }
-  }
-</style>

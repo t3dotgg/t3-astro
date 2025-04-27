@@ -10,10 +10,10 @@ interface Props {
     image: string;
     description: string;
   }[];
-  className?: string;
+  class?: string;
 }
 
-const { heading, sponsors, className } = Astro.props;
+const { heading, sponsors, class: className } = Astro.props;
 ---
 
 <section class={className}>
