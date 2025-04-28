@@ -105,12 +105,13 @@ const isHomepage = Astro.url.pathname === "/";
       }
       <footer
         class={cn(
-          "border-t border-foreground/10 pt-8 pb-safe-offset-8",
+          "[--space:--spacing(4)] sm:[--space:--spacing(8)]",
+          "border-t border-foreground/10 pt-(--space) pb-safe-offset-(--space)",
           classNames?.footer,
         )}
       >
         <div class="container mx-auto px-4">
-          <div class="mb-4 flex justify-center gap-x-6">
+          <div class="flex w-full justify-center gap-x-[min(4vw,--spacing(6))]">
             {
               socialLinks.map((link) => (
                 <a
