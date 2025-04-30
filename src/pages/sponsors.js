@@ -50,6 +50,13 @@ export const sponsors = [
     link: "https://soydev.link/coderabbit",
   },
   {
+    name: "imagekit",
+    image: "imagekit.svg.astro",
+    description:
+      "the best way to optimize images. works with any storage provider (even urls).",
+    link: "https://soydev.link/imagekit",
+  },
+  {
     name: "blacksmith",
     image: "blacksmith.svg.astro",
     description: "github actions but they're 2x faster and way cheaper.",
@@ -189,7 +196,7 @@ export const sponsors = [
   {
     name: "workos",
     image: "workos.svg.astro",
-    description: "the best way to add enterprise auth to your app.",
+    description: "the only sane way to handle enterprise auth.",
     link: "https://soydev.link/workos",
   },
   {
