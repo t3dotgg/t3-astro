@@ -2,7 +2,7 @@
 import "../../../style/global.css";
 import BlogPostHeader from "../../../components/BlogPostHeader.astro";
 import { getSlugFromPath } from "../../../utils/get-slug-from-path";
-import {ViewTransitions} from 'astro:transitions';
+import { ClientRouter } from "astro:transitions";
 
 export async function getStaticPaths({ paginate, rss }) {
   const allPosts = await Astro.glob("../../../content/posts/*.md");
@@ -25,7 +25,7 @@ const { post } = Astro.props;
 
 <html lang="en">
   <head>
-    <ViewTransitions />
+    <ClientRouter />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.svg" />
@@ -46,7 +46,7 @@ const { post } = Astro.props;
     <div class="page flex h-full w-full justify-center">
       <div class="max-w-full px-4 pt-8 lg:w-[42rem] lg:px-0 xl:w-[64rem]">
         <a class="pt-8 text-xl" href="/blog">Theo's Blog</a>
-        <article class="prose prose-lg max-w-none pb-10 lg:prose-xl">
+        <article class="prose prose-lg lg:prose-xl max-w-none pb-10">
           <main>
             <BlogPostHeader post={post.frontmatter} />
             <post.Content />
@@ -61,11 +61,11 @@ const { post } = Astro.props;
 </html>
 
 <style>
+  @reference "../../../style/global.css";
   .page {
     background-image: url("/images/bg-texture.png");
   }
-
   a :global(a) {
-    @apply my-1 appearance-none rounded-md py-2 text-blue-200 outline-none ring-theo-blue hover:underline focus:ring;
+    @apply ring-theo-blue my-1 appearance-none rounded-md py-2 text-blue-200 outline-hidden hover:underline focus:ring;
   }
 </style>

@@ -2,7 +2,7 @@
 import "../../style/global.css";
 import BlogPostPreview from "../../components/BlogPostPreview.astro";
 import TheoHeaderImage from "../../components/theo-header-image.astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 const siteTitle = "Theo's Blog";
 const description = "Thought dumps and nerdy stuff";
@@ -14,14 +14,14 @@ const sortedPosts = allPosts
   .sort(
     (a, b) =>
       new Date(b.frontmatter.date).valueOf() -
-      new Date(a.frontmatter.date).valueOf()
+      new Date(a.frontmatter.date).valueOf(),
   )
   .filter((p) => p.frontmatter.hidden !== true);
 ---
 
 <html lang="en">
   <head>
-    <ViewTransitions />
+    <ClientRouter />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.svg" />
@@ -67,7 +67,7 @@ const sortedPosts = allPosts
         background-image: url("/images/bg-texture.png");
       }
       a {
-        @apply text-black;
+        color: var(--color-black);
       }
     </style>
   </body>
