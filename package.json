@@ -1,6 +1,6 @@
 {
   "name": "astro-t3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -16,7 +16,9 @@
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.6.11",
-    "tailwindcss": "^4.1.4"
+    "tailwind-merge": "^3.2.0",
+    "tailwindcss": "^4.1.4",
+    "tailwindcss-safe-area": "^0.6.0"
   },
   "dependencies": {
     "@astrojs/prefetch": "^0.4.1",

@@ -1,43 +1,27 @@
 ---
-import "../style/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
 const siteTitle = "404 Not Found";
+const description = "Page not found";
+
+const BaseLayoutClassNames = {
+  html: "h-full",
+  body: "size-full",
+  main: "h-full",
+};
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.svg" />
-    <meta name="twitter:image" content="https://t3.gg/images/twitter.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="@t3dotgg" />
-    <meta property="og:title" content={siteTitle} />
-    <meta property="og:image" content="https://t3.gg/images/twitter.png" />
-    <title>{siteTitle}</title>
-    <meta name="theme-color" content="#000000" />
-
-    <script defer data-domain="astro.t3.gg" src="https://t3.gg/js/script.js"
-    ></script>
-  </head>
-  <body class="h-screen min-h-full">
-    <main class="h-full w-full">
-      <div class="absolute top-4 left-4">
-        <a
-          href="/"
-          class="rounded-sm px-4 py-2 text-sm transition-colors hover:bg-black/60 hover:text-white"
-        >
-          ← Go Home
-        </a>
-      </div>
-      <div class="flex h-full w-full items-center justify-center">
-        <div
-          class="flex flex-col justify-center text-center text-6xl font-bold"
-        >
-          <div>404</div>
-          <div class="text-xl font-light text-black">(Page Not Found)</div>
-        </div>
-      </div>
-    </main>
-    <style></style>
-  </body>
-</html>
+<BaseLayout
+  title={siteTitle}
+  description={description}
+  classNames={BaseLayoutClassNames}
+>
+  <div class="flex size-full items-center justify-center">
+    <div
+      class="flex flex-col justify-center gap-1 py-4 text-center text-6xl font-bold"
+    >
+      <div>404</div>
+      <div class="text-xl font-light">(Page Not Found)</div>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,70 @@
+---
+// Resolve sponsor image file paths for dynamic imports
+const sponsorImages = import.meta.glob<any>("../assets/sponsors/*.svg.astro");
+
+interface Props {
+  heading: string;
+  sponsors: {
+    name: string;
+    link: string;
+    image: string;
+    description: string;
+  }[];
+  class?: string;
+}
+
+const { heading, sponsors, class: className } = Astro.props;
+---
+
+<section class={className}>
+  <h2 class="px-8 pb-4 text-2xl font-semibold">{heading}</h2>
+  <div
+    class="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:px-8 lg:grid-cols-3"
+  >
+    {
+      // `Promise.all` not needed as Astro handles `await` in `map()` concurrently by default
+      sponsors.map(async (brand) => {
+        const imageImporter =
+          sponsorImages[`../assets/sponsors/${brand.image}`];
+
+        try {
+          // dynamically build the BrandImage component; catch if it doesn't exist
+          const BrandImage = await imageImporter().then(
+            (mod) => mod.default || mod,
+          );
+
+          return (
+            <a
+              href={brand.link}
+              class="group border-foreground/10 flex flex-row rounded-lg border p-6 transition duration-300 ease-out hover:bg-[white]/50 dark:hover:bg-[white]/5"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                role="img"
+                aria-label={brand.name}
+                class="flex size-24 shrink-0 items-center justify-center self-center [&_svg]:size-full"
+              >
+                <BrandImage />
+              </div>
+              <div class="flex grow flex-col pl-6">
+                <h2 class="text-foreground mb-2 text-xl font-semibold">
+                  {brand.name}
+                </h2>
+                <p class="text-foreground/65 grow" style="text-wrap: balance;">
+                  {brand.description}
+                </p>
+              </div>
+            </a>
+          );
+        } catch (error) {
+          console.error(
+            `Failed to load image component for ${brand.image}:`,
+            error,
+          );
+          return null;
+        }
+      })
+    }
+  </div>
+</section>
