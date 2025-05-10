@@ -24,8 +24,6 @@
   --color-foreground: var(--color-black);
   --color-background: var(--color-white);
 
-  /* custom breakpoints */
-
   /* custom animations */
   /* https://tailwindcss.com/docs/theme#defining-animation-keyframes */
   --animate-fade-in-down: fade-in-down 0.5s ease-out;
